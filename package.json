@@ -1,13 +1,47 @@
 {
   "name": "puppeteer-screen-recorder",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "An utility tool which is useful for capturing screen or record video using the puppeteer",
   "main": "build/main/index.js",
   "typings": "build/main/index.d.ts",
   "module": "build/module/index.js",
-  "repository": "https://github.com/YOUR_GITHUB_USER_NAME/puppeteer-screen-recorder",
+  "repository": "https://github.com/prasanaworld/puppeteer-screen-recorder",
+  "author": {
+    "name": "Prasana Kannan",
+    "url": "https://www.linkedin.com/in/prasanakannan/"
+  },
+  "homepage": "https://github.com/prasanaworld/puppeteer-screen-recorder",
   "license": "MIT",
-  "keywords": [],
+  "keywords": [
+    "puppeteer",
+    "screen",
+    "screen recorder",
+    "video capture",
+    "video recorder",
+    "test case capture",
+    "video",
+    "record",
+    "cast",
+    "shot",
+    "video",
+    "record",
+    "puppeteer",
+    "pptr",
+    "pptr.dev",
+    "automatic",
+    "automation",
+    "screen cast",
+    "devtool",
+    "devtool protocol",
+    "screen frame",
+    "screeencast",
+    "screeencasts",
+    "screeenCasts",
+    "screeenCast",
+    "headless",
+    "headfull",
+    "FFMPEG"
+  ],
   "scripts": {
     "build": "run-p build:*",
     "build:main": "tsc -p tsconfig.json",
@@ -41,11 +75,17 @@
     "node": ">=10"
   },
   "dependencies": {
-    "@bitauth/libauth": "^1.17.1"
+    "@ffmpeg-installer/ffmpeg": "^1.0.20",
+    "fluent-ffmpeg": "^2.1.2"
+  },
+  "peerDependencies": {
+    "puppeteer": ">=5.5.0"
   },
   "devDependencies": {
+    "puppeteer": "^6.0.0",
     "@ava/typescript": "^1.1.1",
     "@istanbuljs/nyc-config-typescript": "^1.0.1",
+    "@types/node": "^14.14.13",
     "@typescript-eslint/eslint-plugin": "^4.0.1",
     "@typescript-eslint/parser": "^4.0.1",
     "ava": "^3.12.1",
