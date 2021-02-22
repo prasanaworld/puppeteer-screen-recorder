@@ -1,6 +1,6 @@
 {
   "name": "puppeteer-screen-recorder",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "An utility tool which is useful for capturing screen or record video using the puppeteer",
   "main": "build/main/index.js",
   "typings": "build/main/index.d.ts",
