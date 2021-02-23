@@ -50,6 +50,9 @@ export default class PuppeteerScreenRecorder {
     this.page = page;
   }
 
+  /**
+   * @ignore
+   */
   private setupListeners(): void {
     this.page.on('close', async () => await this.stop());
 
@@ -60,6 +63,9 @@ export default class PuppeteerScreenRecorder {
     this.streamWriter.on('videoStreamWriterError', () => this.stop());
   }
 
+  /**
+   * @ignore
+   */
   private async ensureDirectoryExist(dirPath) {
     return new Promise((resolve, reject) => {
       try {
@@ -72,12 +78,27 @@ export default class PuppeteerScreenRecorder {
   }
 
   /**
+   * @public
+   * @method getRecordDuration
+   * @description return the total duration of the video recorded,
+   *  1. if this method is called before calling the stop method, it would be return the time till it has recorded.
+   *  2. if this method is called after stop method, it would give the total time for recording
+   * @returns total duration of video
+   */
+  public getRecordDuration(): string {
+    if (!this.streamWriter) {
+      return '00:00:00:00';
+    }
+    return this.streamWriter.duration;
+  }
+
+  /**
    *
    * @public
    * @method start
    * @param savePath accepts a path string to store the video
    * @description Start the video capturing session
-   * @returns
+   * @returns PuppeteerScreenRecorder
    */
   public async start(savePath: string): Promise<PuppeteerScreenRecorder> {
     await this.ensureDirectoryExist(dirname(savePath));
@@ -93,6 +114,7 @@ export default class PuppeteerScreenRecorder {
    * @public
    * @method stop
    * @description stop the video capturing session
+   * @returns indicate whether stop is completed correct or not, if true without any error else false.
    */
   public async stop(): Promise<boolean> {
     if (this.isScreenCaptureEnded !== null) {

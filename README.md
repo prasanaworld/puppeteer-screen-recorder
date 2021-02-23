@@ -2,29 +2,27 @@
 
 A puppeteer Plugin which uses the native [chrome devtool protocol](https://chromedevtools.github.io/devtools-protocol/tot/Page/#method-startScreencast) for capturing screen and record video frame by frame. Also support option to follow pages which are opened by the current page object.
 
-## Key Feature
+[Documentation](https://prasanaworld.github.io/puppeteer-screen-recorder/classes/puppeteerscreenrecorder.html) |
 
----
+## Key Feature
 
 ### 1. Follow Page Automatically
 
-Automatically follows pages (multiple pages) which are opened at runtime, which is part of video capturing. Also support options to disable the default flow.
+Automatically follows pages (multiple pages) which are opened at runtime, which will be part of video capturing. Also support options to disable the default flow.
 
 ### 2. No overhead over FF_MPEG library
 
-FFMPEG installation configuration and it configuration are automatically managed by the library itself. But options is available to pointing the preinstalled one.
+FFMPEG library's installation and configuration are automatically managed by the library internally. Also offers options to configure with custom library path.
 
 ### 3. Native Implementation
 
-This plugin works directly with native [chrome devtool protocol](https://chromedevtools.github.io/devtools-protocol/tot/Page/#method-startScreencast) to capture the video under the wood.
+This plugin works directly with native [chrome devtool protocol](https://chromedevtools.github.io/devtools-protocol/tot/Page/#method-startScreencast) to capture the video under the wood without any other thirdparty puppeteer plugins for screen capturing.
 
 ### 4. Adopted the Chromium principles
 
 Adopted Chromium principles such as Speed, Security, Stability and Simplicity. It also ensures no frames are missed during video capturing and doesn't impact the performance, since its doesn't use any other puppeteer plugin internally.
 
 ## Getting Started
-
----
 
 ### Installation Guide
 
@@ -41,8 +39,6 @@ yarn add puppeteer-screen-recorder
 ```
 
 ### API Description
-
----
 
 **1. Import the plugin using ES6 or commonjs.**
 
@@ -66,7 +62,7 @@ const Config = {
 
 > - **followNewTab** : Boolean value which is indicate whether to follow the tab or not. Default value is true.
 
-> - **fps**: Numeric value which state no.of Frames per second in which the video should be recorded. default value is 25.
+> - **fps**: Numeric value which denotes no.of Frames per second in which the video should be recorded. default value is 25.
 
 > - **ffmpeg_Path**: String value pointing to the installation of [FFMPEG](https://ffmpeg.org/). Default is null (Automatically install the FFMPEG and use it).
 
@@ -115,11 +111,9 @@ const PuppeteerScreenRecorder = require('puppeteer-screen-recorder');
 
 ## FAQ
 
----
-
 Some of the frequently asked question about puppeteer screen recording are
 
-#### Q: Does it support Chrome in headless mode?
+**Q: Does it support Chrome in headless mode?**
 
 ---
 
@@ -127,36 +121,38 @@ Yes, it supports Both headless and headFul mode.
 
 It records full length video, frame by frame even when Chrome runs in headless mode.
 
-### Q: Does it use the window object?
+**Q: Does it use the window object?**
 
 ---
 
 No, it's not tied to the window Object.
 
-#### Q: Does it follows pages which are opened at runtime
+**Q: Does it follows pages which are opened at runtime**
 
 ---
 
 Yes, it automatically follows pages which is created at runtime.
 
-#### Q: is there an option to disable video recording for new page created and record video only for the page object passed
+**Q: is there an option to disable video recording for new page created and record video only for the page object passed**
 
 ---
 
 Yes, By setting the `options.followNewTab` to false, it record only video for the passed page object alone.
 
-#### Q: Does it support to record video at 60 fps
+**Q: Does it support to record video at 60 fps**
 
 ---
 
 Yes, video can be recorded at 60 fps. By setting `options.fps` to 60.
 
-#### Q:Does it use the window object?
+**Q:Does it use the window object?**
 
 ---
 
 No, it doesn't use the window object.
 
-#### Q: Does it use FFMPEG internally?
+**Q: Does it use FFMPEG internally?**
+
+---
 
 Yes, it uses FFMPEG with optimized options to speed up the video recording using stream from chrome devtool protocol.

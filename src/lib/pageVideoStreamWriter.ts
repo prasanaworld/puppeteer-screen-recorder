@@ -27,6 +27,7 @@ export default class PageVideoStreamWriter extends EventEmitter {
   private readonly screenLimit = 40;
   private screenCastFrames = [];
   private lastProcessedFrame: pageScreenFrame;
+  public duration = '00:00:00:00';
 
   private status = VIDEO_WRITE_STATUS.NOT_STARTED;
   private options: VideoOptions;
@@ -82,6 +83,9 @@ export default class PageVideoStreamWriter extends EventEmitter {
         .inputFPS(this.options.fps)
         .outputOptions('-preset ultrafast')
         .outputOptions('-pix_fmt yuv420p')
+        .on('progress', (progressDetails) => {
+          this.duration = progressDetails.timemark;
+        })
         .on('error', (e) => {
           this.handleWriteStreamError(e.message);
           resolve(false);
