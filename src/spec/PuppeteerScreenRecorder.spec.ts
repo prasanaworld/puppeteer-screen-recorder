@@ -3,7 +3,7 @@ import fs from 'fs';
 import test from 'ava';
 import puppeteer from 'puppeteer';
 
-import PuppeteerScreenRecorder from '../lib/PuppeteerScreenRecorder';
+import { PuppeteerScreenRecorder } from '../lib/PuppeteerScreenRecorder';
 
 test('case 1 --> Happy Path: Should be able to create a new screen-recording session', async (assert) => {
   /** setup */

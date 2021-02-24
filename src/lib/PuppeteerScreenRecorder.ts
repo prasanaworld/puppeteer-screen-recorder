@@ -33,7 +33,7 @@ const defaultPuppeteerScreenRecorderOptions: PuppeteerScreenRecorderOptions = {
  * await screenRecorder.stop()
  * ```
  */
-export default class PuppeteerScreenRecorder {
+export class PuppeteerScreenRecorder {
   private page: Page;
   private options: PuppeteerScreenRecorderOptions;
   private streamReader: pageVideoStreamCollector;
