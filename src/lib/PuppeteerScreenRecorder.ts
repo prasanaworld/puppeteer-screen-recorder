@@ -102,8 +102,8 @@ export class PuppeteerScreenRecorder {
    * @returns PuppeteerScreenRecorder
    * @example
    * ```
-   *  const savepath = ''
-   *  await recorder.start()
+   *  const savePath = './test/demo.mp4'; //.mp4 is required
+   *  await recorder.start(savePath);
    * ```
    */
   public async start(savePath: string): Promise<PuppeteerScreenRecorder> {

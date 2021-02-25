@@ -1,6 +1,6 @@
 # puppeteer-screen-recorder
 
-A puppeteer Plugin which uses the native [chrome devtool protocol](https://chromedevtools.github.io/devtools-protocol/tot/Page/#method-startScreencast) for capturing screen and record video frame by frame. Also support option to follow pages which are opened by the current page object.
+A puppeteer Plugin that uses the native [chrome devtool protocol](https://chromedevtools.github.io/devtools-protocol/tot/Page/#method-startScreencast) for capturing video frame by frame. Also supports an option to follow pages that are opened by the current page object.
 
 [Documentation](https://prasanaworld.github.io/puppeteer-screen-recorder/classes/puppeteerscreenrecorder.html)
 
@@ -83,10 +83,11 @@ const recorder = PuppeteerScreenRecorder(page);
 **4. Start Video capturing**
 
 ```javascript
+const SavePath = './test/demo.mp4';
 await recorder.start(savePath);
 ```
 
-> **savePath**: string value indicating the directory on where to save the video. The path must also specify the name of the video with extension .mp4 (example - ./test/puppeteer-demo.mp4)s
+> **savePath**: string value indicating the directory on where to save the video. The path must also specify the name of the video with extension .mp4 (example - ./test/puppeteer-demo.mp4)
 
 **5. Stop the video capturing.**
 

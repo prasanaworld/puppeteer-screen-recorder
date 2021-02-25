@@ -1,7 +1,7 @@
 {
   "name": "puppeteer-screen-recorder",
   "version": "1.1.2",
-  "description": "A puppeteer Plugin which uses the native [chrome devtool protocol](https://chromedevtools.github.io/devtools-protocol/tot/Page/#method-startScreencast) for capturing screen and record video frame by frame. Also support option to follow pages which are opened by the current page object",
+  "description": "A puppeteer Plugin that uses the native chrome devtool protocol for capturing video frame by frame. Also supports an option to follow pages that are opened by the current page object",
   "main": "build/main/index.js",
   "typings": "build/main/index.d.ts",
   "module": "build/module/index.js",
