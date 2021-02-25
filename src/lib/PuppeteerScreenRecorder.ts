@@ -1,5 +1,5 @@
 import fs from 'fs';
-import { dirname } from 'path';
+import { dirname, extname } from 'path';
 
 import { Page } from 'puppeteer';
 
@@ -27,8 +27,9 @@ const defaultPuppeteerScreenRecorderOptions: PuppeteerScreenRecorderOptions = {
  *  followNewTab: true,
  *  fps: 25,
  * }
+ * const savePath = "./test/demo.mp4";
  * const screenRecorder = new PuppeteerScreenRecorder(page, screenRecorderOptions);
- * await screenRecorder.start()
+ * await screenRecorder.start(savePath);
  *  // some puppeteer action or test
  * await screenRecorder.stop()
  * ```
@@ -99,8 +100,17 @@ export class PuppeteerScreenRecorder {
    * @param savePath accepts a path string to store the video
    * @description Start the video capturing session
    * @returns PuppeteerScreenRecorder
+   * @example
+   * ```
+   *  const savepath = ''
+   *  await recorder.start()
+   * ```
    */
   public async start(savePath: string): Promise<PuppeteerScreenRecorder> {
+    if (extname(savePath) !== '.mp4') {
+      throw new Error('Arguments should be .mp4 extension');
+    }
+
     await this.ensureDirectoryExist(dirname(savePath));
 
     this.streamWriter = new PageVideoStreamWriter(savePath, this.options);

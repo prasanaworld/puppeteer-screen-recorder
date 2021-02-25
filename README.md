@@ -2,7 +2,7 @@
 
 A puppeteer Plugin which uses the native [chrome devtool protocol](https://chromedevtools.github.io/devtools-protocol/tot/Page/#method-startScreencast) for capturing screen and record video frame by frame. Also support option to follow pages which are opened by the current page object.
 
-[Documentation](https://prasanaworld.github.io/puppeteer-screen-recorder/classes/puppeteerscreenrecorder.html) |
+[Documentation](https://prasanaworld.github.io/puppeteer-screen-recorder/classes/puppeteerscreenrecorder.html)
 
 ## Key Feature
 
@@ -56,7 +56,7 @@ const PuppeteerScreenRecorder = require('puppeteer-screen-recorder');
 const Config = {
   followNewTab: true,
   fps: 25,
-  ffmpeg_Path: '<path of ffmpeg_path>',
+  ffmpeg_Path: '<path of ffmpeg_path>' || null,
 };
 ```
 
@@ -68,13 +68,17 @@ const Config = {
 
 **3. create a new instance of video recording**
 
-```
-const recorder = PuppeteerScreenRecorder(page, Config)
+```javascript
+const recorder = PuppeteerScreenRecorder(page, Config); // Config is optional
+
+// or
+
+const recorder = PuppeteerScreenRecorder(page);
 ```
 
 > - **page**: Puppeteer page object which needs to captured.
 > - **config**: Config is an optional object.
->   Default value is `{followNewTab: true, fps: 25, ffmpeg_Path: null }`
+>   Default value is `{ followNewTab: true, fps: 25, ffmpeg_Path: null }`
 
 **4. Start Video capturing**
 
@@ -82,7 +86,7 @@ const recorder = PuppeteerScreenRecorder(page, Config)
 await recorder.start(savePath);
 ```
 
-> **savePath**: string value indicating the directory on where to save the video.
+> **savePath**: string value indicating the directory on where to save the video. The path must also specify the name of the video with extension .mp4 (example - ./test/puppeteer-demo.mp4)s
 
 **5. Stop the video capturing.**
 
@@ -100,7 +104,7 @@ const PuppeteerScreenRecorder = require('puppeteer-screen-recorder');
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
   const recorder = new PuppeteerScreenRecorder(page);
-  await recorder.start('./report/video/');
+  await recorder.start('./report/video/simple.mp4'); // video must have .mp4 has an extension.
   await page.goto('https://example.com');
 
   await page.goto('https://test.com');

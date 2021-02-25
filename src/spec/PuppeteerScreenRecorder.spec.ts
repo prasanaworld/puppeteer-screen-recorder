@@ -54,6 +54,26 @@ test('case 2 --> Happy Path: should be to get the total duration of recording', 
   assert.is(fs.existsSync(outputVideoPath), true);
 });
 
+test('test 3 -> Error Path: should throw error if an invalid savePath argument is passed for start method', async (assert) => {
+  /** setup */
+  const browser = await puppeteer.launch({ headless: true });
+  const page = await browser.newPage();
+
+  try {
+    const outputVideoPath = './test-output/test/video-recorder/';
+    const recorder = new PuppeteerScreenRecorder(page);
+    await recorder.start(outputVideoPath);
+    /** execute */
+    await page.goto('https://github.com', { waitUntil: 'load' });
+
+    await page.goto('https://google.com', { waitUntil: 'load' });
+    /** clear */
+    await recorder.stop();
+  } catch (error) {
+    assert.true(error.message === 'Arguments should be .mp4 extension');
+  }
+});
+
 // test('case 3 --> Happy Path: Should be follow new tab open and record it successfully', async (assert) => {
 //   /** setup */
 //   const browser = await puppeteer.launch({ headless: true });
