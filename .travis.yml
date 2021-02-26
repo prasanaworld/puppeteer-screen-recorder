@@ -1,0 +1,21 @@
+language: 'node'
+
+node_js:
+  - 10
+
+cache:
+  npm: false
+
+jobs:
+  fast_finish: true
+
+install:
+  - npm install
+
+script:
+  - npm run test
+
+after_success:
+  - npm run ci
+
+
