@@ -1,8 +1,21 @@
 # puppeteer-screen-recorder
 
-A puppeteer Plugin that uses the native [chrome devtool protocol](https://chromedevtools.github.io/devtools-protocol/tot/Page/#method-startScreencast) for capturing video frame by frame. Also supports an option to follow pages that are opened by the current page object.
+A puppeteer Plugin that uses the native [chrome devtool protocol](https://chromedevtools.github.io/devtools-protocol/tot/Page/#method-startScreencast) for capturing video frame by frame. Also supports an option to follow pages that are opened by the current page object. [Check out API Docs](https://prasanaworld.github.io/puppeteer-screen-recorder/classes/puppeteerscreenrecorder.html).
 
-[Documentation](https://prasanaworld.github.io/puppeteer-screen-recorder/classes/puppeteerscreenrecorder.html)
+[![NPM](https://nodei.co/npm/puppeteer-screen-recorder.png)](https://npmjs.org/package/puppeteer-screen-recorder)
+
+![GitHub](https://img.shields.io/github/license/prasanaworld/puppeteer-screen-recorder)
+![Test](https://api.travis-ci.org/prasanaworld/puppeteer-screen-recorder.svg?branch=main7)
+
+![GitHub package.json version](https://img.shields.io/github/package-json/v/prasanaworld/puppeteer-screen-recorder)
+![GitHub top language](https://img.shields.io/github/languages/top/prasanaworld/puppeteer-screen-recorder)
+![npm](https://img.shields.io/npm/dw/puppeteer-screen-recorder)
+![Snyk Vulnerabilities for npm package](https://img.shields.io/snyk/vulnerabilities/npm/puppeteer-screen-recorder)
+
+![GitHub forks](https://img.shields.io/github/forks/prasanaworld/puppeteer-screen-recorder?style=social)
+![GitHub Repo stars](https://img.shields.io/github/stars/prasanaworld/puppeteer-screen-recorder?style=social)
+![GitHub watchers](https://img.shields.io/github/watchers/prasanaworld/puppeteer-screen-recorder?style=social)
+![Twitter Follow](https://img.shields.io/twitter/follow/prasanaworld?style=social)
 
 ## Key Feature
 
