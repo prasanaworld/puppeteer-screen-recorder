@@ -5,7 +5,7 @@ A puppeteer Plugin that uses the native [chrome devtool protocol](https://chrome
 [![NPM](https://nodei.co/npm/puppeteer-screen-recorder.png)](https://npmjs.org/package/puppeteer-screen-recorder)
 
 ![GitHub](https://img.shields.io/github/license/prasanaworld/puppeteer-screen-recorder)
-![Test](https://api.travis-ci.org/prasanaworld/puppeteer-screen-recorder.svg?branch=main7)
+[![Build Status](https://travis-ci.org/prasanaworld/puppeteer-screen-recorder.svg?branch=main)](https://travis-ci.org/prasanaworld/puppeteer-screen-recorder)
 
 ![GitHub package.json version](https://img.shields.io/github/package-json/v/prasanaworld/puppeteer-screen-recorder)
 ![GitHub top language](https://img.shields.io/github/languages/top/prasanaworld/puppeteer-screen-recorder)
