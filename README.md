@@ -9,13 +9,18 @@ A puppeteer Plugin that uses the native [chrome devtool protocol](https://chrome
 
 ![GitHub package.json version](https://img.shields.io/github/package-json/v/prasanaworld/puppeteer-screen-recorder)
 ![GitHub top language](https://img.shields.io/github/languages/top/prasanaworld/puppeteer-screen-recorder)
-![npm](https://img.shields.io/npm/dw/puppeteer-screen-recorder)
+![npm](https://img.shields.io/npm/dt/puppeteer-screen-recorder)
 ![Snyk Vulnerabilities for npm package](https://img.shields.io/snyk/vulnerabilities/npm/puppeteer-screen-recorder)
 
 ![GitHub forks](https://img.shields.io/github/forks/prasanaworld/puppeteer-screen-recorder?style=social)
 ![GitHub Repo stars](https://img.shields.io/github/stars/prasanaworld/puppeteer-screen-recorder?style=social)
 ![GitHub watchers](https://img.shields.io/github/watchers/prasanaworld/puppeteer-screen-recorder?style=social)
 ![Twitter Follow](https://img.shields.io/twitter/follow/prasanaworld?style=social)
+
+<p style="background-color: green; padding: 10px; border-radius: 5px;"><b>Info:</b> Planning to support <a href="">playwright</a> as part of next release to support cross compatibility (puppeteer and playwright). 
+</br>
+<a href="https://github.com/prasanaworld/puppeteer-screen-recorder/issues/new">Add Feature Request</a>
+</p>
 
 ## Key Feature
 
