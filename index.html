@@ -122,7 +122,7 @@
 <span class="hljs-keyword">import</span> { PuppeteerScreenRecorder } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;puppeteer-screen-recorder&#x27;</span>;
 
 <span class="hljs-comment">// or commonjs</span>
-<span class="hljs-keyword">const</span> PuppeteerScreenRecorder = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;puppeteer-screen-recorder&#x27;</span>);
+<span class="hljs-keyword">const</span> { PuppeteerScreenRecorder } = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;puppeteer-screen-recorder&#x27;</span>);
 </code></pre>
 				<p><strong>2. Setup the Configuration object.</strong></p>
 				<pre><code class="language-javascript"><span class="hljs-keyword">const</span> Config = {
@@ -174,7 +174,7 @@
 					<h3>Example</h3>
 				</a>
 				<pre><code class="language-javascript"><span class="hljs-keyword">const</span> puppeteer = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;puppeteer&#x27;</span>);
-<span class="hljs-keyword">const</span> PuppeteerScreenRecorder = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;puppeteer-screen-recorder&#x27;</span>);
+<span class="hljs-keyword">const</span> { PuppeteerScreenRecorder } = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;puppeteer-screen-recorder&#x27;</span>);
 
 (<span class="hljs-keyword">async</span> () =&gt; {
   <span class="hljs-keyword">const</span> browser = <span class="hljs-keyword">await</span> puppeteer.launch();
