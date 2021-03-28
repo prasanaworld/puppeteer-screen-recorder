@@ -129,6 +129,11 @@
   <span class="hljs-attr">followNewTab</span>: <span class="hljs-literal">true</span>,
   <span class="hljs-attr">fps</span>: <span class="hljs-number">25</span>,
   <span class="hljs-attr">ffmpeg_Path</span>: <span class="hljs-string">&#x27;&lt;path of ffmpeg_path&gt;&#x27;</span> || <span class="hljs-literal">null</span>,
+  <span class="hljs-attr">videoFrame</span>: {
+    <span class="hljs-attr">width</span>: <span class="hljs-number">1024</span>,
+    <span class="hljs-attr">height</span>: <span class="hljs-number">768</span>,
+  },
+  <span class="hljs-attr">aspectRatio</span>: <span class="hljs-string">&#x27;4:3&#x27;</span>,
 };
 </code></pre>
 				<blockquote>
@@ -144,6 +149,16 @@
 				<blockquote>
 					<ul>
 						<li><strong>ffmpeg_Path</strong>: String value pointing to the installation of <a href="https://ffmpeg.org/">FFMPEG</a>. Default is null (Automatically install the FFMPEG and use it).</li>
+					</ul>
+				</blockquote>
+				<blockquote>
+					<ul>
+						<li><strong>videoFrame</strong>: An object which is to specify the width and height of the capturing video frame. Default to browser viewport size.</li>
+					</ul>
+				</blockquote>
+				<blockquote>
+					<ul>
+						<li><strong>aspectRatio</strong>: Specify the apsect ratio of the video. Default value is <code>4:3</code>.</li>
 					</ul>
 				</blockquote>
 				<p><strong>3. create a new instance of video recording</strong></p>
