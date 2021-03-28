@@ -75,6 +75,11 @@ const Config = {
   followNewTab: true,
   fps: 25,
   ffmpeg_Path: '<path of ffmpeg_path>' || null,
+  videoFrame: {
+    width: 1024,
+    height: 768,
+  },
+  aspectRatio: '4:3',
 };
 ```
 
@@ -83,6 +88,11 @@ const Config = {
 > - **fps**: Numeric value which denotes no.of Frames per second in which the video should be recorded. default value is 25.
 
 > - **ffmpeg_Path**: String value pointing to the installation of [FFMPEG](https://ffmpeg.org/). Default is null (Automatically install the FFMPEG and use it).
+
+> - **videoFrame**: An object which is to specify the width and height of the capturing video frame. Default to browser viewport size.
+
+> - **aspectRatio**: Specify the apsect ratio of the video. Default value is `4:3`.
+
 
 **3. create a new instance of video recording**
 

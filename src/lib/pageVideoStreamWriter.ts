@@ -8,6 +8,11 @@ import { pageScreenFrame } from './pageVideoStreamCollector';
 export type VideoOptions = {
   readonly fps?: number;
   readonly ffmpeg_Path?: string | null;
+  readonly videoFrame?: {
+    width: number | null;
+    height: number | null;
+  };
+  readonly aspectRatio?: '3:2' | '4:3' | '16:9';
 };
 
 /**
@@ -45,6 +50,12 @@ export default class PageVideoStreamWriter extends EventEmitter {
     this.configureVideoFile(savePath);
   }
 
+  private get videoFrameSize(): string {
+    const { width, height } = this.options.videoFrame;
+
+    return width !== null && height !== null ? `${width}x${height}` : '100%';
+  }
+
   private getFfmpegPath(): string | null {
     if (this.options.ffmpeg_Path) {
       return this.options.ffmpeg_Path;
@@ -79,6 +90,8 @@ export default class PageVideoStreamWriter extends EventEmitter {
     this.writerPromise = new Promise((resolve) => {
       ffmpeg({ source: this.videoMediatorStream, priority: 20 })
         .videoCodec('libx264')
+        .size(this.videoFrameSize)
+        .aspect(this.options.aspectRatio || '4:3')
         .inputFormat('image2pipe')
         .inputFPS(this.options.fps)
         .outputOptions('-preset ultrafast')

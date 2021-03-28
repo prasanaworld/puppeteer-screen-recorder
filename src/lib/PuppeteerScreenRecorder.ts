@@ -17,6 +17,11 @@ const defaultPuppeteerScreenRecorderOptions: PuppeteerScreenRecorderOptions = {
   followNewTab: true,
   fps: 25,
   ffmpeg_Path: null,
+  videoFrame: {
+    width: null,
+    height: null,
+  },
+  aspectRatio: '4:3',
 };
 
 /**
