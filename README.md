@@ -65,7 +65,7 @@ yarn add puppeteer-screen-recorder
 import { PuppeteerScreenRecorder } from 'puppeteer-screen-recorder';
 
 // or commonjs
-const PuppeteerScreenRecorder = require('puppeteer-screen-recorder');
+const { PuppeteerScreenRecorder } = require('puppeteer-screen-recorder');
 ```
 
 **2. Setup the Configuration object.**
@@ -117,7 +117,7 @@ await recorder.stop();
 
 ```javascript
 const puppeteer = require('puppeteer');
-const PuppeteerScreenRecorder = require('puppeteer-screen-recorder');
+const { PuppeteerScreenRecorder } = require('puppeteer-screen-recorder');
 
 (async () => {
   const browser = await puppeteer.launch();
