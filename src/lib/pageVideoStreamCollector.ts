@@ -2,16 +2,7 @@ import { EventEmitter } from 'events';
 
 import { CDPSession, Page } from 'puppeteer';
 
-import { PuppeteerScreenRecorderOptions } from './PuppeteerScreenRecorder';
-
-/**
- * @ignore
- */
-export type pageScreenFrame = {
-  readonly blob: Buffer;
-  readonly timestamp: number;
-  readonly duration?: number;
-};
+import { PuppeteerScreenRecorderOptions } from './pageVideoStreamTypes';
 
 /**
  * @ignore

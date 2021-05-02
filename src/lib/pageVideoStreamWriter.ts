@@ -3,27 +3,11 @@ import { PassThrough } from 'stream';
 
 import ffmpeg, { setFfmpegPath } from 'fluent-ffmpeg';
 
-import { pageScreenFrame } from './pageVideoStreamCollector';
-
-export type VideoOptions = {
-  readonly fps?: number;
-  readonly ffmpeg_Path?: string | null;
-  readonly videoFrame?: {
-    width: number | null;
-    height: number | null;
-  };
-  readonly aspectRatio?: '3:2' | '4:3' | '16:9';
-};
-
-/**
- * @ignore
- */
-enum VIDEO_WRITE_STATUS {
-  'NOT_STARTED',
-  'IN_PROGRESS',
-  'COMPLETED',
-  'ERROR',
-}
+import {
+  pageScreenFrame,
+  VIDEO_WRITE_STATUS,
+  VideoOptions,
+} from './pageVideoStreamTypes';
 
 /**
  * @ignore

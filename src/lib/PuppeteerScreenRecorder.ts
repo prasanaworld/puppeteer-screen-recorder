@@ -4,14 +4,13 @@ import { dirname, extname } from 'path';
 import { Page } from 'puppeteer';
 
 import { pageVideoStreamCollector } from './pageVideoStreamCollector';
-import PageVideoStreamWriter, { VideoOptions } from './pageVideoStreamWriter';
-
-export type PuppeteerScreenRecorderOptions = VideoOptions & {
-  readonly followNewTab: boolean;
-};
+import { PuppeteerScreenRecorderOptions } from './pageVideoStreamTypes';
+import PageVideoStreamWriter from './pageVideoStreamWriter';
 
 /**
  * @ignore
+ * @default
+ * @description This will be option passed to the puppeteer screen recorder
  */
 const defaultPuppeteerScreenRecorderOptions: PuppeteerScreenRecorderOptions = {
   followNewTab: true,
