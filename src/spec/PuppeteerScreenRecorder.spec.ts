@@ -107,17 +107,7 @@ test('test 3 -> Error Path: should throw error if an invalid savePath argument i
 
 test('test 4 --> Test laggy video: Bug report', async (assert) => {
   /** setup */
-  const browser = await puppeteer.launch({
-    headless: false,
-    executablePath:
-      '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
-    args: [
-      '--no-sandbox',
-      '--window-size=1920,1040',
-      '--disable-web-security',
-      '--disable-features=IsolateOrigins,site-per-process',
-    ],
-  });
+  const browser = await puppeteer.launch({ headless: true });
   const page = await browser.newPage();
 
   const Config = {
