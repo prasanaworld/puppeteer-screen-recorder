@@ -174,7 +174,7 @@ export default class PageVideoStreamWriter extends EventEmitter {
     this.status = VIDEO_WRITE_STATUS.IN_PROGRESS;
 
     const NUMBER_OF_FPS = Math.max(
-      Math.round(durationSeconds * this.options.fps),
+      Math.floor(durationSeconds * this.options.fps),
       1
     );
 

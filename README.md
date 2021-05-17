@@ -17,9 +17,8 @@ A puppeteer Plugin that uses the native [chrome devtool protocol](https://chrome
 ![GitHub watchers](https://img.shields.io/github/watchers/prasanaworld/puppeteer-screen-recorder?style=social)
 ![Twitter Follow](https://img.shields.io/twitter/follow/prasanaworld?style=social)
 
-<p style="background-color: green; padding: 10px; border-radius: 5px;"><b>Info:</b> Planning to support <a href="">playwright</a> as part of next release to support cross compatibility (puppeteer and playwright). 
-</br>
 <a href="https://github.com/prasanaworld/puppeteer-screen-recorder/issues/new">Add Feature Request</a>
+
 </p>
 
 ## Key Feature
@@ -92,7 +91,6 @@ const Config = {
 > - **videoFrame**: An object which is to specify the width and height of the capturing video frame. Default to browser viewport size.
 
 > - **aspectRatio**: Specify the apsect ratio of the video. Default value is `4:3`.
-
 
 **3. create a new instance of video recording**
 
