@@ -1,5 +1,5 @@
 import { EventEmitter } from 'events';
-import { Writable, PassThrough } from 'stream';
+import { PassThrough, Writable } from 'stream';
 
 import ffmpeg, { setFfmpegPath } from 'fluent-ffmpeg';
 

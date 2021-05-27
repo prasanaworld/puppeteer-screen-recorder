@@ -1,9 +1,11 @@
 import fs from 'fs';
 
+import { dirname } from 'path';
+
+import { PassThrough } from 'stream';
+
 import test from 'ava';
 import puppeteer from 'puppeteer';
-import { dirname } from 'path';
-import { PassThrough } from 'stream';
 
 import { PuppeteerScreenRecorder, PuppeteerScreenRecorderOptions } from '../';
 
