@@ -30,6 +30,7 @@ export type VideoOptions = {
     height: number | null;
   };
   readonly aspectRatio?: '3:2' | '4:3' | '16:9';
+  readonly duration?: number | string;
 };
 
 export type PuppeteerScreenRecorderOptions = VideoOptions & {

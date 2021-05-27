@@ -1,5 +1,5 @@
 import { EventEmitter } from 'events';
-import { PassThrough } from 'stream';
+import { Writable, PassThrough } from 'stream';
 
 import ffmpeg, { setFfmpegPath } from 'fluent-ffmpeg';
 
@@ -24,14 +24,23 @@ export default class PageVideoStreamWriter extends EventEmitter {
   private videoMediatorStream: PassThrough = new PassThrough();
   private writerPromise: Promise<boolean>;
 
-  constructor(savePath: string, options?: VideoOptions) {
+  constructor(savePath: string | Writable, options?: VideoOptions) {
     super();
 
     if (options) {
       this.options = options;
     }
 
-    this.configureVideoFile(savePath);
+    if (savePath && typeof savePath !== 'string') {
+      if (!('writable' in savePath) || !(savePath.writable)) {
+        throw new Error('Invalid output');
+      }
+
+      this.configureVideoFileForStreaming(savePath);
+
+    } else if (typeof savePath === 'string') {
+      this.configureVideoFile(savePath);
+    }
   }
 
   private get videoFrameSize(): string {
@@ -89,6 +98,40 @@ export default class PageVideoStreamWriter extends EventEmitter {
         })
         .on('end', () => resolve(true))
         .save(savePath);
+    });
+  }
+
+  private configureVideoFileForStreaming(stream: Writable): void {
+    this.configureFFmPegPath();
+    this.writerPromise = new Promise((resolve) => {
+      const command = ffmpeg({ source: this.videoMediatorStream, priority: 20 })
+        .format('mp4')
+        .videoCodec('libx264')
+        .size(this.videoFrameSize)
+        .aspect(this.options.aspectRatio || '4:3')
+        .inputFormat('image2pipe')
+        .inputFPS(this.options.fps)
+        .addOutputOptions('-movflags +frag_keyframe+separate_moof+omit_tfhd_offset+empty_moov') // https://github.com/fluent-ffmpeg/node-fluent-ffmpeg/blob/68d5c948b689b3058e52435e0bc3d4af0eee349e/examples/any-to-mp4-steam.js
+        .outputOptions('-preset ultrafast')
+        .outputOptions('-pix_fmt yuv420p')
+        .on('progress', (progressDetails) => {
+          this.duration = progressDetails.timemark;
+        })
+        .on('error', (e) => {
+          this.handleWriteStreamError(e.message);
+          stream.emit('error', e);
+          resolve(false);
+        })
+        .on('end', () => {
+          stream.end();
+          resolve(true);
+        });
+
+      if (this.options.duration) {
+        command.duration(this.options.duration);
+      }
+
+      command.pipe(stream);
     });
   }
 

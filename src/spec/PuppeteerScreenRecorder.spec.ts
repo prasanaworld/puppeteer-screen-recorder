@@ -2,6 +2,8 @@ import fs from 'fs';
 
 import test from 'ava';
 import puppeteer from 'puppeteer';
+import { dirname } from 'path';
+import { PassThrough } from 'stream';
 
 import { PuppeteerScreenRecorder, PuppeteerScreenRecorderOptions } from '../';
 
@@ -146,5 +148,41 @@ test('test 4 --> Test laggy video: Bug report', async (assert) => {
 
   /** assert */
   assert.is(status, true);
+  assert.is(fs.existsSync(outputVideoPath), true);
+});
+
+test('case 5 --> Happy Path: Should be able to create a new screen-recording session using streams', async (assert) => {
+  /** setup */
+  const browser = await puppeteer.launch({ headless: true });
+  const page = await browser.newPage();
+
+  const outputVideoPath = './test-output/test/video-recorder/testCase5.mp4';
+  try {
+    // we are testing using filestream output so we should ensure that the path exists
+    fs.mkdirSync(dirname(outputVideoPath), { recursive: true });
+  } catch (e) {
+    console.error(e);
+  }
+  /** setup streams (PassThrough as an output from screen recorder and fs.WriteStream as an output from PassThrough stream ) */
+  const passStream = new PassThrough();
+  const fileWriteStream = fs.createWriteStream(outputVideoPath);
+  passStream.pipe(fileWriteStream);
+
+  const recorder = new PuppeteerScreenRecorder(page);
+  const recorderValue = await recorder.startStream(passStream);
+
+  /** execute */
+  await page.goto('https://github.com', { waitUntil: 'load' });
+  await page.goto('https://google.com', { waitUntil: 'load' });
+
+  /** clear */
+  const status = await recorder.stop();
+  await browser.close();
+
+  /** assert */
+  assert.is(recorderValue instanceof PuppeteerScreenRecorder, true);
+  assert.is(status, true);
+  assert.is(fileWriteStream.writableEnded, true);
+  assert.is(fileWriteStream.writableFinished, true);
   assert.is(fs.existsSync(outputVideoPath), true);
 });
