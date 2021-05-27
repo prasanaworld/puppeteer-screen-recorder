@@ -1,7 +1,5 @@
 import fs from 'fs';
-
 import { dirname } from 'path';
-
 import { PassThrough } from 'stream';
 
 import test from 'ava';
