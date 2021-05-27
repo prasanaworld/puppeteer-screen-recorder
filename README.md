@@ -92,6 +92,8 @@ const Config = {
 
 > - **aspectRatio**: Specify the apsect ratio of the video. Default value is `4:3`.
 
+> - **duration**: Numeric or string value to specify for how long to record the video. Default value is `undefined`. Possible values are numerical (in seconds) or string (format `[[hh:]mm:]ss[.xxx]`). Currently only works with `startStream`.
+
 **3. create a new instance of video recording**
 
 ```javascript
@@ -114,6 +116,15 @@ await recorder.start(savePath);
 ```
 
 > **savePath**: string value indicating the directory on where to save the video. The path must also specify the name of the video with extension .mp4 (example - ./test/puppeteer-demo.mp4)
+
+**4(a). Start Video capturing using stream**
+
+```javascript
+const pass = new PassThrough();
+await recorder.startStream(pass);
+```
+
+> **pass**: Any writeable stream that will be an output for the stream recorder. Video is recorded and streamed with .mp4 extension.
 
 **5. Stop the video capturing.**
 
