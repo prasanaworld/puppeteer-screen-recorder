@@ -31,15 +31,9 @@ export default class PageVideoStreamWriter extends EventEmitter {
       this.options = options;
     }
 
-    if (savePath && typeof savePath !== 'string') {
-      if (!('writable' in savePath) || !(savePath.writable)) {
-        throw new Error('Invalid output');
-      }
-
-      this.configureVideoFileForStreaming(savePath);
-
-    } else if (typeof savePath === 'string') {
-      this.configureVideoFile(savePath);
+    const isWritable = this.isWritableStream(savePath);
+    if (isWritable || typeof savePath === 'string') {
+      this.configureVideoFile(savePath, isWritable);
     }
   }
 
@@ -78,40 +72,18 @@ export default class PageVideoStreamWriter extends EventEmitter {
     setFfmpegPath(ffmpegPath);
   }
 
-  private configureVideoFile(savePath: string): void {
-    this.configureFFmPegPath();
-    this.writerPromise = new Promise((resolve) => {
-      ffmpeg({ source: this.videoMediatorStream, priority: 20 })
-        .videoCodec('libx264')
-        .size(this.videoFrameSize)
-        .aspect(this.options.aspectRatio || '4:3')
-        .inputFormat('image2pipe')
-        .inputFPS(this.options.fps)
-        .outputOptions('-preset ultrafast')
-        .outputOptions('-pix_fmt yuv420p')
-        .on('progress', (progressDetails) => {
-          this.duration = progressDetails.timemark;
-        })
-        .on('error', (e) => {
-          this.handleWriteStreamError(e.message);
-          resolve(false);
-        })
-        .on('end', () => resolve(true))
-        .save(savePath);
-    });
-  }
-
-  private configureVideoFileForStreaming(stream: Writable): void {
+  private configureVideoFile(
+    savePath: string | Writable,
+    isWritableStream: boolean
+  ): void {
     this.configureFFmPegPath();
     this.writerPromise = new Promise((resolve) => {
       const command = ffmpeg({ source: this.videoMediatorStream, priority: 20 })
-        .format('mp4')
         .videoCodec('libx264')
         .size(this.videoFrameSize)
         .aspect(this.options.aspectRatio || '4:3')
         .inputFormat('image2pipe')
         .inputFPS(this.options.fps)
-        .addOutputOptions('-movflags +frag_keyframe+separate_moof+omit_tfhd_offset+empty_moov') // https://github.com/fluent-ffmpeg/node-fluent-ffmpeg/blob/68d5c948b689b3058e52435e0bc3d4af0eee349e/examples/any-to-mp4-steam.js
         .outputOptions('-preset ultrafast')
         .outputOptions('-pix_fmt yuv420p')
         .on('progress', (progressDetails) => {
@@ -119,11 +91,15 @@ export default class PageVideoStreamWriter extends EventEmitter {
         })
         .on('error', (e) => {
           this.handleWriteStreamError(e.message);
-          stream.emit('error', e);
+          if (isWritableStream) {
+            (savePath as Writable).emit('error', e);
+          }
           resolve(false);
         })
         .on('end', () => {
-          stream.end();
+          if (isWritableStream) {
+            (savePath as Writable).end();
+          }
           resolve(true);
         });
 
@@ -131,7 +107,16 @@ export default class PageVideoStreamWriter extends EventEmitter {
         command.duration(this.options.duration);
       }
 
-      command.pipe(stream);
+      if (isWritableStream) {
+        command.toFormat('mp4');
+        // https://github.com/fluent-ffmpeg/node-fluent-ffmpeg/blob/68d5c948b689b3058e52435e0bc3d4af0eee349e/examples/any-to-mp4-steam.js
+        command.addOutputOptions(
+          '-movflags +frag_keyframe+separate_moof+omit_tfhd_offset+empty_moov'
+        );
+        command.pipe(savePath);
+      } else {
+        command.save(savePath);
+      }
     });
   }
 
@@ -245,5 +230,15 @@ export default class PageVideoStreamWriter extends EventEmitter {
     this.videoMediatorStream.end();
     this.status = VIDEO_WRITE_STATUS.COMPLETED;
     return this.writerPromise;
+  }
+
+  private isWritableStream(savePath: string | Writable): boolean {
+    if (savePath && typeof savePath !== 'string') {
+      if (!('writable' in savePath) || !savePath.writable) {
+        throw new Error('Output should be a writable stream');
+      }
+      return true;
+    }
+    return false;
   }
 }
