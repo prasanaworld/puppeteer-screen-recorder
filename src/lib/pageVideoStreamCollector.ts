@@ -21,7 +21,7 @@ export class pageVideoStreamCollector extends EventEmitter {
     this.options = options;
   }
 
-  private shouldFollowPopupWindow(): boolean {
+  private get shouldFollowPopupWindow(): boolean {
     return this.options.followNewTab;
   }
 
