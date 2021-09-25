@@ -41,7 +41,7 @@ Adopted Chromium principles such as Speed, Security, Stability and Simplicity. I
 
 ### 5. Supports multiple video format and stream
 
-Supports multiple video format like AVI, MP4, MOV and WEBM. Enable support for custom writable or duplex stream for custom process.
+Supports multiple video format like AVI, MP4, MOV and WEBM. Enable support for writable or duplex stream for process the output streaming .
 
 ## Getting Started
 
