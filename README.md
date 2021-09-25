@@ -95,11 +95,11 @@ const Config = {
 **3. create a new instance of video recording**
 
 ```javascript
-const recorder = PuppeteerScreenRecorder(page, Config); // Config is optional
+const recorder = new PuppeteerScreenRecorder(page, Config); // Config is optional
 
 // or
 
-const recorder = PuppeteerScreenRecorder(page);
+const recorder = new PuppeteerScreenRecorder(page);
 ```
 
 > - **page**: Puppeteer page object which needs to captured.
