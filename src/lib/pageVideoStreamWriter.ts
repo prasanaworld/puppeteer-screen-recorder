@@ -1,14 +1,23 @@
 import { EventEmitter } from 'events';
-import { PassThrough } from 'stream';
+import os from 'os';
+import { extname } from 'path';
+import { PassThrough, Writable } from 'stream';
 
 import ffmpeg, { setFfmpegPath } from 'fluent-ffmpeg';
 
 import {
   pageScreenFrame,
+  SupportedFileFormats,
   VIDEO_WRITE_STATUS,
   VideoOptions,
 } from './pageVideoStreamTypes';
 
+const SUPPORTED_VIDEO_FILE_FORMATS = [
+  SupportedFileFormats.MP4,
+  SupportedFileFormats.AVI,
+  SupportedFileFormats.MOV,
+  SupportedFileFormats.WEBM,
+];
 /**
  * @ignore
  */
@@ -24,14 +33,20 @@ export default class PageVideoStreamWriter extends EventEmitter {
   private videoMediatorStream: PassThrough = new PassThrough();
   private writerPromise: Promise<boolean>;
 
-  constructor(savePath: string, options?: VideoOptions) {
+  constructor(destinationSource: string | Writable, options?: VideoOptions) {
     super();
 
     if (options) {
       this.options = options;
     }
 
-    this.configureVideoFile(savePath);
+    const isWritable = this.isWritableStream(destinationSource);
+    this.configureFFmPegPath();
+    if (isWritable) {
+      this.configureVideoWritableStream(destinationSource as Writable);
+    } else {
+      this.configureVideoFile(destinationSource as string);
+    }
   }
 
   private get videoFrameSize(): string {
@@ -57,39 +72,113 @@ export default class PageVideoStreamWriter extends EventEmitter {
     }
   }
 
+  private getDestinationPathExtension(destinationFile): SupportedFileFormats {
+    const fileExtension = extname(destinationFile);
+    return fileExtension.includes('.')
+      ? (fileExtension.replace('.', '') as SupportedFileFormats)
+      : (fileExtension as SupportedFileFormats);
+  }
+
   private configureFFmPegPath(): void {
     const ffmpegPath = this.getFfmpegPath();
 
     if (!ffmpegPath) {
       throw new Error(
-        'Missing path for FFmpeg, \n Set the FFMPEG_PATH env variable'
+        'FFmpeg path is missing, \n Set the FFMPEG_PATH env variable'
       );
     }
 
     setFfmpegPath(ffmpegPath);
   }
 
-  private configureVideoFile(savePath: string): void {
-    this.configureFFmPegPath();
+  private isWritableStream(destinationSource: string | Writable): boolean {
+    if (destinationSource && typeof destinationSource !== 'string') {
+      if (
+        !(destinationSource instanceof Writable) ||
+        !('writable' in destinationSource) ||
+        !destinationSource.writable
+      ) {
+        throw new Error('Output should be a writable stream');
+      }
+      return true;
+    }
+    return false;
+  }
+
+  private configureVideoFile(destinationPath: string): void {
+    const fileExt = this.getDestinationPathExtension(destinationPath);
+
+    if (!SUPPORTED_VIDEO_FILE_FORMATS.includes(fileExt)) {
+      throw new Error('File format is not supported');
+    }
+
     this.writerPromise = new Promise((resolve) => {
-      ffmpeg({ source: this.videoMediatorStream, priority: 20 })
-        .videoCodec('libx264')
-        .size(this.videoFrameSize)
-        .aspect(this.options.aspectRatio || '4:3')
-        .inputFormat('image2pipe')
-        .inputFPS(this.options.fps)
-        .outputOptions('-preset ultrafast')
-        .outputOptions('-pix_fmt yuv420p')
-        .on('progress', (progressDetails) => {
-          this.duration = progressDetails.timemark;
-        })
+      const outputStream = this.getDestinationStream();
+
+      outputStream
         .on('error', (e) => {
           this.handleWriteStreamError(e.message);
           resolve(false);
         })
         .on('end', () => resolve(true))
-        .save(savePath);
+        .save(destinationPath);
+
+      if (fileExt == SupportedFileFormats.WEBM) {
+        outputStream
+          .videoCodec('libvpx')
+          .videoBitrate(1000, true)
+          .outputOptions('-flags', '+global_header', '-psnr');
+      }
     });
+  }
+
+  private configureVideoWritableStream(writableStream: Writable) {
+    this.writerPromise = new Promise((resolve) => {
+      const outputStream = this.getDestinationStream();
+
+      outputStream
+        .on('error', (e) => {
+          writableStream.emit('error', e);
+          resolve(false);
+        })
+        .on('end', () => {
+          writableStream.end();
+          resolve(true);
+        });
+
+      outputStream.toFormat('mp4');
+      outputStream.addOutputOptions(
+        '-movflags +frag_keyframe+separate_moof+omit_tfhd_offset+empty_moov'
+      );
+      outputStream.pipe(writableStream);
+    });
+  }
+
+  private getDestinationStream(): ffmpeg {
+    const cpu = Math.min(1, os.cpus().length);
+    const outputStream = ffmpeg({
+      source: this.videoMediatorStream,
+      priority: 20,
+    })
+      .videoCodec('libx264')
+      .size(this.videoFrameSize)
+      .aspect(this.options.aspectRatio || '4:3')
+      .inputFormat('image2pipe')
+      .inputFPS(this.options.fps)
+      .outputOptions('-preset ultrafast')
+      .outputOptions('-pix_fmt yuv420p')
+      .outputOptions('-minrate 1000')
+      .outputOptions('-maxrate 1000')
+      .outputOptions(`-threads ${cpu}`)
+      .on('progress', (progressDetails) => {
+        this.duration = progressDetails.timemark;
+      });
+
+    if (this.options.recordDurationLimit) {
+      outputStream.duration(this.options.recordDurationLimit);
+    }
+
+    return outputStream;
   }
 
   private handleWriteStreamError(errorMessage): void {

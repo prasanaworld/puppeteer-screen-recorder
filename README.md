@@ -90,7 +90,9 @@ const Config = {
 
 > - **videoFrame**: An object which is to specify the width and height of the capturing video frame. Default to browser viewport size.
 
-> - **aspectRatio**: Specify the apsect ratio of the video. Default value is `4:3`.
+> - **aspectRatio**: Specify the aspect ratio of the video. Default value is `4:3`.
+
+> - **recordDurationLimit**: Numerical value specify duration (in seconds) to record the video. By default video is recorded till stop method is invoked`. (Note: It's mandatory to invoke Stop() method even if this value is set)
 
 **3. create a new instance of video recording**
 
@@ -108,10 +110,21 @@ const recorder = new PuppeteerScreenRecorder(page);
 
 **4. Start Video capturing**
 
+**1. Save file to disk**
+
 ```javascript
 const SavePath = './test/demo.mp4';
 await recorder.start(savePath);
 ```
+
+**2. Start Video capturing using stream**
+
+```javascript
+const pipeStream = new PassThrough();
+await recorder.startStream(pipeStream);
+```
+
+> **pass**: Any writeable stream that will be an output for the stream recorder. Video is recorded and streamed with .mp4 extension.
 
 > **savePath**: string value indicating the directory on where to save the video. The path must also specify the name of the video with extension .mp4 (example - ./test/puppeteer-demo.mp4)
 
