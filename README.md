@@ -39,6 +39,10 @@ This plugin works directly with native [chrome devtool protocol](https://chromed
 
 Adopted Chromium principles such as Speed, Security, Stability and Simplicity. It also ensures no frames are missed during video capturing and doesn't impact the performance, since its doesn't use any other puppeteer plugin internally.
 
+### 5. Supports multiple video format and stream
+
+Supports multiple video format like AVI, MP4, MOV and WEBM. Enable support for custom writable or duplex stream for custom process.
+
 ## Getting Started
 
 ### Installation Guide
@@ -90,7 +94,9 @@ const Config = {
 
 > - **videoFrame**: An object which is to specify the width and height of the capturing video frame. Default to browser viewport size.
 
-> - **aspectRatio**: Specify the apsect ratio of the video. Default value is `4:3`.
+> - **aspectRatio**: Specify the aspect ratio of the video. Default value is `4:3`.
+
+> - **recordDurationLimit**: Numerical value specify duration (in seconds) to record the video. By default video is recorded till stop method is invoked`. (Note: It's mandatory to invoke Stop() method even if this value is set)
 
 **3. create a new instance of video recording**
 
@@ -108,12 +114,23 @@ const recorder = new PuppeteerScreenRecorder(page);
 
 **4. Start Video capturing**
 
+**1. Save file to disk**
+
 ```javascript
 const SavePath = './test/demo.mp4';
 await recorder.start(savePath);
 ```
 
-> **savePath**: string value indicating the directory on where to save the video. The path must also specify the name of the video with extension .mp4 (example - ./test/puppeteer-demo.mp4)
+**2. Start Video capturing using stream**
+
+```javascript
+const pipeStream = new PassThrough();
+await recorder.startStream(pipeStream);
+```
+
+> **pass**: Any writeable stream that will be an output for the stream recorder. Video is recorded and streamed with .mp4 extension.
+
+> **savePath**: string value indicating the directory on where to save the video. The path must also specify the name of the video with extension .mp4 (example - ./test/puppeteer-demo.mp4). Starting from v2, support added for extensions mp4, avi, mov and webm.
 
 **5. Stop the video capturing.**
 
@@ -131,7 +148,7 @@ const { PuppeteerScreenRecorder } = require('puppeteer-screen-recorder');
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
   const recorder = new PuppeteerScreenRecorder(page);
-  await recorder.start('./report/video/simple.mp4'); // video must have .mp4 has an extension.
+  await recorder.start('./report/video/simple.mp4'); // supports extension - mp4, avi, webm and mov
   await page.goto('https://example.com');
 
   await page.goto('https://test.com');
@@ -151,6 +168,12 @@ Some of the frequently asked question about puppeteer screen recording are
 Yes, it supports Both headless and headFul mode.
 
 It records full length video, frame by frame even when Chrome runs in headless mode.
+
+**Q: Does it support multiple extension?**
+
+---
+
+Yes, Starting from version 2.0, support multiple extension like AVI, MP4, MOV and WEBM.
 
 **Q: Does it use the window object?**
 
@@ -187,3 +210,21 @@ No, it doesn't use the window object.
 ---
 
 Yes, it uses FFMPEG with optimized options to speed up the video recording using stream from chrome devtool protocol.
+
+**Q: Does it support Webm?**
+
+---
+
+Webm format is supported.
+
+**Q: Is it possible to output the stream for further processing/enhancing?**
+
+---
+
+Yes. By passing writable stream/duplex stream to startStream method.
+
+**Q: Can I limit the time of recording, like to stop after 2 minutes?**
+
+---
+
+By specifying the time in seconding using `option.recordDurationLimit`

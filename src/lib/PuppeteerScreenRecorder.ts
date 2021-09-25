@@ -1,5 +1,6 @@
 import fs from 'fs';
-import { dirname, extname } from 'path';
+import { dirname } from 'path';
+import { Writable } from 'stream';
 
 import { Page } from 'puppeteer';
 
@@ -83,6 +84,19 @@ export class PuppeteerScreenRecorder {
   }
 
   /**
+   * @private
+   * @method startStreamReader
+   * @description start listening for video stream from the page.
+   * @returns PuppeteerScreenRecorder
+   */
+  private async startStreamReader(): Promise<PuppeteerScreenRecorder> {
+    this.setupListeners();
+
+    await this.streamReader.start();
+    return this;
+  }
+
+  /**
    * @public
    * @method getRecordDuration
    * @description return the total duration of the video recorded,
@@ -111,17 +125,27 @@ export class PuppeteerScreenRecorder {
    * ```
    */
   public async start(savePath: string): Promise<PuppeteerScreenRecorder> {
-    if (extname(savePath) !== '.mp4') {
-      throw new Error('Arguments should be .mp4 extension');
-    }
-
     await this.ensureDirectoryExist(dirname(savePath));
 
     this.streamWriter = new PageVideoStreamWriter(savePath, this.options);
-    this.setupListeners();
+    return this.startStreamReader();
+  }
 
-    await this.streamReader.start();
-    return this;
+  /**
+   *
+   * @public
+   * @method startStream
+   * @description Start the video capturing session in a stream
+   * @returns {PuppeteerScreenRecorder}
+   * @example
+   * ```
+   *  const stream = new PassThrough();
+   *  await recorder.startStream(stream);
+   * ```
+   */
+  public async startStream(stream: Writable): Promise<PuppeteerScreenRecorder> {
+    this.streamWriter = new PageVideoStreamWriter(stream, this.options);
+    return this.startStreamReader();
   }
 
   /**

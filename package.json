@@ -43,6 +43,8 @@
     "FFMPEG"
   ],
   "scripts": {
+    "example": "ts-node src/example/index.ts",
+    "example:debug": "npm run example -- --inspect",
     "build": "run-p build:*",
     "build:main": "tsc -p tsconfig.json",
     "build:module": "tsc -p tsconfig.module.json",
@@ -69,7 +71,7 @@
     "doc:publish": "gh-pages -m \"[ci skip] Updates\" -d build/docs",
     "version": "standard-version",
     "reset-hard": "git clean -dfx && npm i",
-    "prepare-release": "run-s reset-hard test doc:html version doc:publish",
+    "prepare-release": "run-s test doc:html version doc:publish",
     "ci": "run-s reset-hard doc:html version doc:publish"
   },
   "engines": {

@@ -30,8 +30,16 @@ export type VideoOptions = {
     height: number | null;
   };
   readonly aspectRatio?: '3:2' | '4:3' | '16:9';
+  readonly recordDurationLimit?: number;
 };
 
 export type PuppeteerScreenRecorderOptions = VideoOptions & {
   readonly followNewTab: boolean;
 };
+
+export enum SupportedFileFormats {
+  MP4 = 'mp4',
+  MOV = 'mov',
+  AVI = 'avi',
+  WEBM = 'webm',
+}
