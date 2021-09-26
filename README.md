@@ -221,10 +221,22 @@ Webm format is supported.
 
 ---
 
-Yes. By passing writable stream/duplex stream to startStream method.
+Yes. By passing writable stream/duplex stream to `startStream` method.
 
 **Q: Can I limit the time of recording, like to stop after 2 minutes?**
 
 ---
 
-By specifying the time in seconding using `option.recordDurationLimit`
+By specifying the time to record (in seconds) using `option.recordDurationLimit`
+
+**Q: Does it support audio recording?**
+
+---
+
+No, it doesn't audio recording.
+
+**Q: Does it support GIF format, any plan to support in fur?**
+
+---
+
+No, it wont support GIF. since Gif is considered as a image format.

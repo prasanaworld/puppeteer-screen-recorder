@@ -84,6 +84,7 @@ export class PuppeteerScreenRecorder {
   }
 
   /**
+   * @ignore
    * @private
    * @method startStreamReader
    * @description start listening for video stream from the page.

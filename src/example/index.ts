@@ -2,6 +2,9 @@ import puppeteer from 'puppeteer';
 
 import { PuppeteerScreenRecorder } from '../lib/PuppeteerScreenRecorder';
 
+/**
+ * @ignore
+ */
 async function executeSample(format) {
   const browser = await puppeteer.launch();
   const page = await browser.newPage();

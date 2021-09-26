@@ -12,12 +12,16 @@ import {
   VideoOptions,
 } from './pageVideoStreamTypes';
 
-const SUPPORTED_VIDEO_FILE_FORMATS = [
+/**
+ * @ignore
+ */
+const SUPPORTED_FILE_FORMATS = [
   SupportedFileFormats.MP4,
   SupportedFileFormats.AVI,
   SupportedFileFormats.MOV,
   SupportedFileFormats.WEBM,
 ];
+
 /**
  * @ignore
  */
@@ -108,7 +112,7 @@ export default class PageVideoStreamWriter extends EventEmitter {
   private configureVideoFile(destinationPath: string): void {
     const fileExt = this.getDestinationPathExtension(destinationPath);
 
-    if (!SUPPORTED_VIDEO_FILE_FORMATS.includes(fileExt)) {
+    if (!SUPPORTED_FILE_FORMATS.includes(fileExt)) {
       throw new Error('File format is not supported');
     }
 
