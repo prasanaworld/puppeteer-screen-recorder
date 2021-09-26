@@ -83,19 +83,6 @@
 							<h3>Type aliases</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-type-alias"><a href="globals.html#puppeteerscreenrecorderoptions" class="tsd-kind-icon">Puppeteer<wbr>Screen<wbr>Recorder<wbr>Options</a></li>
-								<li class="tsd-kind-type-alias"><a href="globals.html#videooptions" class="tsd-kind-icon">Video<wbr>Options</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section ">
-							<h3>Variables</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-variable"><a href="globals.html#supported_video_file_formats" class="tsd-kind-icon">SUPPORTED_<wbr>VIDEO_<wbr>FILE_<wbr>FORMATS</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section ">
-							<h3>Functions</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-function"><a href="globals.html#executesample" class="tsd-kind-icon">execute<wbr>Sample</a></li>
 							</ul>
 						</section>
 					</div>
@@ -106,41 +93,122 @@
 				<section class="tsd-panel tsd-member tsd-kind-type-alias">
 					<a name="puppeteerscreenrecorderoptions" class="tsd-anchor"></a>
 					<h3>Puppeteer<wbr>Screen<wbr>Recorder<wbr>Options</h3>
-					<div class="tsd-signature tsd-kind-icon">Puppeteer<wbr>Screen<wbr>Recorder<wbr>Options<span class="tsd-signature-symbol">:</span> <a href="globals.html#videooptions" class="tsd-signature-type">VideoOptions</a><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-symbol">{ </span>followNewTab<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> }</span></div>
+					<div class="tsd-signature tsd-kind-icon">Puppeteer<wbr>Screen<wbr>Recorder<wbr>Options<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>aspectRatio<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">"3:2"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"4:3"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"16:9"</span><span class="tsd-signature-symbol">; </span>ffmpeg_Path<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">; </span>followNewTab<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">; </span>fps<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>recordDurationLimit<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>videoFrame<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-symbol">{ </span>height<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">; </span>width<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> }</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/prasanaworld/puppeteer-screen-recorder/blob/e7f31db/src/lib/pageVideoStreamTypes.ts#L36">src/lib/pageVideoStreamTypes.ts:36</a></li>
+							<li>Defined in <a href="https://github.com/prasanaworld/puppeteer-screen-recorder/blob/dceeb12/src/lib/pageVideoStreamTypes.ts#L22">src/lib/pageVideoStreamTypes.ts:22</a></li>
 						</ul>
 					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-type-alias">
-					<a name="videooptions" class="tsd-anchor"></a>
-					<h3>Video<wbr>Options</h3>
-					<div class="tsd-signature tsd-kind-icon">Video<wbr>Options<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>aspectRatio<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">"3:2"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"4:3"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"16:9"</span><span class="tsd-signature-symbol">; </span>ffmpeg_Path<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">; </span>fps<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>recordDurationLimit<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>videoFrame<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-symbol">{ </span>height<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">; </span>width<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> }</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/prasanaworld/puppeteer-screen-recorder/blob/e7f31db/src/lib/pageVideoStreamTypes.ts#L25">src/lib/pageVideoStreamTypes.ts:25</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-					</div>
 					<div class="tsd-type-declaration">
 						<h4>Type declaration</h4>
 						<ul class="tsd-parameters">
 							<li class="tsd-parameter">
 								<h5><span class="tsd-flag ts-flagOptional">Optional</span> <span class="tsd-flag ts-flagReadonly">Readonly</span> aspect<wbr>Ratio<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">"3:2"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"4:3"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"16:9"</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<dl class="tsd-comment-tags">
+										<dt>name</dt>
+										<dd><p>aspectRatio</p>
+										</dd>
+										<dt>member</dt>
+										<dd><p>PuppeteerScreenRecorderOptions</p>
+										</dd>
+										<dt>description</dt>
+										<dd><p>Specify the aspect ratio of the video. Default value is 4:3.</p>
+										</dd>
+										<dt>default</dt>
+										<dd><p>4:3</p>
+										</dd>
+									</dl>
+								</div>
 							</li>
 							<li class="tsd-parameter">
 								<h5><span class="tsd-flag ts-flagOptional">Optional</span> <span class="tsd-flag ts-flagReadonly">Readonly</span> ffmpeg_<wbr><wbr>Path<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<dl class="tsd-comment-tags">
+										<dt>name</dt>
+										<dd><p>ffmpeg_Path</p>
+										</dd>
+										<dt>member</dt>
+										<dd><p>PuppeteerScreenRecorderOptions</p>
+										</dd>
+										<dt>description</dt>
+										<dd><p>String value pointing to the installation of FFMPEG. Default is null (Automatically install the FFMPEG and use it).</p>
+										</dd>
+										<dt>default</dt>
+										<dd><p>null</p>
+										</dd>
+									</dl>
+								</div>
+							</li>
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagReadonly">Readonly</span> follow<wbr>New<wbr>Tab<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<dl class="tsd-comment-tags">
+										<dt>name</dt>
+										<dd><p>followNewTab</p>
+										</dd>
+										<dt>member</dt>
+										<dd><p>PuppeteerScreenRecorderOptions</p>
+										</dd>
+										<dt>description</dt>
+										<dd><p>Boolean value which is indicate whether to follow the tab or not. Default value is true.</p>
+										</dd>
+										<dt>default</dt>
+										<dd><p>true</p>
+										</dd>
+									</dl>
+								</div>
 							</li>
 							<li class="tsd-parameter">
 								<h5><span class="tsd-flag ts-flagOptional">Optional</span> <span class="tsd-flag ts-flagReadonly">Readonly</span> fps<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<dl class="tsd-comment-tags">
+										<dt>name</dt>
+										<dd><p>fps</p>
+										</dd>
+										<dt>member</dt>
+										<dd><p>PuppeteerScreenRecorderOptions</p>
+										</dd>
+										<dt>description</dt>
+										<dd><p>Numeric value which denotes no.of Frames per second in which the video should be recorded. default value is 25.</p>
+										</dd>
+										<dt>default</dt>
+										<dd><p>25</p>
+										</dd>
+									</dl>
+								</div>
 							</li>
 							<li class="tsd-parameter">
 								<h5><span class="tsd-flag ts-flagOptional">Optional</span> <span class="tsd-flag ts-flagReadonly">Readonly</span> record<wbr>Duration<wbr>Limit<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<dl class="tsd-comment-tags">
+										<dt>name</dt>
+										<dd><p>recordDurationLimit</p>
+										</dd>
+										<dt>member</dt>
+										<dd><p>PuppeteerScreenRecorderOptions</p>
+										</dd>
+										<dt>description</dt>
+										<dd><p>Numerical value specify duration (in seconds) to record the video. By default video is recorded till stop method is invoked`. (Note: It&#39;s mandatory to invoke Stop() method even if this value is set)</p>
+										</dd>
+									</dl>
+								</div>
 							</li>
 							<li class="tsd-parameter">
 								<h5><span class="tsd-flag ts-flagOptional">Optional</span> <span class="tsd-flag ts-flagReadonly">Readonly</span> video<wbr>Frame<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-symbol">{ </span>height<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">; </span>width<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> }</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<dl class="tsd-comment-tags">
+										<dt>name</dt>
+										<dd><p>videoFrame</p>
+										</dd>
+										<dt>member</dt>
+										<dd><p>PuppeteerScreenRecorderOptions</p>
+										</dd>
+										<dt>description</dt>
+										<dd><p>An object which is to specify the width and height of the capturing video frame. Default to browser viewport size.</p>
+										</dd>
+									</dl>
+								</div>
 								<ul class="tsd-parameters">
 									<li class="tsd-parameter">
 										<h5>height<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h5>
@@ -152,45 +220,6 @@
 							</li>
 						</ul>
 					</div>
-				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Variables</h2>
-				<section class="tsd-panel tsd-member tsd-kind-variable">
-					<a name="supported_video_file_formats" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> SUPPORTED_<wbr>VIDEO_<wbr>FILE_<wbr>FORMATS</h3>
-					<div class="tsd-signature tsd-kind-icon">SUPPORTED_<wbr>VIDEO_<wbr>FILE_<wbr>FORMATS<span class="tsd-signature-symbol">:</span> <a href="enums/supportedfileformats.html" class="tsd-signature-type">SupportedFileFormats</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = [SupportedFileFormats.MP4,SupportedFileFormats.AVI,SupportedFileFormats.MOV,SupportedFileFormats.WEBM,]</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/prasanaworld/puppeteer-screen-recorder/blob/e7f31db/src/lib/pageVideoStreamWriter.ts#L15">src/lib/pageVideoStreamWriter.ts:15</a></li>
-						</ul>
-					</aside>
-				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Functions</h2>
-				<section class="tsd-panel tsd-member tsd-kind-function">
-					<a name="executesample" class="tsd-anchor"></a>
-					<h3>execute<wbr>Sample</h3>
-					<ul class="tsd-signatures tsd-kind-function">
-						<li class="tsd-signature tsd-kind-icon">execute<wbr>Sample<span class="tsd-signature-symbol">(</span>format<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/prasanaworld/puppeteer-screen-recorder/blob/e7f31db/src/example/index.ts#L5">src/example/index.ts:5</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>format: <span class="tsd-signature-type">any</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
-						</li>
-					</ul>
 				</section>
 			</section>
 		</div>
@@ -213,15 +242,6 @@
 					<li class=" tsd-kind-type-alias">
 						<a href="globals.html#puppeteerscreenrecorderoptions" class="tsd-kind-icon">Puppeteer<wbr>Screen<wbr>Recorder<wbr>Options</a>
 					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#videooptions" class="tsd-kind-icon">Video<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-variable">
-						<a href="globals.html#supported_video_file_formats" class="tsd-kind-icon">SUPPORTED_<wbr>VIDEO_<wbr>FILE_<wbr>FORMATS</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="globals.html#executesample" class="tsd-kind-icon">execute<wbr>Sample</a>
-					</li>
 				</ul>
 			</nav>
 		</div>
@@ -234,10 +254,6 @@
 			<ul class="tsd-legend">
 				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
 				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
 			</ul>
 		</div>
 	</div>
