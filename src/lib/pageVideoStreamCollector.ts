@@ -40,11 +40,11 @@ export class pageVideoStreamCollector extends EventEmitter {
   }
 
   private addListenerOnTabOpens(page: Page): void {
-    page.on('popup', () => this.registerTabListener(page));
+    page.on('popup', (newPage) => this.registerTabListener(newPage));
   }
 
   private removeListenerOnTabClose(page: Page): void {
-    page.off('popup', () => this.registerTabListener(page));
+    page.off('popup', (newPage) => this.registerTabListener(newPage));
   }
 
   private async registerTabListener(newPage: Page): Promise<void> {
