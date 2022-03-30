@@ -159,7 +159,7 @@ export default class PageVideoStreamWriter extends EventEmitter {
   }
 
   private getDestinationStream(): ffmpeg {
-    const cpu = Math.min(1, os.cpus().length);
+    const cpu = Math.max(1, os.cpus().length - 1);
     const outputStream = ffmpeg({
       source: this.videoMediatorStream,
       priority: 20,
