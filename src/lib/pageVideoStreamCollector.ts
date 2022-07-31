@@ -122,6 +122,7 @@ export class pageVideoStreamCollector extends EventEmitter {
 
   public async start(): Promise<void> {
     await this.startSession(this.page);
+    this.page.once('close', async () => await this.endSession());
 
     if (this.shouldFollowPopupWindow) {
       this.addListenerOnTabOpens(this.page);

@@ -60,13 +60,13 @@ export class PuppeteerScreenRecorder {
    * @ignore
    */
   private setupListeners(): void {
-    this.page.on('close', async () => await this.stop());
+    this.page.once('close', async () => await this.stop());
 
     this.streamReader.on('pageScreenFrame', (pageScreenFrame) => {
       this.streamWriter.insert(pageScreenFrame);
     });
 
-    this.streamWriter.on('videoStreamWriterError', () => this.stop());
+    this.streamWriter.once('videoStreamWriterError', () => this.stop());
   }
 
   /**
