@@ -63,6 +63,15 @@ export type PuppeteerScreenRecorderOptions = {
   readonly aspectRatio?: '3:2' | '4:3' | '16:9';
 
   /**
+   * @name autopad
+   * @member PuppeteerScreenRecorderOptions
+   * @description Specify whether autopad option is used and its color. Default to autopad deactivation mode.
+   */
+  readonly autopad?: {
+    color?: string;
+  };
+
+  /**
    * @name recordDurationLimit
    * @member PuppeteerScreenRecorderOptions
    * @description  Numerical value specify duration (in seconds) to record the video. By default video is recorded till stop method is invoked`. (Note: It's mandatory to invoke Stop() method even if this value is set)

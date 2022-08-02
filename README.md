@@ -82,6 +82,9 @@ const Config = {
     width: 1024,
     height: 768,
   },
+  autopad: {
+    color: 'black' | '#35A5FF',
+  },
   aspectRatio: '4:3',
 };
 ```
@@ -95,6 +98,8 @@ const Config = {
 > - **videoFrame**: An object which is to specify the width and height of the capturing video frame. Default to browser viewport size.
 
 > - **aspectRatio**: Specify the aspect ratio of the video. Default value is `4:3`.
+
+> - **autopad**: Specify whether autopad option is used and its color. Default to autopad deactivation mode.
 
 > - **recordDurationLimit**: Numerical value specify duration (in seconds) to record the video. By default video is recorded till stop method is invoked`. (Note: It's mandatory to invoke Stop() method even if this value is set)
 
