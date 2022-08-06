@@ -183,11 +183,11 @@
 					</ul>
 				</blockquote>
 				<p><strong>4. Start Video capturing</strong></p>
-				<p><strong>1. Save file to disk</strong></p>
+				<p><strong>Option 1 - Start video capturing and save as file</strong></p>
 				<pre><code class="language-javascript"><span class="hljs-keyword">const</span> SavePath = <span class="hljs-string">&#x27;./test/demo.mp4&#x27;</span>;
 <span class="hljs-keyword">await</span> recorder.start(savePath);
 </code></pre>
-				<p><strong>2. Start Video capturing using stream</strong></p>
+				<p><strong>Option 2 - Start Video capturing using stream</strong></p>
 				<pre><code class="language-javascript"><span class="hljs-keyword">const</span> pipeStream = <span class="hljs-keyword">new</span> PassThrough();
 <span class="hljs-keyword">await</span> recorder.startStream(pipeStream);
 </code></pre>
@@ -282,6 +282,9 @@
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="globals.html#puppeteerscreenrecorderoptions" class="tsd-kind-icon">Puppeteer<wbr>Screen<wbr>Recorder<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#sleep" class="tsd-kind-icon">sleep</a>
 					</li>
 				</ul>
 			</nav>
