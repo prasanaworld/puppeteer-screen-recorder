@@ -8,7 +8,10 @@ import { PuppeteerScreenRecorder, PuppeteerScreenRecorderOptions } from '../';
 
 test('case 1a --> Happy Path: Should be able to create a new screen-recording session', async (assert) => {
   /** setup */
-  const browser = await puppeteer.launch({ headless: true });
+  const browser = await puppeteer.launch({
+    headless: true,
+    executablePath: process.env['PUPPETEER_EXECUTABLE_PATH'],
+  });
   const page = await browser.newPage();
 
   const outputVideoPath = './test-output/test/video-recorder/testCase1.mp4';
@@ -31,7 +34,10 @@ test('case 1a --> Happy Path: Should be able to create a new screen-recording se
 
 test('case 1a --> Happy Path: Should be able to create a new screen-recording session using mp4 format', async (assert) => {
   /** setup */
-  const browser = await puppeteer.launch({ headless: true });
+  const browser = await puppeteer.launch({
+    headless: true,
+    executablePath: process.env['PUPPETEER_EXECUTABLE_PATH'],
+  });
   const page = await browser.newPage();
 
   const outputVideoPath = './test-output/test/video-recorder/testCase1.mp4';
@@ -54,7 +60,10 @@ test('case 1a --> Happy Path: Should be able to create a new screen-recording se
 
 test('case 1b --> Happy Path: Should be able to create a new screen-recording session using mov', async (assert) => {
   /** setup */
-  const browser = await puppeteer.launch({ headless: true });
+  const browser = await puppeteer.launch({
+    headless: true,
+    executablePath: process.env['PUPPETEER_EXECUTABLE_PATH'],
+  });
   const page = await browser.newPage();
 
   const outputVideoPath = './test-output/test/video-recorder/testCase1.mov';
@@ -77,7 +86,10 @@ test('case 1b --> Happy Path: Should be able to create a new screen-recording se
 
 test('case 1c --> Happy Path: Should be able to create a new screen-recording session using webm', async (assert) => {
   /** setup */
-  const browser = await puppeteer.launch({ headless: true });
+  const browser = await puppeteer.launch({
+    headless: true,
+    executablePath: process.env['PUPPETEER_EXECUTABLE_PATH'],
+  });
   const page = await browser.newPage();
 
   const outputVideoPath = './test-output/test/video-recorder/testCase1.webm';
@@ -100,7 +112,10 @@ test('case 1c --> Happy Path: Should be able to create a new screen-recording se
 
 test('case 1d --> Happy Path: should be to get the total duration of recording using avi', async (assert) => {
   /** setup */
-  const browser = await puppeteer.launch({ headless: true });
+  const browser = await puppeteer.launch({
+    headless: true,
+    executablePath: process.env['PUPPETEER_EXECUTABLE_PATH'],
+  });
   const page = await browser.newPage();
 
   const outputVideoPath = './test-output/test/video-recorder/testCase2.avi';
@@ -127,7 +142,10 @@ test('case 1d --> Happy Path: should be to get the total duration of recording u
 
 test('case 2 --> Happy Path: testing video recording with video frame width, height and aspect ratio', async (assert) => {
   /** setup */
-  const browser = await puppeteer.launch({ headless: true });
+  const browser = await puppeteer.launch({
+    headless: true,
+    executablePath: process.env['PUPPETEER_EXECUTABLE_PATH'],
+  });
   const page = await browser.newPage();
 
   const options: PuppeteerScreenRecorderOptions = {
@@ -157,7 +175,10 @@ test('case 2 --> Happy Path: testing video recording with video frame width, hei
 
 test('test 3 -> Error Path: should throw error if an invalid savePath argument is passed for start method', async (assert) => {
   /** setup */
-  const browser = await puppeteer.launch({ headless: true });
+  const browser = await puppeteer.launch({
+    headless: true,
+    executablePath: process.env['PUPPETEER_EXECUTABLE_PATH'],
+  });
   const page = await browser.newPage();
 
   try {
@@ -177,7 +198,10 @@ test('test 3 -> Error Path: should throw error if an invalid savePath argument i
 
 test('case 4 --> Happy Path: Should be able to create a new screen-recording session using streams', async (assert) => {
   /** setup */
-  const browser = await puppeteer.launch({ headless: true });
+  const browser = await puppeteer.launch({
+    headless: true,
+    executablePath: process.env['PUPPETEER_EXECUTABLE_PATH'],
+  });
   const page = await browser.newPage();
 
   const outputVideoPath = './test-output/test/video-recorder/testCase4.mp4';
