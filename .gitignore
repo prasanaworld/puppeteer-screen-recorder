@@ -10,3 +10,4 @@ coverage
 yarn.lock
 **/.DS_Store
 ./test_output
+.gitconfig
