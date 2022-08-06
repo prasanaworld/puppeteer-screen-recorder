@@ -114,14 +114,14 @@ const recorder = new PuppeteerScreenRecorder(page);
 
 **4. Start Video capturing**
 
-**1. Save file to disk**
+**Option 1 - Start video capturing and save as file**
 
 ```javascript
 const SavePath = './test/demo.mp4';
 await recorder.start(savePath);
 ```
 
-**2. Start Video capturing using stream**
+**Option 2 - Start Video capturing using stream**
 
 ```javascript
 const pipeStream = new PassThrough();
