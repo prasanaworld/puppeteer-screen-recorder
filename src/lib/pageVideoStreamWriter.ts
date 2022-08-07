@@ -175,7 +175,7 @@ export default class PageVideoStreamWriter extends EventEmitter {
       .videoCodec('libx264')
       .size(this.videoFrameSize)
       .aspect(this.options.aspectRatio || '4:3')
-      .autopad(this.autopad.activation, this.autopad.color)
+      .autopad(this.autopad.activation, this.autopad?.color)
       .inputFormat('image2pipe')
       .inputFPS(this.options.fps)
       .outputOptions('-preset ultrafast')
