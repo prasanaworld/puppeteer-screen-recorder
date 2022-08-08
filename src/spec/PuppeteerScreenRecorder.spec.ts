@@ -207,3 +207,97 @@ test('case 4 --> Happy Path: Should be able to create a new screen-recording ses
     assert.is(fileWriteStream.writableFinished, true);
   });
 });
+
+test('case 5a --> Happy Path: testing video recording with video frame width, height and autopad color', async (assert) => {
+  /** setup */
+  const browser = await puppeteer.launch({ headless: true });
+  const page = await browser.newPage();
+
+  const options: PuppeteerScreenRecorderOptions = {
+    followNewTab: false,
+    videoFrame: {
+      width: 1024,
+      height: 1024,
+    },
+    autopad: {
+      color: 'gray',
+    },
+  };
+  const outputVideoPath = './test-output/test/video-recorder/testCase5a.mp4';
+  const recorder = new PuppeteerScreenRecorder(page, options);
+  const recorderValue = await recorder.start(outputVideoPath);
+
+  /** execute */
+  await page.goto('https://github.com', { waitUntil: 'load' });
+  /** clear */
+  const status = await recorder.stop();
+
+  await browser.close();
+
+  /** assert */
+  assert.is(recorderValue instanceof PuppeteerScreenRecorder, true);
+  assert.is(status, true);
+  assert.is(fs.existsSync(outputVideoPath), true);
+});
+
+test('case 5b --> Happy Path: testing video recording with video frame width, height and autopad color as hex code', async (assert) => {
+  /** setup */
+  const browser = await puppeteer.launch({ headless: true });
+  const page = await browser.newPage();
+
+  const options: PuppeteerScreenRecorderOptions = {
+    followNewTab: false,
+    videoFrame: {
+      width: 1024,
+      height: 1024,
+    },
+    autopad: {
+      color: '#008000',
+    },
+  };
+  const outputVideoPath = './test-output/test/video-recorder/testCase5b.mp4';
+  const recorder = new PuppeteerScreenRecorder(page, options);
+  const recorderValue = await recorder.start(outputVideoPath);
+
+  /** execute */
+  await page.goto('https://github.com', { waitUntil: 'load' });
+  /** clear */
+  const status = await recorder.stop();
+
+  await browser.close();
+
+  /** assert */
+  assert.is(recorderValue instanceof PuppeteerScreenRecorder, true);
+  assert.is(status, true);
+  assert.is(fs.existsSync(outputVideoPath), true);
+});
+
+test('case 5c --> Happy Path: testing video recording with video frame width, height and default autopad color', async (assert) => {
+  /** setup */
+  const browser = await puppeteer.launch({ headless: true });
+  const page = await browser.newPage();
+
+  const options: PuppeteerScreenRecorderOptions = {
+    followNewTab: false,
+    videoFrame: {
+      width: 1024,
+      height: 1024,
+    },
+    autopad: {},
+  };
+  const outputVideoPath = './test-output/test/video-recorder/testCase5c.mp4';
+  const recorder = new PuppeteerScreenRecorder(page, options);
+  const recorderValue = await recorder.start(outputVideoPath);
+
+  /** execute */
+  await page.goto('https://github.com', { waitUntil: 'load' });
+  /** clear */
+  const status = await recorder.stop();
+
+  await browser.close();
+
+  /** assert */
+  assert.is(recorderValue instanceof PuppeteerScreenRecorder, true);
+  assert.is(status, true);
+  assert.is(fs.existsSync(outputVideoPath), true);
+});
