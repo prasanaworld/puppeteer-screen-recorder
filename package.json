@@ -78,8 +78,10 @@
     "node": ">=10"
   },
   "dependencies": {
-    "@ffmpeg-installer/ffmpeg": "^1.1.0",
     "fluent-ffmpeg": "^2.1.2"
+  },
+  "optionalDependencies": {
+    "@ffmpeg-installer/ffmpeg": "^1.1.0"
   },
   "peerDependencies": {
     "puppeteer": ">=5.5.0"
