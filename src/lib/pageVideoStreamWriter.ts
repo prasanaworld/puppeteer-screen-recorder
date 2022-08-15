@@ -59,6 +59,14 @@ export default class PageVideoStreamWriter extends EventEmitter {
     return width !== null && height !== null ? `${width}x${height}` : '100%';
   }
 
+  private get autopad(): { activation: boolean; color?: string } {
+    const autopad = this.options.autopad;
+
+    return !autopad
+      ? { activation: false }
+      : { activation: true, color: autopad.color };
+  }
+
   private getFfmpegPath(): string | null {
     if (this.options.ffmpeg_Path) {
       return this.options.ffmpeg_Path;
@@ -167,6 +175,7 @@ export default class PageVideoStreamWriter extends EventEmitter {
       .videoCodec('libx264')
       .size(this.videoFrameSize)
       .aspect(this.options.aspectRatio || '4:3')
+      .autopad(this.autopad.activation, this.autopad?.color)
       .inputFormat('image2pipe')
       .inputFPS(this.options.fps)
       .outputOptions('-preset ultrafast')
