@@ -63,6 +63,41 @@ export type PuppeteerScreenRecorderOptions = {
   readonly aspectRatio?: '3:2' | '4:3' | '16:9';
 
   /**
+   * @name videoCodec
+   * @member PuppeteerScreenRecorderOptions
+   * @description Specify the codec used by FFMPEG when creating the final video file. The default value is libx264.
+   */
+  readonly videoCodec?: string;
+
+  /**
+   * @name videoBitrate
+   * @member PuppeteerScreenRecorderOptions
+   * @description Specify the target bitrate of the final video file in bits/s. The default value is 1000.
+   */
+  readonly videoBitrate?: number;
+
+  /**
+   * @name videoCrf
+   * @member PuppeteerScreenRecorderOptions
+   * @description Specify the crf of the final video file. The default value is 23.
+   */
+  readonly videoCrf?: number;
+
+  /**
+   * @name videoPreset
+   * @member PuppeteerScreenRecorderOptions
+   * @description Specify the preset to use when encoding the video file. The default value is 'ultrafast'.
+   */
+  readonly videoPreset?: string;
+
+  /**
+   * @name videoPixelFormat
+   * @member PuppeteerScreenRecorderOptions
+   * @description Specify the pixel format to use when encoding the video file. The default value is 'yuv420p'.
+   */
+  readonly videoPixelFormat?: string;
+
+  /**
    * @name autopad
    * @member PuppeteerScreenRecorderOptions
    * @description Specify whether autopad option is used and its color. Default to autopad deactivation mode.

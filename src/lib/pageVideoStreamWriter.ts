@@ -138,7 +138,7 @@ export default class PageVideoStreamWriter extends EventEmitter {
       if (fileExt == SupportedFileFormats.WEBM) {
         outputStream
           .videoCodec('libvpx')
-          .videoBitrate(1000, true)
+          .videoBitrate(this.options.videoBitrate || 1000, true)
           .outputOptions('-flags', '+global_header', '-psnr');
       }
     });
@@ -172,16 +172,17 @@ export default class PageVideoStreamWriter extends EventEmitter {
       source: this.videoMediatorStream,
       priority: 20,
     })
-      .videoCodec('libx264')
+      .videoCodec(this.options.videoCodec || 'libx264')
       .size(this.videoFrameSize)
       .aspect(this.options.aspectRatio || '4:3')
       .autopad(this.autopad.activation, this.autopad?.color)
       .inputFormat('image2pipe')
       .inputFPS(this.options.fps)
-      .outputOptions('-preset ultrafast')
-      .outputOptions('-pix_fmt yuv420p')
-      .outputOptions('-minrate 1000')
-      .outputOptions('-maxrate 1000')
+      .outputOptions(`-crf ${this.options.videoCrf ?? 23}`)
+      .outputOptions(`-preset ${this.options.videoPreset || 'ultrafast'}`)
+      .outputOptions(`-pix_fmt ${this.options.videoPixelFormat || 'yuv420p'}`)
+      .outputOptions(`-minrate ${this.options.videoBitrate || 1000}`)
+      .outputOptions(`-maxrate ${this.options.videoBitrate || 1000}`)
       .outputOptions(`-threads ${cpu}`)
       .on('progress', (progressDetails) => {
         this.duration = progressDetails.timemark;

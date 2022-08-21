@@ -82,6 +82,10 @@ const Config = {
     width: 1024,
     height: 768,
   },
+  videoCrf: 18,
+  videoCodec: 'libx264',
+  videoPreset: 'ultrafast',
+  videoBitrate: 1000,
   autopad: {
     color: 'black' | '#35A5FF',
   },

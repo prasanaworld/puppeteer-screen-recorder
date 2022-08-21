@@ -325,3 +325,33 @@ test('case 5c --> Happy Path: testing video recording with video frame width, he
   assert.is(status, true);
   assert.is(fs.existsSync(outputVideoPath), true);
 });
+
+test('case 6 --> Happy Path: should create a video with a custom crf', async (assert) => {
+  /** setup */
+  const browser = await puppeteer.launch({ headless: true });
+  const page = await browser.newPage();
+
+  const options: PuppeteerScreenRecorderOptions = {
+    followNewTab: false,
+    videoFrame: {
+      width: 1024,
+      height: 1024,
+    },
+    videoCrf: 0,
+  };
+  const outputVideoPath = './test-output/test/video-recorder/testCase6.mp4';
+  const recorder = new PuppeteerScreenRecorder(page, options);
+  const recorderValue = await recorder.start(outputVideoPath);
+
+  /** execute */
+  await page.goto('https://github.com', { waitUntil: 'load' });
+  /** clear */
+  const status = await recorder.stop();
+
+  await browser.close();
+
+  /** assert */
+  assert.is(recorderValue instanceof PuppeteerScreenRecorder, true);
+  assert.is(status, true);
+  assert.is(fs.existsSync(outputVideoPath), true);
+});
