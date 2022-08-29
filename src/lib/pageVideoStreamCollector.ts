@@ -54,9 +54,16 @@ export class pageVideoStreamCollector extends EventEmitter {
 
   private async startScreenCast(shouldDeleteSessionOnFailure = false) {
     const currentSession = this.getCurrentSession();
+    const quality = Number.isNaN(this.options.quality)
+      ? 100
+      : Math.max(Math.min(this.options.quality, 100), 0);
     try {
+      await currentSession.send('Animation.setPlaybackRate', {
+        playbackRate: 1,
+      });
       await currentSession.send('Page.startScreencast', {
         everyNthFrame: 1,
+        quality: quality,
       });
     } catch (e) {
       if (shouldDeleteSessionOnFailure) {

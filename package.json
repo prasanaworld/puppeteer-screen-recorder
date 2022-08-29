@@ -44,6 +44,7 @@
   ],
   "scripts": {
     "example": "ts-node src/example/index.ts",
+    "example:stream": "npm run example -- stream",
     "example:debug": "npm run example -- --inspect",
     "build": "run-p build:*",
     "build:main": "tsc -p tsconfig.json",

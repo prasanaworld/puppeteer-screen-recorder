@@ -182,6 +182,7 @@ export default class PageVideoStreamWriter extends EventEmitter {
       .outputOptions('-pix_fmt yuv420p')
       .outputOptions('-minrate 1000')
       .outputOptions('-maxrate 1000')
+      .outputOptions('-framerate 1')
       .outputOptions(`-threads ${cpu}`)
       .on('progress', (progressDetails) => {
         this.duration = progressDetails.timemark;
