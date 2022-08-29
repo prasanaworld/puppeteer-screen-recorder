@@ -99,7 +99,7 @@
 				<section class="tsd-panel tsd-member tsd-kind-type-alias">
 					<a name="puppeteerscreenrecorderoptions" class="tsd-anchor"></a>
 					<h3>Puppeteer<wbr>Screen<wbr>Recorder<wbr>Options</h3>
-					<div class="tsd-signature tsd-kind-icon">Puppeteer<wbr>Screen<wbr>Recorder<wbr>Options<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>aspectRatio<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">"3:2"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"4:3"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"16:9"</span><span class="tsd-signature-symbol">; </span>ffmpeg_Path<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">; </span>followNewTab<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">; </span>fps<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>recordDurationLimit<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>videoFrame<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-symbol">{ </span>height<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">; </span>width<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> }</span></div>
+					<div class="tsd-signature tsd-kind-icon">Puppeteer<wbr>Screen<wbr>Recorder<wbr>Options<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>aspectRatio<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">"3:2"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"4:3"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"16:9"</span><span class="tsd-signature-symbol">; </span>autopad<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-symbol">{ </span>color<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">; </span>ffmpeg_Path<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">; </span>followNewTab<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">; </span>fps<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>quality<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>recordDurationLimit<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>videoFrame<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-symbol">{ </span>height<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">; </span>width<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> }</span></div>
 					<aside class="tsd-sources">
 						<ul>
 							<li>Defined in src/lib/pageVideoStreamTypes.ts:22</li>
@@ -126,6 +126,27 @@
 										</dd>
 									</dl>
 								</div>
+							</li>
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> <span class="tsd-flag ts-flagReadonly">Readonly</span> autopad<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-symbol">{ </span>color<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<dl class="tsd-comment-tags">
+										<dt>name</dt>
+										<dd><p>autopad</p>
+										</dd>
+										<dt>member</dt>
+										<dd><p>PuppeteerScreenRecorderOptions</p>
+										</dd>
+										<dt>description</dt>
+										<dd><p>Specify whether autopad option is used and its color. Default to autopad deactivation mode.</p>
+										</dd>
+									</dl>
+								</div>
+								<ul class="tsd-parameters">
+									<li class="tsd-parameter">
+										<h5><span class="tsd-flag ts-flagOptional">Optional</span> color<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span></h5>
+									</li>
+								</ul>
 							</li>
 							<li class="tsd-parameter">
 								<h5><span class="tsd-flag ts-flagOptional">Optional</span> <span class="tsd-flag ts-flagReadonly">Readonly</span> ffmpeg_<wbr><wbr>Path<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h5>
@@ -180,6 +201,25 @@
 										</dd>
 										<dt>default</dt>
 										<dd><p>25</p>
+										</dd>
+									</dl>
+								</div>
+							</li>
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> <span class="tsd-flag ts-flagReadonly">Readonly</span> quality<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<dl class="tsd-comment-tags">
+										<dt>name</dt>
+										<dd><p>quality</p>
+										</dd>
+										<dt>member</dt>
+										<dd><p>PuppeteerScreenRecorderOptions</p>
+										</dd>
+										<dt>description</dt>
+										<dd><p>Numeric value which denotes no.of quality of individual frame captured by chrome. Value accepted 0 - 100.  100 denotes the highest quality and 0 denotes the lowest quality</p>
+										</dd>
+										<dt>default</dt>
+										<dd><p>100</p>
 										</dd>
 									</dl>
 								</div>
@@ -240,7 +280,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in src/example/index.ts:5</li>
+									<li>Defined in src/example/index.ts:8</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
