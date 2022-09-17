@@ -45,6 +45,14 @@ export type PuppeteerScreenRecorderOptions = {
   readonly quality?: number;
 
   /**
+   * @name format
+   * @member PuppeteerScreenRecorderOptions
+   * @description specify the format for recording the video
+   * @default jpeg
+   */
+  readonly format?: 'jpeg' | 'png';
+
+  /**
    * @name ffmpeg_Path
    * @member PuppeteerScreenRecorderOptions
    * @description String value pointing to the installation of FFMPEG. Default is null (Automatically install the FFMPEG and use it).

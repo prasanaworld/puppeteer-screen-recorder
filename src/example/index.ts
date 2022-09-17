@@ -25,7 +25,7 @@ async function testStartMethod(format) {
   await sleep(2000);
   await page.evaluate(() => {
     const buttonElement = Array.from(
-      document.querySelectorAll<HTMLButtonElement>('#button')
+      document.querySelectorAll<HTMLButtonElement>('a yt-formatted-string')
     ).find((element) => element.textContent === 'Reject all');
 
     if (buttonElement) {

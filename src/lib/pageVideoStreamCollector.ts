@@ -63,6 +63,7 @@ export class pageVideoStreamCollector extends EventEmitter {
       });
       await currentSession.send('Page.startScreencast', {
         everyNthFrame: 1,
+        format: this.options.format || 'jpeg',
         quality: quality,
       });
     } catch (e) {
