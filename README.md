@@ -33,6 +33,7 @@ By helping your company become a Github Sponsor, you will not only feel great ab
 
   + [open-collective](https://opencollective.com/puppeteer-screen-recorder)
   + [Paypal](https://paypal.me/prasanaworld)
+  + [Bitcoin - 3NdGW6wKVFgxa1X5XxRDNHqMWAhGNSrA5A](3NdGW6wKVFgxa1X5XxRDNHqMWAhGNSrA5A)
 
 ## Key Feature
 

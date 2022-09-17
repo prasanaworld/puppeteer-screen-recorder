@@ -5,6 +5,7 @@
   "main": "build/main/index.js",
   "typings": "build/main/index.d.ts",
   "module": "build/module/index.js",
+  "workspaces": ["https://opencollective.com/puppeteer-screen-recorder"],
   "repository": "https://github.com/prasanaworld/puppeteer-screen-recorder",
   "author": {
     "name": "Prasana Kannan",
