@@ -37,6 +37,22 @@ export type PuppeteerScreenRecorderOptions = {
   readonly fps?: number;
 
   /**
+   * @name quality
+   * @member PuppeteerScreenRecorderOptions
+   * @description Numeric value which denotes no.of quality of individual frame captured by chrome. Value accepted 0 - 100.  100 denotes the highest quality and 0 denotes the lowest quality
+   * @default 100
+   */
+  readonly quality?: number;
+
+  /**
+   * @name format
+   * @member PuppeteerScreenRecorderOptions
+   * @description specify the format for recording the video
+   * @default jpeg
+   */
+  readonly format?: 'jpeg' | 'png';
+
+  /**
    * @name ffmpeg_Path
    * @member PuppeteerScreenRecorderOptions
    * @description String value pointing to the installation of FFMPEG. Default is null (Automatically install the FFMPEG and use it).

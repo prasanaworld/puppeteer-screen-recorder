@@ -234,7 +234,10 @@ test('case 4 --> Happy Path: Should be able to create a new screen-recording ses
 
 test('case 5a --> Happy Path: testing video recording with video frame width, height and autopad color', async (assert) => {
   /** setup */
-  const browser = await puppeteer.launch({ headless: true });
+  const browser = await puppeteer.launch({
+    headless: true,
+    executablePath: process.env['PUPPETEER_EXECUTABLE_PATH'],
+  });
   const page = await browser.newPage();
 
   const options: PuppeteerScreenRecorderOptions = {
@@ -266,7 +269,10 @@ test('case 5a --> Happy Path: testing video recording with video frame width, he
 
 test('case 5b --> Happy Path: testing video recording with video frame width, height and autopad color as hex code', async (assert) => {
   /** setup */
-  const browser = await puppeteer.launch({ headless: true });
+  const browser = await puppeteer.launch({
+    headless: true,
+    executablePath: process.env['PUPPETEER_EXECUTABLE_PATH'],
+  });
   const page = await browser.newPage();
 
   const options: PuppeteerScreenRecorderOptions = {
@@ -298,7 +304,10 @@ test('case 5b --> Happy Path: testing video recording with video frame width, he
 
 test('case 5c --> Happy Path: testing video recording with video frame width, height and default autopad color', async (assert) => {
   /** setup */
-  const browser = await puppeteer.launch({ headless: true });
+  const browser = await puppeteer.launch({
+    headless: true,
+    executablePath: process.env['PUPPETEER_EXECUTABLE_PATH'],
+  });
   const page = await browser.newPage();
 
   const options: PuppeteerScreenRecorderOptions = {

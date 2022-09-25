@@ -1,4 +1,4 @@
-# puppeteer-screen-recorder
+# <img alt="puppeteer screen recorder logo" width="128px" src="https://github.com/prasanaworld/puppeteer-screen-recorder/blob/main/asserts/puppeteer-screen-recorder.png" /> puppeteer-screen-recorder
 
 A puppeteer Plugin that uses the native [chrome devtool protocol](https://chromedevtools.github.io/devtools-protocol/tot/Page/#method-startScreencast) for capturing video frame by frame. Also supports an option to follow pages that are opened by the current page object. [Check out API Docs](https://prasanaworld.github.io/puppeteer-screen-recorder/classes/puppeteerscreenrecorder.html).
 
@@ -20,6 +20,20 @@ A puppeteer Plugin that uses the native [chrome devtool protocol](https://chrome
 <a href="https://github.com/prasanaworld/puppeteer-screen-recorder/issues/new">Add Feature Request</a>
 
 </p>
+
+
+## Be a Sponsor
+Puppeteer-screen-recorder isn't backed by a company, so the future of this project depends on you. Become a sponsor or a backer - help the open source community. 
+
+#### **For Companies and Businesses**
+By becoming a Github Sponsor, your company and brand will be recognized as a one that gives back to the open source tools that run your business and one that respects your developers time and your customers' experience.
+
+#### **For Developers**
+By helping your company become a Github Sponsor, you will not only feel great about giving back to the open source tools that run your business run, If you believe your company could become a sponsor, then please reach out!
+
+  + [open-collective](https://opencollective.com/puppeteer-screen-recorder)
+  + [Paypal](https://paypal.me/prasanaworld)
+  + [Bitcoin - 3NdGW6wKVFgxa1X5XxRDNHqMWAhGNSrA5A](3NdGW6wKVFgxa1X5XxRDNHqMWAhGNSrA5A)
 
 ## Key Feature
 
