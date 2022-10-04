@@ -181,7 +181,9 @@ const { PuppeteerScreenRecorder } = require('puppeteer-screen-recorder');
 ```
 
 ## FAQ
-I found a exciting new way to search my code base and puppeteer using https://askyourcode.com. It works like a magic to answer all questions. |
+I found a exciting new way to search my code base and puppeteer using https://askyourcode.com. It works like a magic to answer all questions. 
+
+![askyourcode.com](https://github.com/prasanaworld/puppeteer-screen-recorder/blob/documetic-readme-update/asserts/puppeteer-screen-recorder-using-documatic.mov)
 
 
 If you are interested in this package or any other puppeteer one, you should check it out, it's free and saved me a ton of time.
