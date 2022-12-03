@@ -63,7 +63,8 @@ export type PuppeteerScreenRecorderOptions = {
   /**
    * @name videoFrame
    * @member PuppeteerScreenRecorderOptions
-   * @description An object which is to specify the width and height of the capturing video frame. Default to browser viewport size.
+   * @description An object which specifies the width and height of the output video frame.
+   * Note: VideoFrame option is not applicable for capturing the video.
    */
   readonly videoFrame?: {
     width: number | null;
