@@ -181,12 +181,6 @@ const { PuppeteerScreenRecorder } = require('puppeteer-screen-recorder');
 ```
 
 ## FAQ
-I found an exciting new way to search puppeteer code base using https://askyourcode.com (it works just like magic 🪄 ✨).  Now it's possible to search all faqs related to puppeteer-screen-recorder with [askyourcode.com](https://askyourcode.com).
-
-![puppeteer-screen-recorder-documatic](https://user-images.githubusercontent.com/3425038/193901565-b9d2feec-dbf9-4b29-9ea9-3b869a158a86.gif)
-
-If you are interested, you should check it out, it's free and saved me a ton of time.
-
 
 Some of the frequently asked question about puppeteer screen recording are
 
@@ -271,6 +265,3 @@ No, it doesn't audio recording.
 No, it wont support GIF. since Gif is considered as a image format.
 
 
-## Sponsors
-
-![Documatic](https://www.documatic.com/svg/logo.svg)
