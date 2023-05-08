@@ -28,7 +28,6 @@ const SUPPORTED_FILE_FORMATS = [
 export default class PageVideoStreamWriter extends EventEmitter {
   private readonly screenLimit = 40;
   private screenCastFrames = [];
-  private lastProcessedFrame: pageScreenFrame;
   public duration = '00:00:00:00';
 
   private status = VIDEO_WRITE_STATUS.NOT_STARTED;
@@ -237,7 +236,7 @@ export default class PageVideoStreamWriter extends EventEmitter {
         0,
         numberOfFramesToSplice
       );
-      this.processFrameBeforeWrite(framesToProcess);
+      this.processFrameBeforeWrite(framesToProcess, this.screenCastFrames[0].timestamp);
     }
 
     const insertionIndex = this.findSlot(frame.timestamp);
@@ -249,16 +248,11 @@ export default class PageVideoStreamWriter extends EventEmitter {
     }
   }
 
-  private trimFrame(fameList: pageScreenFrame[]): pageScreenFrame[] {
-    if (!this.lastProcessedFrame) {
-      this.lastProcessedFrame = fameList[0];
-    }
-
-    return fameList.map((currentFrame: pageScreenFrame) => {
-      const duration =
-        currentFrame.timestamp - this.lastProcessedFrame.timestamp;
-      this.lastProcessedFrame = currentFrame;
-
+  private trimFrame(fameList: pageScreenFrame[], chunckEndTime: number): pageScreenFrame[] {
+    return fameList.map((currentFrame: pageScreenFrame, index: number) => {
+      const endTime = (index !== fameList.length-1) ? fameList[index+1].timestamp : chunckEndTime;
+      const duration = endTime - currentFrame.timestamp; 
+        
       return {
         ...currentFrame,
         duration,
@@ -266,8 +260,8 @@ export default class PageVideoStreamWriter extends EventEmitter {
     });
   }
 
-  private processFrameBeforeWrite(frames: pageScreenFrame[]): void {
-    const processedFrames = this.trimFrame(frames);
+  private processFrameBeforeWrite(frames: pageScreenFrame[], chunckEndTime: number): void {
+    const processedFrames = this.trimFrame(frames, chunckEndTime);
 
     processedFrames.forEach(({ blob, duration }) => {
       this.write(blob, duration);
@@ -288,12 +282,8 @@ export default class PageVideoStreamWriter extends EventEmitter {
   }
 
   private drainFrames(stoppedTime: number): void {
-    this.processFrameBeforeWrite(this.screenCastFrames);
+    this.processFrameBeforeWrite(this.screenCastFrames, stoppedTime);
     this.screenCastFrames = [];
-
-    if (!this.lastProcessedFrame) return;
-    const durationSeconds = stoppedTime - this.lastProcessedFrame.timestamp;
-    this.write(this.lastProcessedFrame.blob, durationSeconds);
   }
 
   public stop(stoppedTime = Date.now() / 1000): Promise<boolean> {
