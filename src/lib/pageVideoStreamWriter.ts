@@ -26,7 +26,7 @@ const SUPPORTED_FILE_FORMATS = [
  * @ignore
  */
 export default class PageVideoStreamWriter extends EventEmitter {
-  private readonly screenLimit = 40;
+  private readonly screenLimit = 10;
   private screenCastFrames = [];
   public duration = '00:00:00:00';
 

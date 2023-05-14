@@ -15,7 +15,7 @@ import PageVideoStreamWriter from './pageVideoStreamWriter';
  */
 const defaultPuppeteerScreenRecorderOptions: PuppeteerScreenRecorderOptions = {
   followNewTab: true,
-  fps: 25,
+  fps: 15,
   quality: 100,
   ffmpeg_Path: null,
   videoFrame: {
@@ -31,7 +31,7 @@ const defaultPuppeteerScreenRecorderOptions: PuppeteerScreenRecorderOptions = {
  * ```typescript
  * const screenRecorderOptions = {
  *  followNewTab: true,
- *  fps: 25,
+ *  fps: 15,
  * }
  * const savePath = "./test/demo.mp4";
  * const screenRecorder = new PuppeteerScreenRecorder(page, screenRecorderOptions);
