@@ -129,6 +129,13 @@ export type PuppeteerScreenRecorderOptions = {
    * @description  Numerical value specify duration (in seconds) to record the video. By default video is recorded till stop method is invoked`. (Note: It's mandatory to invoke Stop() method even if this value is set)
    */
   readonly recordDurationLimit?: number;
+
+  /**
+   * @name metadata
+   * @member PuppeteerScreenRecorderOptions
+   * @description Specify metadata information as key value pairs.
+   */
+  readonly metadata?: object
 };
 
 /** @ignore */

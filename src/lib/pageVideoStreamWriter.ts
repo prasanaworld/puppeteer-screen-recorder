@@ -187,6 +187,9 @@ export default class PageVideoStreamWriter extends EventEmitter {
       .on('progress', (progressDetails) => {
         this.duration = progressDetails.timemark;
       });
+    for(const key in this.options.metadata) {
+      outputStream.outputOptions('-metadata', `${key}=${this.options.metadata[key]}`);
+    }
 
     if (this.options.recordDurationLimit) {
       outputStream.duration(this.options.recordDurationLimit);
