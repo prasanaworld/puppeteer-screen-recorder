@@ -117,7 +117,8 @@ export type PuppeteerScreenRecorderOptions = {
   /**
    * @name ffmpegAdditionalOptions
    * @member PuppeteerScreenRecorderOptions
-   * @description Allows you to pass additional options to the ffmpeg encoder - for example you might want to pass "-movflags +faststart"
+   * @description Allows you to pass additional options to the ffmpeg encoder - 
+   * @example you might want to pass "-movflags +faststart"
    */
   readonly ffmpegAdditionalOptions?: string[];
 
@@ -142,7 +143,7 @@ export type PuppeteerScreenRecorderOptions = {
    * @member PuppeteerScreenRecorderOptions
    * @description Specify metadata information as key value pairs.
    */
-  readonly metadata?: object
+  readonly metadata?: Record<string, string>;
 };
 
 /** @ignore */

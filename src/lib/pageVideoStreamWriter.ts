@@ -210,8 +210,11 @@ export default class PageVideoStreamWriter extends EventEmitter {
       .on('progress', (progressDetails) => {
         this.duration = progressDetails.timemark;
       });
-    for(const key in this.options.metadata) {
-      outputStream.outputOptions('-metadata', `${key}=${this.options.metadata[key]}`);
+      for (const key in this.options.metadata) {
+      outputStream.outputOptions(
+        '-metadata',
+        `${key}=${this.options.metadata[key]}`
+      );
     }
 
     if (this.options.recordDurationLimit) {
@@ -309,28 +312,24 @@ export default class PageVideoStreamWriter extends EventEmitter {
   public write(data: Buffer, durationSeconds = 1): void {
     this.status = VIDEO_WRITE_STATUS.IN_PROGRESS;
 
-    const totalFrames =  durationSeconds * this.options.fps;
-    let floored = Math.floor(totalFrames);
+    const totalFrames = durationSeconds * this.options.fps;
+    const floored = Math.floor(totalFrames);
 
-    let numberOfFPS = Math.max(
-      floored,
-      1
-    );
+    let numberOfFPS = Math.max(floored, 1);
     if (floored === 0) {
       this.frameGain += 1 - totalFrames;
     } else {
       this.frameLoss += totalFrames - floored;
     }
 
-    while(1 < this.frameLoss) {
+    while (1 < this.frameLoss) {
       this.frameLoss--;
       numberOfFPS++;
     }
-    while(1 < this.frameGain) {
+    while (1 < this.frameGain) {
       this.frameGain--;
       numberOfFPS--;
     }
-
 
     for (let i = 0; i < numberOfFPS; i++) {
       this.videoMediatorStream.write(data);
