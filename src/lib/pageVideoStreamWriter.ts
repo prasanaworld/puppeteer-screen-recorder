@@ -29,6 +29,8 @@ export default class PageVideoStreamWriter extends EventEmitter {
   private readonly screenLimit = 10;
   private screenCastFrames = [];
   public duration = '00:00:00:00';
+  public frameGain = 0;
+  public frameLoss = 0;
 
   private status = VIDEO_WRITE_STATUS.NOT_STARTED;
   private options: VideoOptions;
@@ -271,12 +273,30 @@ export default class PageVideoStreamWriter extends EventEmitter {
   public write(data: Buffer, durationSeconds = 1): void {
     this.status = VIDEO_WRITE_STATUS.IN_PROGRESS;
 
-    const NUMBER_OF_FPS = Math.max(
-      Math.floor(durationSeconds * this.options.fps),
+    const totalFrames =  durationSeconds * this.options.fps;
+    let floored = Math.floor(totalFrames);
+
+    let numberOfFPS = Math.max(
+      floored,
       1
     );
+    if (floored === 0) {
+      this.frameGain += 1 - totalFrames;
+    } else {
+      this.frameLoss += totalFrames - floored;
+    }
 
-    for (let i = 0; i < NUMBER_OF_FPS; i++) {
+    while(1 < this.frameLoss) {
+      this.frameLoss--;
+      numberOfFPS++;
+    }
+    while(1 < this.frameGain) {
+      this.frameGain--;
+      numberOfFPS--;
+    }
+
+
+    for (let i = 0; i < numberOfFPS; i++) {
       this.videoMediatorStream.write(data);
     }
   }
