@@ -133,6 +133,10 @@ export default class PageVideoStreamWriter extends EventEmitter {
           this.handleWriteStreamError(e.message);
           resolve(false);
         })
+        .on('stderr', (e) => {
+          this.handleWriteStreamError(e);
+          resolve(false);
+        })
         .on('end', () => resolve(true))
         .save(destinationPath);
 
@@ -154,6 +158,10 @@ export default class PageVideoStreamWriter extends EventEmitter {
           writableStream.emit('error', e);
           resolve(false);
         })
+        .on('stderr', (e) => {
+          writableStream.emit('error', { message: e });
+          resolve(false);
+        })
         .on('end', () => {
           writableStream.end();
           resolve(true);
@@ -169,6 +177,25 @@ export default class PageVideoStreamWriter extends EventEmitter {
 
   private getDestinationStream(): ffmpeg {
     const cpu = Math.max(1, os.cpus().length - 1);
+    const outputOptions = [];
+    outputOptions.push(`-crf ${this.options.videoCrf ?? 23}`);
+    outputOptions.push(`-preset ${this.options.videoPreset || 'ultrafast'}`);
+    outputOptions.push(
+      `-pix_fmt ${this.options.videoPixelFormat || 'yuv420p'}`
+    );
+    outputOptions.push(`-minrate ${this.options.videoBitrate || 1000}`);
+    outputOptions.push(`-maxrate ${this.options.videoBitrate || 1000}`);
+    outputOptions.push('-framerate 1');
+    outputOptions.push(`-threads ${cpu}`);
+    outputOptions.push(`-loglevel error`);
+    if (
+      this.options.ffmpegAdditionalOptions &&
+      this.options.ffmpegAdditionalOptions.length
+    ) {
+      for (const opt of this.options.ffmpegAdditionalOptions) {
+        outputOptions.push(opt);
+      }
+    }
     const outputStream = ffmpeg({
       source: this.videoMediatorStream,
       priority: 20,
@@ -179,13 +206,7 @@ export default class PageVideoStreamWriter extends EventEmitter {
       .autopad(this.autopad.activation, this.autopad?.color)
       .inputFormat('image2pipe')
       .inputFPS(this.options.fps)
-      .outputOptions(`-crf ${this.options.videoCrf ?? 23}`)
-      .outputOptions(`-preset ${this.options.videoPreset || 'ultrafast'}`)
-      .outputOptions(`-pix_fmt ${this.options.videoPixelFormat || 'yuv420p'}`)
-      .outputOptions(`-minrate ${this.options.videoBitrate || 1000}`)
-      .outputOptions(`-maxrate ${this.options.videoBitrate || 1000}`)
-      .outputOptions('-framerate 1')
-      .outputOptions(`-threads ${cpu}`)
+      .outputOptions(outputOptions)
       .on('progress', (progressDetails) => {
         this.duration = progressDetails.timemark;
       });
@@ -241,7 +262,10 @@ export default class PageVideoStreamWriter extends EventEmitter {
         0,
         numberOfFramesToSplice
       );
-      this.processFrameBeforeWrite(framesToProcess, this.screenCastFrames[0].timestamp);
+      this.processFrameBeforeWrite(
+        framesToProcess,
+        this.screenCastFrames[0].timestamp
+      );
     }
 
     const insertionIndex = this.findSlot(frame.timestamp);
@@ -253,11 +277,17 @@ export default class PageVideoStreamWriter extends EventEmitter {
     }
   }
 
-  private trimFrame(fameList: pageScreenFrame[], chunckEndTime: number): pageScreenFrame[] {
+  private trimFrame(
+    fameList: pageScreenFrame[],
+    chunckEndTime: number
+  ): pageScreenFrame[] {
     return fameList.map((currentFrame: pageScreenFrame, index: number) => {
-      const endTime = (index !== fameList.length-1) ? fameList[index+1].timestamp : chunckEndTime;
-      const duration = endTime - currentFrame.timestamp; 
-        
+      const endTime =
+        index !== fameList.length - 1
+          ? fameList[index + 1].timestamp
+          : chunckEndTime;
+      const duration = endTime - currentFrame.timestamp;
+
       return {
         ...currentFrame,
         duration,
@@ -265,7 +295,10 @@ export default class PageVideoStreamWriter extends EventEmitter {
     });
   }
 
-  private processFrameBeforeWrite(frames: pageScreenFrame[], chunckEndTime: number): void {
+  private processFrameBeforeWrite(
+    frames: pageScreenFrame[],
+    chunckEndTime: number
+  ): void {
     const processedFrames = this.trimFrame(frames, chunckEndTime);
 
     processedFrames.forEach(({ blob, duration }) => {

@@ -115,6 +115,13 @@ export type PuppeteerScreenRecorderOptions = {
   readonly videoPixelFormat?: string;
 
   /**
+   * @name ffmpegAdditionalOptions
+   * @member PuppeteerScreenRecorderOptions
+   * @description Allows you to pass additional options to the ffmpeg encoder - for example you might want to pass "-movflags +faststart"
+   */
+  readonly ffmpegAdditionalOptions?: string[];
+
+  /**
    * @name autopad
    * @member PuppeteerScreenRecorderOptions
    * @description Specify whether autopad option is used and its color. Default to autopad deactivation mode.
