@@ -175,8 +175,10 @@ export default class PageVideoStreamWriter extends EventEmitter {
     });
   }
 
-  private getDestinationStream(): ffmpeg {
+  private getOutputOption() {
     const cpu = Math.max(1, os.cpus().length - 1);
+    const videoOutputOptions = this.options.videOutputOptions ?? [];
+
     const outputOptions = [];
     outputOptions.push(`-crf ${this.options.videoCrf ?? 23}`);
     outputOptions.push(`-preset ${this.options.videoPreset || 'ultrafast'}`);
@@ -188,14 +190,23 @@ export default class PageVideoStreamWriter extends EventEmitter {
     outputOptions.push('-framerate 1');
     outputOptions.push(`-threads ${cpu}`);
     outputOptions.push(`-loglevel error`);
-    if (
-      this.options.ffmpegAdditionalOptions &&
-      this.options.ffmpegAdditionalOptions.length
-    ) {
-      for (const opt of this.options.ffmpegAdditionalOptions) {
-        outputOptions.push(opt);
-      }
+
+    videoOutputOptions.forEach((options) => {
+      outputOptions.push(options);
+    });
+
+    return outputOptions;
+  }
+
+  private addVideoMetadata(outputStream: ReturnType<typeof ffmpeg>) {
+    const metadataOptions = this.options.metadata ?? [];
+
+    for (const metadata of metadataOptions) {
+      outputStream.outputOptions('-metadata', metadata);
     }
+  }
+
+  private getDestinationStream(): ffmpeg {
     const outputStream = ffmpeg({
       source: this.videoMediatorStream,
       priority: 20,
@@ -206,16 +217,12 @@ export default class PageVideoStreamWriter extends EventEmitter {
       .autopad(this.autopad.activation, this.autopad?.color)
       .inputFormat('image2pipe')
       .inputFPS(this.options.fps)
-      .outputOptions(outputOptions)
+      .outputOptions(this.getOutputOption())
       .on('progress', (progressDetails) => {
         this.duration = progressDetails.timemark;
       });
-      for (const key in this.options.metadata) {
-      outputStream.outputOptions(
-        '-metadata',
-        `${key}=${this.options.metadata[key]}`
-      );
-    }
+
+    this.addVideoMetadata(outputStream);
 
     if (this.options.recordDurationLimit) {
       outputStream.duration(this.options.recordDurationLimit);

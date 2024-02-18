@@ -115,12 +115,12 @@ export type PuppeteerScreenRecorderOptions = {
   readonly videoPixelFormat?: string;
 
   /**
-   * @name ffmpegAdditionalOptions
+   * @name videOutputOptions
    * @member PuppeteerScreenRecorderOptions
-   * @description Allows you to pass additional options to the ffmpeg encoder - 
+   * @description Allows you to pass additional options to the ffmpeg encoder -
    * @example you might want to pass "-movflags +faststart"
    */
-  readonly ffmpegAdditionalOptions?: string[];
+  readonly videOutputOptions?: string[];
 
   /**
    * @name autopad
@@ -143,7 +143,7 @@ export type PuppeteerScreenRecorderOptions = {
    * @member PuppeteerScreenRecorderOptions
    * @description Specify metadata information as key value pairs.
    */
-  readonly metadata?: Record<string, string>;
+  readonly metadata?: string[];
 };
 
 /** @ignore */
