@@ -22,7 +22,7 @@ A puppeteer Plugin that uses the native [chrome devtool protocol](https://chrome
 </p>
 
 ## Recording video/audio from video conferencing calls
-If you’re looking to use this repo to retrieve video or audio streams from meeting platforms like Zoom, Google Meet, Microsoft Teams, consider checking out [Recall.ai](https://www.recall.ai), an API for meeting recording.
+If you’re looking to use this repo to retrieve video or audio streams from meeting platforms like Zoom, Google Meet, Microsoft Teams, consider checking out [Recall.ai](https://www.recall.ai/?utm_source=github&utm_medium=sponsorship&utm_campaign=puppeteer-screen-recorder), an API for meeting recording.
 
 ## Be a Sponsor
 Puppeteer-screen-recorder isn't backed by a company, so the future of this project depends on you. Become a sponsor or a backer - help the open source community. 
