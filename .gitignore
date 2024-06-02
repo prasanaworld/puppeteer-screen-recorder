@@ -7,7 +7,6 @@ test
 src/**.js
 coverage
 *.log
-yarn.lock
 **/.DS_Store
 ./test_output
 .gitconfig

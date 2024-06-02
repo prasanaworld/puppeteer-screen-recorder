@@ -13,11 +13,19 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4.1.6
+
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
-      - run: npm ci --legacy-peer-deps
-      - run: npm install puppeteer@19.0.0
-      - run: npm run build
-      - run: npm run test
+
+      - name: Install Yarn
+        run: npm install -g yarn
+
+      - run: yarn ci --legacy-peer-deps
+
+      - run: yarn add puppeteer@19.0.0
+
+      - run: yarn run build
+
+      - run: yarn run test
