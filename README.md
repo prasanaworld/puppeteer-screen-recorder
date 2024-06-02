@@ -9,7 +9,7 @@ A puppeteer Plugin that uses the native [chrome devtool protocol](https://chrome
 
 ![GitHub](https://img.shields.io/github/license/prasanaworld/puppeteer-screen-recorder) ![GitHub Sponsors](https://img.shields.io/github/sponsors/prasanaworld?label=Github%20Sponsours) ![Open Collective backers and sponsors](https://img.shields.io/opencollective/all/puppeteer-screen-recorder?label=Open%20Collective%20sponsors)
 
-![GitHub package.json version](https://img.shields.io/github/package-json/v/prasanaworld/puppeteer-screen-recorder) ![GitHub top language](https://img.shields.io/github/languages/top/prasanaworld/puppeteer-screen-recorder) ![npm](https://img.shields.io/npm/dt/puppeteer-screen-recorder) ![Snyk Vulnerabilities for npm package](https://img.shields.io/snyk/vulnerabilities/npm/puppeteer-screen-recorder)
+![GitHub package.json version](https://img.shields.io/github/package-json/v/prasanaworld/puppeteer-screen-recorder) ![GitHub top language](https://img.shields.io/github/languages/top/prasanaworld/puppeteer-screen-recorder) ![npm](https://img.shields.io/npm/dt/puppeteer-screen-recorder) ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/prasanaworld/puppeteer-screen-recorder/ci.yml)
 
 ![GitHub forks](https://img.shields.io/github/forks/prasanaworld/puppeteer-screen-recorder?style=social) ![GitHub Repo stars](https://img.shields.io/github/stars/prasanaworld/puppeteer-screen-recorder?style=social) ![GitHub watchers](https://img.shields.io/github/watchers/prasanaworld/puppeteer-screen-recorder?style=social) ![Twitter Follow](https://img.shields.io/twitter/follow/prasanaworld?style=social)
 

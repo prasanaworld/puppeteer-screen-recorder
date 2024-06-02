@@ -14,23 +14,24 @@ function sleep(time: number) {
 
 /** @ignore */
 async function testStartMethod(format: string, isStream: boolean) {
+  const executablePath = process.env['PUPPETEER_EXECUTABLE_PATH'];
   const browser = await puppeteer.launch({
-    executablePath: process.env['PUPPETEER_EXECUTABLE_PATH'],
+    ...(executablePath ? { executablePath: executablePath } : {}),
     headless: false,
   });
   const page = await browser.newPage();
   const recorder = new PuppeteerScreenRecorder(page);
-  if (isStream) {
-    const passthrough = new PassThrough();
-    format = format.replace('video', 'stream');
-    const fileWriteStream = fs.createWriteStream(format);
-    passthrough.pipe(fileWriteStream);
-    await recorder.startStream(passthrough);
-  } else {
-    await recorder.start(format);
-  }
+  await page.setViewport({
+    width: 1920,
+    height: 1080,
+    deviceScaleFactor: 1,
+  });
+
+  await recorder.start('./report/video/simple1.mp4');
+
   await page.goto('https://developer.mozilla.org/en-US/docs/Web/CSS/animation');
   await sleep(10 * 1000);
+
   await recorder.stop();
   await browser.close();
 }
