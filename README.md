@@ -37,29 +37,10 @@ By helping your company become a Github Sponsor, you will not only feel great ab
 - [Paypal](https://paypal.me/prasanaworld)
 - [Bitcoin - 3NdGW6wKVFgxa1X5XxRDNHqMWAhGNSrA5A](3NdGW6wKVFgxa1X5XxRDNHqMWAhGNSrA5A)
 
-## Key Feature
-
-### 1. Follow Page Automatically
-
-Automatically follows pages (multiple pages) which are opened at runtime, which will be part of video capturing. Also support options to disable the default flow.
-
-### 2. No overhead over FF_MPEG library
-
-FFMPEG library's installation and configuration are automatically managed by the library internally. Also offers options to configure with custom library path.
-
-### 3. Native Implementation
-
-This plugin works directly with native [chrome devtool protocol](https://chromedevtools.github.io/devtools-protocol/tot/Page/#method-startScreencast) to capture the video under the wood without any other thirdparty puppeteer plugins for screen capturing.
-
-### 4. Adopted the Chromium principles
-
-Adopted Chromium principles such as Speed, Security, Stability and Simplicity. It also ensures no frames are missed during video capturing and doesn't impact the performance, since its doesn't use any other puppeteer plugin internally.
-
-### 5. Supports multiple video format and stream
-
-Supports multiple video format like AVI, MP4, MOV and WEBM. Enable support for writable or duplex stream for process the output streaming .
-
 ## Getting Started
+
+### How to use 
+![How to use](https://raw.githubusercontent.com/prasanaworld/puppeteer-screen-recorder/main/asserts/video_demo.gif)
 
 ### Installation Guide
 
@@ -181,6 +162,29 @@ const { PuppeteerScreenRecorder } = require('puppeteer-screen-recorder');
   await browser.close();
 })();
 ```
+
+## Key Feature
+
+### 1. Follow Page Automatically
+
+Automatically follows pages (multiple pages) which are opened at runtime, which will be part of video capturing. Also support options to disable the default flow.
+
+### 2. No overhead over FF_MPEG library
+
+FFMPEG library's installation and configuration are automatically managed by the library internally. Also offers options to configure with custom library path.
+
+### 3. Native Implementation
+
+This plugin works directly with native [chrome devtool protocol](https://chromedevtools.github.io/devtools-protocol/tot/Page/#method-startScreencast) to capture the video under the wood without any other thirdparty puppeteer plugins for screen capturing.
+
+### 4. Adopted the Chromium principles
+
+Adopted Chromium principles such as Speed, Security, Stability and Simplicity. It also ensures no frames are missed during video capturing and doesn't impact the performance, since its doesn't use any other puppeteer plugin internally.
+
+### 5. Supports multiple video format and stream
+
+Supports multiple video format like AVI, MP4, MOV and WEBM. Enable support for writable or duplex stream for process the output streaming .
+
 
 ## FAQ
 
