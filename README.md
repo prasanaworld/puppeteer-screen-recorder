@@ -1,22 +1,17 @@
 # <img alt="puppeteer screen recorder logo" width="128px" src="https://github.com/prasanaworld/puppeteer-screen-recorder/blob/main/asserts/puppeteer-screen-recorder.png" /> puppeteer-screen-recorder
 
-A puppeteer Plugin that uses the native [chrome devtool protocol](https://chromedevtools.github.io/devtools-protocol/tot/Page/#method-startScreencast) for capturing video frame by frame. Also supports an option to follow pages that are opened by the current page object. [Check out API Docs](https://prasanaworld.github.io/puppeteer-screen-recorder/classes/puppeteerscreenrecorder.html).
+A puppeteer Plugin that uses the native [chrome devtool protocol](https://chromedevtools.github.io/devtools-protocol/tot/Page/#method-startScreencast) for capturing video frame by frame. Also supports an option to follow pages that are opened by the current page object.
+[Check out API Docs](https://prasanaworld.github.io/puppeteer-screen-recorder/classes/puppeteerscreenrecorder.html).
+
+![Website](https://img.shields.io/website?url=https%3A%2F%2Fprasanaworld.github.io%2Fpuppeteer-screen-recorder%2Fclasses%2Fpuppeteerscreenrecorder.html&style=plastic&logo=website&label=Documentation) ![Discord](https://img.shields.io/discord/1246821801120632902?style=plastic&logo=discord&label=Join%20Our%20Discord%20Server&link=https%3A%2F%2Fdiscord.com%2Fchannels%2F1246821801120632902%2F1246821801120632905)
 
 [![NPM](https://nodei.co/npm/puppeteer-screen-recorder.png)](https://npmjs.org/package/puppeteer-screen-recorder)
 
-![GitHub](https://img.shields.io/github/license/prasanaworld/puppeteer-screen-recorder)
-![GitHub Sponsors](https://img.shields.io/github/sponsors/prasanaworld)
-![Open Collective backers and sponsors](https://img.shields.io/opencollective/all/puppeteer-screen-recorder?label=Open%20Collective%20sponsors)
+![GitHub](https://img.shields.io/github/license/prasanaworld/puppeteer-screen-recorder) ![GitHub Sponsors](https://img.shields.io/github/sponsors/prasanaworld?label=Github%20Sponsours) ![Open Collective backers and sponsors](https://img.shields.io/opencollective/all/puppeteer-screen-recorder?label=Open%20Collective%20sponsors)
 
-![GitHub package.json version](https://img.shields.io/github/package-json/v/prasanaworld/puppeteer-screen-recorder)
-![GitHub top language](https://img.shields.io/github/languages/top/prasanaworld/puppeteer-screen-recorder)
-![npm](https://img.shields.io/npm/dt/puppeteer-screen-recorder)
-![Snyk Vulnerabilities for npm package](https://img.shields.io/snyk/vulnerabilities/npm/puppeteer-screen-recorder)
+![GitHub package.json version](https://img.shields.io/github/package-json/v/prasanaworld/puppeteer-screen-recorder) ![GitHub top language](https://img.shields.io/github/languages/top/prasanaworld/puppeteer-screen-recorder) ![npm](https://img.shields.io/npm/dt/puppeteer-screen-recorder) ![Snyk Vulnerabilities for npm package](https://img.shields.io/snyk/vulnerabilities/npm/puppeteer-screen-recorder)
 
-![GitHub forks](https://img.shields.io/github/forks/prasanaworld/puppeteer-screen-recorder?style=social)
-![GitHub Repo stars](https://img.shields.io/github/stars/prasanaworld/puppeteer-screen-recorder?style=social)
-![GitHub watchers](https://img.shields.io/github/watchers/prasanaworld/puppeteer-screen-recorder?style=social)
-![Twitter Follow](https://img.shields.io/twitter/follow/prasanaworld?style=social)
+![GitHub forks](https://img.shields.io/github/forks/prasanaworld/puppeteer-screen-recorder?style=social) ![GitHub Repo stars](https://img.shields.io/github/stars/prasanaworld/puppeteer-screen-recorder?style=social) ![GitHub watchers](https://img.shields.io/github/watchers/prasanaworld/puppeteer-screen-recorder?style=social) ![Twitter Follow](https://img.shields.io/twitter/follow/prasanaworld?style=social)
 
 <a href="https://github.com/prasanaworld/puppeteer-screen-recorder/issues/new">Add Feature Request</a>
 

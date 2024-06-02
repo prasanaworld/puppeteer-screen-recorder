@@ -1,0 +1,22 @@
+name: Puppeteer-screen-recorder CI
+
+on: [workflow_dispatch, push, pull_request]
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        node-version: [20.6.1]
+        os: [macos-latest, windows-latest, ubuntu-latest]
+
+    steps:
+      - uses: actions/checkout@v4.1.6
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@4
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm ci
+      - run: npm run build
+      - run: npm run test

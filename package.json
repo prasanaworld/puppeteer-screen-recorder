@@ -17,6 +17,24 @@
   "sponsor": {
     "url": "https://opencollective.com/puppeteer-screen-recorder"
   },
+  "funding": [
+    {
+      "type": "individual",
+      "url": "https://github.com/sponsors/prasanaworld/dashboard/tiers?frequency=one-time"
+    },
+    {
+      "type": "individual",
+      "url": "https://opencollective.com/puppeteer-screen-recorder"
+    },
+    {
+      "type": "corporate",
+      "url": "https://github.com/sponsors/prasanaworld/dashboard/tiers"
+    },
+    {
+      "type": "corporate",
+      "url": "https://opencollective.com/puppeteer-screen-recorder"
+    }
+  ],
   "homepage": "https://prasanaworld.github.io/puppeteer-screen-recorder/",
   "license": "MIT",
   "keywords": [
@@ -78,7 +96,6 @@
     "cov:check": "nyc report && nyc check-coverage --lines 100 --functions 100 --branches 100",
     "doc": "run-s doc:html && open-cli build/docs/index.html",
     "doc:html": "typedoc src/ --exclude **/*.spec.ts --excludePrivate --target ES6 --mode file --out build/docs",
-    "doc:json": "typedoc src/ --exclude **/*.spec.ts --excludePrivate --target ES6 --mode file --json build/docs/typedoc.json",
     "doc:publish": "gh-pages -m \"[ci skip] Updates\" -d build/docs",
     "version": "standard-version",
     "reset-hard": "git clean -dfx && npm i",
