@@ -11,7 +11,11 @@
   "repository": "https://github.com/prasanaworld/puppeteer-screen-recorder",
   "author": {
     "name": "Prasana Kannan",
-    "url": "https://www.linkedin.com/in/prasanakannan/"
+    "url": "https://www.linkedin.com/in/prasanakannan/",
+    "email": "prasanaworld@gmail.com"
+  },
+  "sponsor": {
+    "url": "https://opencollective.com/puppeteer-screen-recorder"
   },
   "homepage": "https://prasanaworld.github.io/puppeteer-screen-recorder/",
   "license": "MIT",
@@ -22,6 +26,9 @@
     "video capture",
     "video recorder",
     "test case capture",
+    "test case video recorder",
+    "puppeteer plugin",
+    "puppeteer library",
     "video",
     "record",
     "cast",

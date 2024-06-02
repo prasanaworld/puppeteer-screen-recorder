@@ -5,7 +5,8 @@ A puppeteer Plugin that uses the native [chrome devtool protocol](https://chrome
 [![NPM](https://nodei.co/npm/puppeteer-screen-recorder.png)](https://npmjs.org/package/puppeteer-screen-recorder)
 
 ![GitHub](https://img.shields.io/github/license/prasanaworld/puppeteer-screen-recorder)
-[![Build Status](https://travis-ci.org/prasanaworld/puppeteer-screen-recorder.svg?branch=main)](https://travis-ci.org/prasanaworld/puppeteer-screen-recorder)
+![GitHub Sponsors](https://img.shields.io/github/sponsors/prasanaworld)
+![Open Collective backers and sponsors](https://img.shields.io/opencollective/all/puppeteer-screen-recorder?label=Open%20Collective%20sponsors)
 
 ![GitHub package.json version](https://img.shields.io/github/package-json/v/prasanaworld/puppeteer-screen-recorder)
 ![GitHub top language](https://img.shields.io/github/languages/top/prasanaworld/puppeteer-screen-recorder)
@@ -22,20 +23,24 @@ A puppeteer Plugin that uses the native [chrome devtool protocol](https://chrome
 </p>
 
 ## Recording video/audio from video conferencing calls
+
 If you’re looking to use this repo to retrieve video or audio streams from meeting platforms like Zoom, Google Meet, Microsoft Teams, consider checking out [Recall.ai](https://www.recall.ai/?utm_source=github&utm_medium=sponsorship&utm_campaign=puppeteer-screen-recorder), an API for meeting recording.
 
 ## Be a Sponsor
-Puppeteer-screen-recorder isn't backed by a company, so the future of this project depends on you. Become a sponsor or a backer - help the open source community. 
+
+Puppeteer-screen-recorder isn't backed by a company, so the future of this project depends on you. Become a sponsor or a backer - help the open source community.
 
 #### **For Companies and Businesses**
-By becoming a Github Sponsor, your company and brand will be recognized as a one that gives back to the open source tools that run your business and one that respects your developers time and your customers' experience.
+
+By becoming a Github Sponsor, your company and brand will be recognized as a one that gives back to the open source tools that run your business and one that respects your developers time and your customers' experience. For more details contact [Author - Prasana Kannan](prasanaworld@gmail.com)
 
 #### **For Developers**
+
 By helping your company become a Github Sponsor, you will not only feel great about giving back to the open source tools that run your business run, If you believe your company could become a sponsor, then please reach out!
 
-  + [open-collective](https://opencollective.com/puppeteer-screen-recorder)
-  + [Paypal](https://paypal.me/prasanaworld)
-  + [Bitcoin - 3NdGW6wKVFgxa1X5XxRDNHqMWAhGNSrA5A](3NdGW6wKVFgxa1X5XxRDNHqMWAhGNSrA5A)
+- [open-collective](https://opencollective.com/puppeteer-screen-recorder)
+- [Paypal](https://paypal.me/prasanaworld)
+- [Bitcoin - 3NdGW6wKVFgxa1X5XxRDNHqMWAhGNSrA5A](3NdGW6wKVFgxa1X5XxRDNHqMWAhGNSrA5A)
 
 ## Key Feature
 
@@ -265,5 +270,3 @@ No, it doesn't audio recording.
 ---
 
 No, it wont support GIF. since Gif is considered as a image format.
-
-
