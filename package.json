@@ -103,15 +103,12 @@
     "node": ">=16"
   },
   "dependencies": {
-    "fluent-ffmpeg": "^2.1.2",
-    "puppeteer": "19.0.0"
+    "fluent-ffmpeg": "^2.1.2"
   },
   "optionalDependencies": {
     "@ffmpeg-installer/ffmpeg": "^1.1.0"
   },
-  "peerDependencies": {
-    "puppeteer": ">=19.0.0"
-  },
+  "peerDependencies": {},
   "devDependencies": {
     "@ava/typescript": "^1.1.1",
     "@istanbuljs/nyc-config-typescript": "^1.0.1",
