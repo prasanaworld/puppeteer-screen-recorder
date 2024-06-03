@@ -110,7 +110,7 @@
   },
   "peerDependencies": {},
   "devDependencies": {
-    "@ava/typescript": "^1.1.1",
+    "@ava/typescript": "^5.0.0",
     "@istanbuljs/nyc-config-typescript": "^1.0.1",
     "@types/node": "^14.14.13",
     "@typescript-eslint/eslint-plugin": "^4.0.1",
