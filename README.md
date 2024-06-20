@@ -123,7 +123,7 @@ const recorder = new PuppeteerScreenRecorder(page);
 **Option 1 - Start video capturing and save as file**
 
 ```javascript
-const SavePath = './test/demo.mp4';
+const savePath = './test/demo.mp4';
 await recorder.start(savePath);
 ```
 
