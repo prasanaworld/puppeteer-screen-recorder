@@ -97,7 +97,7 @@
     "version": "standard-version",
     "reset-hard": "git clean -dfx && yarn ci",
     "prepare-release": "run-s test doc:html version doc:publish",
-    "ci": "run-s doc:html version doc:publish"
+    "ci": "run-s reset-hard doc:html version doc:publish"
   },
   "engines": {
     "node": ">=16"
