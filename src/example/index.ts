@@ -1,6 +1,3 @@
-import fs from 'fs';
-import { PassThrough } from 'stream';
-
 import puppeteer from 'puppeteer';
 
 import { PuppeteerScreenRecorder } from '../lib/PuppeteerScreenRecorder';
@@ -13,7 +10,7 @@ function sleep(time: number) {
 }
 
 /** @ignore */
-async function testStartMethod(format: string, isStream: boolean) {
+async function testStartMethod(format: string) {
   const executablePath = process.env['PUPPETEER_EXECUTABLE_PATH'];
   const browser = await puppeteer.launch({
     ...(executablePath ? { executablePath: executablePath } : {}),
@@ -27,7 +24,7 @@ async function testStartMethod(format: string, isStream: boolean) {
     deviceScaleFactor: 1,
   });
 
-  await recorder.start('./report/video/simple1.mp4');
+  await recorder.start(format);
 
   await page.goto('https://developer.mozilla.org/en-US/docs/Web/CSS/animation');
   await sleep(10 * 1000);
@@ -37,13 +34,7 @@ async function testStartMethod(format: string, isStream: boolean) {
 }
 
 async function executeSample(format) {
-  const argList = process.argv.slice(2);
-  const isStreamTest = argList.includes('stream');
-
-  console.log(
-    `Testing with Method using ${isStreamTest ? 'stream' : 'normal'} mode`
-  );
-  return testStartMethod(format, isStreamTest);
+  return testStartMethod(format);
 }
 
 executeSample('./report/video/simple1.mp4').then(() => {

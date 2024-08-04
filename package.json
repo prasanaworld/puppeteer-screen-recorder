@@ -95,9 +95,9 @@
     "doc:html": "typedoc src/ --exclude **/*.spec.ts --excludePrivate --target ES6 --mode file --out build/docs",
     "doc:publish": "gh-pages -m \"[ci skip] Updates\" -d build/docs",
     "version": "standard-version",
-    "reset-hard": "git clean -dfx && yarn i",
+    "reset-hard": "git clean -dfx && yarn ci",
     "prepare-release": "run-s test doc:html version doc:publish",
-    "ci": "run-s reset-hard doc:html version doc:publish"
+    "ci": "run-s doc:html version doc:publish"
   },
   "engines": {
     "node": ">=16"
