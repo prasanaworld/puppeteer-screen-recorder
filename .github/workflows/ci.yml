@@ -8,7 +8,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [20.6.1]
+        node-version: [20.0.9]
         os: [ubuntu-latest]
 
     steps:
