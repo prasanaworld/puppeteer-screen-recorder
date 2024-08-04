@@ -1,6 +1,6 @@
 {
   "name": "puppeteer-screen-recorder",
-  "version": "3.0.3",
+  "version": "3.0.4",
   "description": "A puppeteer Plugin that uses the native chrome devtool protocol for capturing video frame by frame. Also supports an option to follow pages that are opened by the current page object",
   "main": "build/main/index.js",
   "typings": "build/main/index.d.ts",
@@ -68,9 +68,6 @@
     "FFMPEG"
   ],
   "scripts": {
-    "example": "ts-node src/example/index.ts",
-    "example:stream": "yarn run example -- stream",
-    "example:debug": "yarn run example -- --inspect",
     "build": "run-p build:*",
     "build:main": "tsc -p tsconfig.json",
     "build:module": "tsc -p tsconfig.module.json",
@@ -92,12 +89,12 @@
     "cov:send": "run-s cov:lcov && codecov",
     "cov:check": "nyc report && nyc check-coverage --lines 100 --functions 100 --branches 100",
     "doc": "run-s doc:html && open-cli build/docs/index.html",
-    "doc:html": "typedoc src/ --exclude **/*.spec.ts --excludePrivate --target ES6 --mode file --out build/docs",
+    "doc:html": "typedoc --entryPoints src/index.ts --excludePrivate --out build/docs",
     "doc:publish": "gh-pages -m \"[ci skip] Updates\" -d build/docs",
     "version": "standard-version",
     "reset-hard": "git clean -dfx && yarn install",
     "prepare-release": "run-s test doc:html version doc:publish",
-    "ci": "run-s reset-hard doc:html version doc:publish"
+    "ci": "run-s doc:html version doc:publish"
   },
   "engines": {
     "node": ">=16"
@@ -108,7 +105,9 @@
   "optionalDependencies": {
     "@ffmpeg-installer/ffmpeg": "^1.1.0"
   },
-  "peerDependencies": {},
+  "peerDependencies": {
+    "puppeteer": ">=19.0.0"
+  },
   "devDependencies": {
     "@ava/typescript": "5.0.0",
     "@istanbuljs/nyc-config-typescript": "^1.0.1",
