@@ -2,6 +2,7 @@ import fs from 'fs';
 import { dirname } from 'path';
 import { Writable } from 'stream';
 
+// @ts-ignore:next-line
 import { Page } from 'puppeteer';
 
 import { pageVideoStreamCollector } from './pageVideoStreamCollector';
@@ -51,7 +52,7 @@ export class PuppeteerScreenRecorder {
     this.options = Object.assign(
       {},
       defaultPuppeteerScreenRecorderOptions,
-      options
+      options,
     );
     this.streamReader = new pageVideoStreamCollector(page, this.options);
     this.page = page;

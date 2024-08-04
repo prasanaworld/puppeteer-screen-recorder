@@ -2,6 +2,7 @@ import fs from 'fs';
 import { dirname } from 'path';
 
 import test from 'ava';
+// @ts-ignore:next-line
 import puppeteer from 'puppeteer';
 
 import { PuppeteerScreenRecorder, PuppeteerScreenRecorderOptions } from '../';

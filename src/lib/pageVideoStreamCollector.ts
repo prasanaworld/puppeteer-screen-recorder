@@ -1,5 +1,6 @@
 import { EventEmitter } from 'events';
 
+// @ts-ignore:next-line
 import { CDPSession, Page } from 'puppeteer';
 
 import { PuppeteerScreenRecorderOptions } from './pageVideoStreamTypes';
@@ -115,10 +116,10 @@ export class pageVideoStreamCollector extends EventEmitter {
           } catch (error) {
             console.error(
               'Error in sending Acknowledgment for PageScreenCast',
-              error.message
+              error.message,
             );
           }
-        }
+        },
       );
     });
   }
