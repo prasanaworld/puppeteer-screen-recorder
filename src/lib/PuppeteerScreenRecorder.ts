@@ -2,8 +2,7 @@ import fs from 'fs';
 import { dirname } from 'path';
 import { Writable } from 'stream';
 
-// @ts-ignore:next-line
-import { Page } from 'puppeteer';
+import { Page } from 'puppeteer-core';
 
 import { pageVideoStreamCollector } from './pageVideoStreamCollector';
 import { PuppeteerScreenRecorderOptions } from './pageVideoStreamTypes';

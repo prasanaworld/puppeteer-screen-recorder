@@ -17,7 +17,8 @@ async function testStartMethod(format: string) {
     headless: false,
   });
   const page = await browser.newPage();
-  const recorder = new PuppeteerScreenRecorder(page);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const recorder = new PuppeteerScreenRecorder(page as any);
   await page.setViewport({
     width: 1920,
     height: 1080,

@@ -7,7 +7,7 @@
   "author": "",
   "license": "ISC",
   "scripts": {
-    "example": "ts-node src/example/index.ts"
+    "example": "ts-node index.ts"
   },
   "dependencies": {
     "puppeteer": "19.0.0"

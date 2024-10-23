@@ -1,7 +1,7 @@
 import { EventEmitter } from 'events';
 
-// @ts-ignore:next-line
-import { CDPSession, Page } from 'puppeteer';
+
+import { CDPSession, Page } from 'puppeteer-core';
 
 import { PuppeteerScreenRecorderOptions } from './pageVideoStreamTypes';
 
