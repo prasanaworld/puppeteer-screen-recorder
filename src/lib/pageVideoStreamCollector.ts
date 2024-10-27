@@ -1,7 +1,6 @@
 import { EventEmitter } from 'events';
 
-
-import { CDPSession, Page } from 'puppeteer-core';
+import { CDPSession, Page } from 'puppeteer';
 
 import { PuppeteerScreenRecorderOptions } from './pageVideoStreamTypes';
 

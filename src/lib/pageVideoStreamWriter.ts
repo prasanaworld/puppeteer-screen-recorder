@@ -97,7 +97,7 @@ export default class PageVideoStreamWriter extends EventEmitter {
 
     if (!ffmpegPath) {
       throw new Error(
-        'FFmpeg path is missing, \n Set the FFMPEG_PATH env variable'
+        'FFmpeg path is missing, \n Set the FFMPEG_PATH env variable',
       );
     }
 
@@ -169,7 +169,7 @@ export default class PageVideoStreamWriter extends EventEmitter {
 
       outputStream.toFormat('mp4');
       outputStream.addOutputOptions(
-        '-movflags +frag_keyframe+separate_moof+omit_tfhd_offset+empty_moov'
+        '-movflags +frag_keyframe+separate_moof+omit_tfhd_offset+empty_moov',
       );
       outputStream.pipe(writableStream);
     });
@@ -183,7 +183,7 @@ export default class PageVideoStreamWriter extends EventEmitter {
     outputOptions.push(`-crf ${this.options.videoCrf ?? 23}`);
     outputOptions.push(`-preset ${this.options.videoPreset || 'ultrafast'}`);
     outputOptions.push(
-      `-pix_fmt ${this.options.videoPixelFormat || 'yuv420p'}`
+      `-pix_fmt ${this.options.videoPixelFormat || 'yuv420p'}`,
     );
     outputOptions.push(`-minrate ${this.options.videoBitrate || 1000}`);
     outputOptions.push(`-maxrate ${this.options.videoBitrate || 1000}`);
@@ -241,7 +241,7 @@ export default class PageVideoStreamWriter extends EventEmitter {
       return;
     }
     return console.error(
-      `Error unable to capture video stream: ${errorMessage}`
+      `Error unable to capture video stream: ${errorMessage}`,
     );
   }
 
@@ -270,11 +270,11 @@ export default class PageVideoStreamWriter extends EventEmitter {
       const numberOfFramesToSplice = Math.floor(this.screenLimit / 2);
       const framesToProcess = this.screenCastFrames.splice(
         0,
-        numberOfFramesToSplice
+        numberOfFramesToSplice,
       );
       this.processFrameBeforeWrite(
         framesToProcess,
-        this.screenCastFrames[0].timestamp
+        this.screenCastFrames[0].timestamp,
       );
     }
 
@@ -289,7 +289,7 @@ export default class PageVideoStreamWriter extends EventEmitter {
 
   private trimFrame(
     fameList: pageScreenFrame[],
-    chunckEndTime: number
+    chunckEndTime: number,
   ): pageScreenFrame[] {
     return fameList.map((currentFrame: pageScreenFrame, index: number) => {
       const endTime =
@@ -307,7 +307,7 @@ export default class PageVideoStreamWriter extends EventEmitter {
 
   private processFrameBeforeWrite(
     frames: pageScreenFrame[],
-    chunckEndTime: number
+    chunckEndTime: number,
   ): void {
     const processedFrames = this.trimFrame(frames, chunckEndTime);
 
