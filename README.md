@@ -156,8 +156,6 @@ const { PuppeteerScreenRecorder } = require('puppeteer-screen-recorder');
   const recorder = new PuppeteerScreenRecorder(page);
   await recorder.start('./report/video/simple.mp4'); // supports extension - mp4, avi, webm and mov
   await page.goto('https://example.com');
-
-  await page.goto('https://test.com');
   await recorder.stop();
   await browser.close();
 })();
