@@ -8,7 +8,7 @@ jobs:
     permissions:
       contents: read
       id-token: write
-    steps:
+    
     steps:
       - uses: actions/checkout@v4.1.6
 
@@ -25,13 +25,8 @@ jobs:
 
       - run: yarn add puppeteer@19.0.0
 
-      - run: yarn run build
+      - run: yarn run prepare-release
 
-      - run: yarn run test
-
-      - uses: actions/checkout@v4
-
-      - run: npm ci
       - run: npm publish --provenance --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
