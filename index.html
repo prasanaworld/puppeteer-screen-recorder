@@ -1,347 +1,150 @@
-<!doctype html>
-<html class="default no-js">
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>puppeteer-screen-recorder</title>
-	<meta name="description" content="Documentation for puppeteer-screen-recorder">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="assets/css/main.css">
-</head>
-<body>
-<header>
-	<div class="tsd-page-toolbar">
-		<div class="container">
-			<div class="table-wrap">
-				<div class="table-cell" id="tsd-search" data-index="assets/js/search.json" data-base=".">
-					<div class="field">
-						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
-						<input id="tsd-search-field" type="text" />
-					</div>
-					<ul class="results">
-						<li class="state loading">Preparing search index...</li>
-						<li class="state failure">The search index is not available</li>
-					</ul>
-					<a href="index.html" class="title">puppeteer-screen-recorder</a>
-				</div>
-				<div class="table-cell" id="tsd-widgets">
-					<div id="tsd-filter">
-						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
-						<div class="tsd-filter-group">
-							<div class="tsd-select" id="tsd-filter-visibility">
-								<span class="tsd-select-label">All</span>
-								<ul class="tsd-select-list">
-									<li data-value="public">Public</li>
-									<li data-value="protected">Public/Protected</li>
-									<li data-value="private" class="selected">All</li>
-								</ul>
-							</div>
-							<input type="checkbox" id="tsd-filter-inherited" checked />
-							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
-							<input type="checkbox" id="tsd-filter-externals" checked />
-							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
-							<input type="checkbox" id="tsd-filter-only-exported" />
-							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
-						</div>
-					</div>
-					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="tsd-page-title">
-		<div class="container">
-			<ul class="tsd-breadcrumb">
-				<li>
-					<a href="globals.html">Globals</a>
-				</li>
-			</ul>
-			<h1>puppeteer-screen-recorder</h1>
-		</div>
-	</div>
-</header>
-<div class="container container-main">
-	<div class="row">
-		<div class="col-8 col-content">
-			<div class="tsd-panel tsd-typography">
-				<a href="#-puppeteer-screen-recorder" id="-puppeteer-screen-recorder" style="color: inherit; text-decoration: none;">
-					<h1><img alt="puppeteer screen recorder logo" width="128px" src="https://github.com/prasanaworld/puppeteer-screen-recorder/blob/main/asserts/puppeteer-screen-recorder.png" /> puppeteer-screen-recorder</h1>
-				</a>
-				<p>A puppeteer Plugin that uses the native <a href="https://chromedevtools.github.io/devtools-protocol/tot/Page/#method-startScreencast">chrome devtool protocol</a> for capturing video frame by frame. Also supports an option to follow pages that are opened by the current page object. <a href="https://prasanaworld.github.io/puppeteer-screen-recorder/classes/puppeteerscreenrecorder.html">Check out API Docs</a>.</p>
-				<p><a href="https://npmjs.org/package/puppeteer-screen-recorder"><img src="https://nodei.co/npm/puppeteer-screen-recorder.png" alt="NPM"></a></p>
-				<p><img src="https://img.shields.io/github/license/prasanaworld/puppeteer-screen-recorder" alt="GitHub">
-				<a href="https://travis-ci.org/prasanaworld/puppeteer-screen-recorder"><img src="https://travis-ci.org/prasanaworld/puppeteer-screen-recorder.svg?branch=main" alt="Build Status"></a></p>
-				<p><img src="https://img.shields.io/github/package-json/v/prasanaworld/puppeteer-screen-recorder" alt="GitHub package.json version">
-					<img src="https://img.shields.io/github/languages/top/prasanaworld/puppeteer-screen-recorder" alt="GitHub top language">
-					<img src="https://img.shields.io/npm/dt/puppeteer-screen-recorder" alt="npm">
-				<img src="https://img.shields.io/snyk/vulnerabilities/npm/puppeteer-screen-recorder" alt="Snyk Vulnerabilities for npm package"></p>
-				<p><img src="https://img.shields.io/github/forks/prasanaworld/puppeteer-screen-recorder?style=social" alt="GitHub forks">
-					<img src="https://img.shields.io/github/stars/prasanaworld/puppeteer-screen-recorder?style=social" alt="GitHub Repo stars">
-					<img src="https://img.shields.io/github/watchers/prasanaworld/puppeteer-screen-recorder?style=social" alt="GitHub watchers">
-				<img src="https://img.shields.io/twitter/follow/prasanaworld?style=social" alt="Twitter Follow"></p>
-				<p><a href="https://github.com/prasanaworld/puppeteer-screen-recorder/issues/new">Add Feature Request</a></p>
-				</p>
-				<a href="#be-a-sponsor" id="be-a-sponsor" style="color: inherit; text-decoration: none;">
-					<h2>Be a Sponsor</h2>
-				</a>
-				<p>Puppeteer-screen-recorder isn&#39;t backed by a company, so the future of this project depends on you. Become a sponsor or a backer - help the open source community. </p>
-				<a href="#for-companies-and-businesses" id="for-companies-and-businesses" style="color: inherit; text-decoration: none;">
-					<h4><strong>For Companies and Businesses</strong></h4>
-				</a>
-				<p>By becoming a Github Sponsor, your company and brand will be recognized as a one that gives back to the open source tools that run your business and one that respects your developers time and your customers&#39; experience.</p>
-				<a href="#for-developers" id="for-developers" style="color: inherit; text-decoration: none;">
-					<h4><strong>For Developers</strong></h4>
-				</a>
-				<p>By helping your company become a Github Sponsor, you will not only feel great about giving back to the open source tools that run your business run, If you believe your company could become a sponsor, then please reach out!</p>
-				<ul>
-					<li><a href="https://opencollective.com/puppeteer-screen-recorder">open-collective</a></li>
-					<li><a href="https://paypal.me/prasanaworld">Paypal</a></li>
-					<li><a href="3NdGW6wKVFgxa1X5XxRDNHqMWAhGNSrA5A">Bitcoin - 3NdGW6wKVFgxa1X5XxRDNHqMWAhGNSrA5A</a></li>
-				</ul>
-				<a href="#key-feature" id="key-feature" style="color: inherit; text-decoration: none;">
-					<h2>Key Feature</h2>
-				</a>
-				<a href="#1-follow-page-automatically" id="1-follow-page-automatically" style="color: inherit; text-decoration: none;">
-					<h3>1. Follow Page Automatically</h3>
-				</a>
-				<p>Automatically follows pages (multiple pages) which are opened at runtime, which will be part of video capturing. Also support options to disable the default flow.</p>
-				<a href="#2-no-overhead-over-ff_mpeg-library" id="2-no-overhead-over-ff_mpeg-library" style="color: inherit; text-decoration: none;">
-					<h3>2. No overhead over FF_MPEG library</h3>
-				</a>
-				<p>FFMPEG library&#39;s installation and configuration are automatically managed by the library internally. Also offers options to configure with custom library path.</p>
-				<a href="#3-native-implementation" id="3-native-implementation" style="color: inherit; text-decoration: none;">
-					<h3>3. Native Implementation</h3>
-				</a>
-				<p>This plugin works directly with native <a href="https://chromedevtools.github.io/devtools-protocol/tot/Page/#method-startScreencast">chrome devtool protocol</a> to capture the video under the wood without any other thirdparty puppeteer plugins for screen capturing.</p>
-				<a href="#4-adopted-the-chromium-principles" id="4-adopted-the-chromium-principles" style="color: inherit; text-decoration: none;">
-					<h3>4. Adopted the Chromium principles</h3>
-				</a>
-				<p>Adopted Chromium principles such as Speed, Security, Stability and Simplicity. It also ensures no frames are missed during video capturing and doesn&#39;t impact the performance, since its doesn&#39;t use any other puppeteer plugin internally.</p>
-				<a href="#5-supports-multiple-video-format-and-stream" id="5-supports-multiple-video-format-and-stream" style="color: inherit; text-decoration: none;">
-					<h3>5. Supports multiple video format and stream</h3>
-				</a>
-				<p>Supports multiple video format like AVI, MP4, MOV and WEBM. Enable support for writable or duplex stream for process the output streaming .</p>
-				<a href="#getting-started" id="getting-started" style="color: inherit; text-decoration: none;">
-					<h2>Getting Started</h2>
-				</a>
-				<a href="#installation-guide" id="installation-guide" style="color: inherit; text-decoration: none;">
-					<h3>Installation Guide</h3>
-				</a>
-				<p>Using Npm</p>
-				<pre><code class="language-sh">npm install puppeteer-screen-recorder
-</code></pre>
-				<p>Using Yarn</p>
-				<pre><code class="language-sh">yarn add puppeteer-screen-recorder
-</code></pre>
-				<a href="#api-description" id="api-description" style="color: inherit; text-decoration: none;">
-					<h3>API Description</h3>
-				</a>
-				<p><strong>1. Import the plugin using ES6 or commonjs.</strong></p>
-				<pre><code class="language-javascript"><span class="hljs-comment">// ES6</span>
-<span class="hljs-keyword">import</span> { PuppeteerScreenRecorder } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;puppeteer-screen-recorder&#x27;</span>;
+<!DOCTYPE html><html class="default" lang="en"><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>puppeteer-screen-recorder</title><meta name="description" content="Documentation for puppeteer-screen-recorder"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="assets/style.css"/><link rel="stylesheet" href="assets/highlight.css"/><script defer src="assets/main.js"></script><script async src="assets/icons.js" id="tsd-icons-script"></script><script async src="assets/search.js" id="tsd-search-script"></script><script async src="assets/navigation.js" id="tsd-nav-script"></script></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os";document.body.style.display="none";setTimeout(() => app?app.showPage():document.body.style.removeProperty("display"),500)</script><header class="tsd-page-toolbar"><div class="tsd-toolbar-contents container"><div class="table-cell" id="tsd-search" data-base="."><div class="field"><label for="tsd-search-field" class="tsd-widget tsd-toolbar-icon search no-caption"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><use href="assets/icons.svg#icon-search"></use></svg></label><input type="text" id="tsd-search-field" aria-label="Search"/></div><div class="field"><div id="tsd-toolbar-links"></div></div><ul class="results"><li class="state loading">Preparing search index...</li><li class="state failure">The search index is not available</li></ul><a href="index.html" class="title">puppeteer-screen-recorder</a></div><div class="table-cell" id="tsd-widgets"><a href="#" class="tsd-widget tsd-toolbar-icon menu no-caption" data-toggle="menu" aria-label="Menu"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><use href="assets/icons.svg#icon-menu"></use></svg></a></div></div></header><div class="container container-main"><div class="col-content"><div class="tsd-page-title"><h2>puppeteer-screen-recorder</h2></div><div class="tsd-panel tsd-typography"><a id="md:-puppeteer-screen-recorder" class="tsd-anchor"></a><h1 class="tsd-anchor-link"><img alt="puppeteer screen recorder logo" width="128px" src="https://github.com/prasanaworld/puppeteer-screen-recorder/blob/main/asserts/puppeteer-screen-recorder.png" /> puppeteer-screen-recorder<a href="#md:-puppeteer-screen-recorder" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h1><p>A puppeteer Plugin that uses the native <a href="https://chromedevtools.github.io/devtools-protocol/tot/Page/#method-startScreencast">chrome devtool protocol</a> for capturing video frame by frame. Also supports an option to follow pages that are opened by the current page object.
+<a href="https://prasanaworld.github.io/puppeteer-screen-recorder/classes/puppeteerscreenrecorder.html">Check out API Docs</a>.</p>
+<p><img src="https://img.shields.io/website?url=https%3A%2F%2Fprasanaworld.github.io%2Fpuppeteer-screen-recorder%2Fclasses%2Fpuppeteerscreenrecorder.html&amp;style=plastic&amp;logo=website&amp;label=Documentation" alt="Website"> <img src="https://img.shields.io/discord/1246821801120632902?style=plastic&amp;logo=discord&amp;label=Join%20Our%20Discord%20Server&amp;link=https%3A%2F%2Fdiscord.com%2Fchannels%2F1246821801120632902%2F1246821801120632905" alt="Discord"></p>
+<p><a href="https://npmjs.org/package/puppeteer-screen-recorder"><img src="https://nodei.co/npm/puppeteer-screen-recorder.png" alt="NPM"></a></p>
+<p><img src="https://img.shields.io/github/license/prasanaworld/puppeteer-screen-recorder" alt="GitHub"> <img src="https://img.shields.io/github/sponsors/prasanaworld?label=Github%20Sponsours" alt="GitHub Sponsors"> <img src="https://img.shields.io/opencollective/all/puppeteer-screen-recorder?label=Open%20Collective%20sponsors" alt="Open Collective backers and sponsors"></p>
+<p><img src="https://img.shields.io/github/package-json/v/prasanaworld/puppeteer-screen-recorder" alt="GitHub package.json version"> <img src="https://img.shields.io/github/languages/top/prasanaworld/puppeteer-screen-recorder" alt="GitHub top language"> <img src="https://img.shields.io/npm/dt/puppeteer-screen-recorder" alt="npm"> <img src="https://img.shields.io/github/actions/workflow/status/prasanaworld/puppeteer-screen-recorder/ci.yml" alt="GitHub Actions Workflow Status"></p>
+<p><img src="https://img.shields.io/github/forks/prasanaworld/puppeteer-screen-recorder?style=social" alt="GitHub forks"> <img src="https://img.shields.io/github/stars/prasanaworld/puppeteer-screen-recorder?style=social" alt="GitHub Repo stars"> <img src="https://img.shields.io/github/watchers/prasanaworld/puppeteer-screen-recorder?style=social" alt="GitHub watchers"> <img src="https://img.shields.io/twitter/follow/prasanaworld?style=social" alt="Twitter Follow"></p>
+<p><a href="https://github.com/prasanaworld/puppeteer-screen-recorder/issues/new">Add Feature Request</a></p>
+</p>
+<a id="md:recording-videoaudio-from-video-conferencing-calls" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Recording video/audio from video conferencing calls<a href="#md:recording-videoaudio-from-video-conferencing-calls" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><p>If you’re looking to use this repo to retrieve video or audio streams from meeting platforms like Zoom, Google Meet, Microsoft Teams, consider checking out <a href="https://www.recall.ai/?utm_source=github&amp;utm_medium=sponsorship&amp;utm_campaign=puppeteer-screen-recorder">Recall.ai</a>, an API for meeting recording.</p>
+<a id="md:be-a-sponsor" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Be a Sponsor<a href="#md:be-a-sponsor" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><p>Puppeteer-screen-recorder isn't backed by a company, so the future of this project depends on you. Become a sponsor or a backer - help the open source community.</p>
+<a id="md:for-companies-and-businesses" class="tsd-anchor"></a><h4 class="tsd-anchor-link"><strong>For Companies and Businesses</strong><a href="#md:for-companies-and-businesses" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h4><p>By becoming a Github Sponsor, your company and brand will be recognized as a one that gives back to the open source tools that run your business and one that respects your developers time and your customers' experience. For more details contact <a href="prasanaworld@gmail.com">Author - Prasana Kannan</a></p>
+<a id="md:for-developers" class="tsd-anchor"></a><h4 class="tsd-anchor-link"><strong>For Developers</strong><a href="#md:for-developers" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h4><p>By helping your company become a Github Sponsor, you will not only feel great about giving back to the open source tools that run your business run, If you believe your company could become a sponsor, then please reach out!</p>
+<ul>
+<li><a href="https://opencollective.com/puppeteer-screen-recorder">open-collective</a></li>
+<li><a href="https://paypal.me/prasanaworld">Paypal</a></li>
+<li><a href="3NdGW6wKVFgxa1X5XxRDNHqMWAhGNSrA5A">Bitcoin - 3NdGW6wKVFgxa1X5XxRDNHqMWAhGNSrA5A</a></li>
+</ul>
+<a id="md:getting-started" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Getting Started<a href="#md:getting-started" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><a id="md:how-to-use" class="tsd-anchor"></a><h3 class="tsd-anchor-link">How to use<a href="#md:how-to-use" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><p><img src="https://raw.githubusercontent.com/prasanaworld/puppeteer-screen-recorder/main/asserts/video_demo.gif" alt="How to use"></p>
+<a id="md:installation-guide" class="tsd-anchor"></a><h3 class="tsd-anchor-link">Installation Guide<a href="#md:installation-guide" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><p>Using Npm</p>
+<pre><code class="sh"><span class="hl-0">npm</span><span class="hl-1"> </span><span class="hl-2">install</span><span class="hl-1"> </span><span class="hl-2">puppeteer-screen-recorder</span>
+</code><button type="button">Copy</button></pre>
 
-<span class="hljs-comment">// or commonjs</span>
-<span class="hljs-keyword">const</span> { PuppeteerScreenRecorder } = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;puppeteer-screen-recorder&#x27;</span>);
-</code></pre>
-				<p><strong>2. Setup the Configuration object.</strong></p>
-				<pre><code class="language-javascript"><span class="hljs-keyword">const</span> Config = {
-  <span class="hljs-attr">followNewTab</span>: <span class="hljs-literal">true</span>,
-  <span class="hljs-attr">fps</span>: <span class="hljs-number">25</span>,
-  <span class="hljs-attr">ffmpeg_Path</span>: <span class="hljs-string">&#x27;&lt;path of ffmpeg_path&gt;&#x27;</span> || <span class="hljs-literal">null</span>,
-  <span class="hljs-attr">videoFrame</span>: {
-    <span class="hljs-attr">width</span>: <span class="hljs-number">1024</span>,
-    <span class="hljs-attr">height</span>: <span class="hljs-number">768</span>,
-  },
-  <span class="hljs-attr">videoCrf</span>: <span class="hljs-number">18</span>,
-  <span class="hljs-attr">videoCodec</span>: <span class="hljs-string">&#x27;libx264&#x27;</span>,
-  <span class="hljs-attr">videoPreset</span>: <span class="hljs-string">&#x27;ultrafast&#x27;</span>,
-  <span class="hljs-attr">videoBitrate</span>: <span class="hljs-number">1000</span>,
-  <span class="hljs-attr">autopad</span>: {
-    <span class="hljs-attr">color</span>: <span class="hljs-string">&#x27;black&#x27;</span> | <span class="hljs-string">&#x27;#35A5FF&#x27;</span>,
-  },
-  <span class="hljs-attr">aspectRatio</span>: <span class="hljs-string">&#x27;4:3&#x27;</span>,
-};
-</code></pre>
-				<blockquote>
-					<ul>
-						<li><strong>followNewTab</strong> : Boolean value which is indicate whether to follow the tab or not. Default value is true.</li>
-					</ul>
-				</blockquote>
-				<blockquote>
-					<ul>
-						<li><strong>fps</strong>: Numeric value which denotes no.of Frames per second in which the video should be recorded. default value is 25.</li>
-					</ul>
-				</blockquote>
-				<blockquote>
-					<ul>
-						<li><strong>ffmpeg_Path</strong>: String value pointing to the installation of <a href="https://ffmpeg.org/">FFMPEG</a>. Default is null (Automatically install the FFMPEG and use it).</li>
-					</ul>
-				</blockquote>
-				<blockquote>
-					<ul>
-						<li><strong>videoFrame</strong>: An object which is to specify the width and height of the capturing video frame. Default to browser viewport size.</li>
-					</ul>
-				</blockquote>
-				<blockquote>
-					<ul>
-						<li><strong>aspectRatio</strong>: Specify the aspect ratio of the video. Default value is <code>4:3</code>.</li>
-					</ul>
-				</blockquote>
-				<blockquote>
-					<ul>
-						<li><strong>autopad</strong>: Specify whether autopad option is used and its color. Default to autopad deactivation mode.</li>
-					</ul>
-				</blockquote>
-				<blockquote>
-					<ul>
-						<li><strong>recordDurationLimit</strong>: Numerical value specify duration (in seconds) to record the video. By default video is recorded till stop method is invoked`. (Note: It&#39;s mandatory to invoke Stop() method even if this value is set)</li>
-					</ul>
-				</blockquote>
-				<p><strong>3. create a new instance of video recording</strong></p>
-				<pre><code class="language-javascript"><span class="hljs-keyword">const</span> recorder = <span class="hljs-keyword">new</span> PuppeteerScreenRecorder(page, Config); <span class="hljs-comment">// Config is optional</span>
+<p>Using Yarn</p>
+<pre><code class="sh"><span class="hl-0">yarn</span><span class="hl-1"> </span><span class="hl-2">add</span><span class="hl-1"> </span><span class="hl-2">puppeteer-screen-recorder</span>
+</code><button type="button">Copy</button></pre>
 
-<span class="hljs-comment">// or</span>
+<a id="md:api-description" class="tsd-anchor"></a><h3 class="tsd-anchor-link">API Description<a href="#md:api-description" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><p><strong>1. Import the plugin using ES6 or commonjs.</strong></p>
+<pre><code class="javascript"><span class="hl-3">// ES6</span><br/><span class="hl-4">import</span><span class="hl-1"> { </span><span class="hl-5">PuppeteerScreenRecorder</span><span class="hl-1"> } </span><span class="hl-4">from</span><span class="hl-1"> </span><span class="hl-2">&#39;puppeteer-screen-recorder&#39;</span><span class="hl-1">;</span><br/><br/><span class="hl-3">// or commonjs</span><br/><span class="hl-6">const</span><span class="hl-1"> { </span><span class="hl-7">PuppeteerScreenRecorder</span><span class="hl-1"> } = </span><span class="hl-0">require</span><span class="hl-1">(</span><span class="hl-2">&#39;puppeteer-screen-recorder&#39;</span><span class="hl-1">);</span>
+</code><button type="button">Copy</button></pre>
 
-<span class="hljs-keyword">const</span> recorder = <span class="hljs-keyword">new</span> PuppeteerScreenRecorder(page);
-</code></pre>
-				<blockquote>
-					<ul>
-						<li><strong>page</strong>: Puppeteer page object which needs to captured.</li>
-						<li><strong>config</strong>: Config is an optional object.
-						Default value is <code>{ followNewTab: true, fps: 25, ffmpeg_Path: null }</code></li>
-					</ul>
-				</blockquote>
-				<p><strong>4. Start Video capturing</strong></p>
-				<p><strong>Option 1 - Start video capturing and save as file</strong></p>
-				<pre><code class="language-javascript"><span class="hljs-keyword">const</span> SavePath = <span class="hljs-string">&#x27;./test/demo.mp4&#x27;</span>;
-<span class="hljs-keyword">await</span> recorder.start(savePath);
-</code></pre>
-				<p><strong>Option 2 - Start Video capturing using stream</strong></p>
-				<pre><code class="language-javascript"><span class="hljs-keyword">const</span> pipeStream = <span class="hljs-keyword">new</span> PassThrough();
-<span class="hljs-keyword">await</span> recorder.startStream(pipeStream);
-</code></pre>
-				<blockquote>
-					<p><strong>pass</strong>: Any writeable stream that will be an output for the stream recorder. Video is recorded and streamed with .mp4 extension.</p>
-				</blockquote>
-				<blockquote>
-					<p><strong>savePath</strong>: string value indicating the directory on where to save the video. The path must also specify the name of the video with extension .mp4 (example - ./test/puppeteer-demo.mp4). Starting from v2, support added for extensions mp4, avi, mov and webm.</p>
-				</blockquote>
-				<p><strong>5. Stop the video capturing.</strong></p>
-				<pre><code class="language-javascript"><span class="hljs-keyword">await</span> recorder.stop();
-</code></pre>
-				<a href="#example" id="example" style="color: inherit; text-decoration: none;">
-					<h3>Example</h3>
-				</a>
-				<pre><code class="language-javascript"><span class="hljs-keyword">const</span> puppeteer = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;puppeteer&#x27;</span>);
-<span class="hljs-keyword">const</span> { PuppeteerScreenRecorder } = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;puppeteer-screen-recorder&#x27;</span>);
+<p><strong>2. Setup the Configuration object.</strong></p>
+<pre><code class="javascript"><span class="hl-6">const</span><span class="hl-1"> </span><span class="hl-7">Config</span><span class="hl-1"> = {</span><br/><span class="hl-1">  </span><span class="hl-5">followNewTab:</span><span class="hl-1"> </span><span class="hl-6">true</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">fps:</span><span class="hl-1"> </span><span class="hl-8">25</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">ffmpeg_Path:</span><span class="hl-1"> </span><span class="hl-2">&#39;&lt;path of ffmpeg_path&gt;&#39;</span><span class="hl-1"> || </span><span class="hl-6">null</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">videoFrame:</span><span class="hl-1"> {</span><br/><span class="hl-1">    </span><span class="hl-5">width:</span><span class="hl-1"> </span><span class="hl-8">1024</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-5">height:</span><span class="hl-1"> </span><span class="hl-8">768</span><span class="hl-1">,</span><br/><span class="hl-1">  },</span><br/><span class="hl-1">  </span><span class="hl-5">videoCrf:</span><span class="hl-1"> </span><span class="hl-8">18</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">videoCodec:</span><span class="hl-1"> </span><span class="hl-2">&#39;libx264&#39;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">videoPreset:</span><span class="hl-1"> </span><span class="hl-2">&#39;ultrafast&#39;</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">videoBitrate:</span><span class="hl-1"> </span><span class="hl-8">1000</span><span class="hl-1">,</span><br/><span class="hl-1">  </span><span class="hl-5">autopad:</span><span class="hl-1"> {</span><br/><span class="hl-1">    </span><span class="hl-5">color:</span><span class="hl-1"> </span><span class="hl-2">&#39;black&#39;</span><span class="hl-1"> | </span><span class="hl-2">&#39;#35A5FF&#39;</span><span class="hl-1">,</span><br/><span class="hl-1">  },</span><br/><span class="hl-1">  </span><span class="hl-5">aspectRatio:</span><span class="hl-1"> </span><span class="hl-2">&#39;4:3&#39;</span><span class="hl-1">,</span><br/><span class="hl-1">};</span>
+</code><button type="button">Copy</button></pre>
 
-(<span class="hljs-keyword">async</span> () =&gt; {
-  <span class="hljs-keyword">const</span> browser = <span class="hljs-keyword">await</span> puppeteer.launch();
-  <span class="hljs-keyword">const</span> page = <span class="hljs-keyword">await</span> browser.newPage();
-  <span class="hljs-keyword">const</span> recorder = <span class="hljs-keyword">new</span> PuppeteerScreenRecorder(page);
-  <span class="hljs-keyword">await</span> recorder.start(<span class="hljs-string">&#x27;./report/video/simple.mp4&#x27;</span>); <span class="hljs-comment">// supports extension - mp4, avi, webm and mov</span>
-  <span class="hljs-keyword">await</span> page.goto(<span class="hljs-string">&#x27;https://example.com&#x27;</span>);
+<blockquote>
+<ul>
+<li><strong>followNewTab</strong> : Boolean value which is indicate whether to follow the tab or not. Default value is true.</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li><strong>fps</strong>: Numeric value which denotes no.of Frames per second in which the video should be recorded. default value is 25.</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li><strong>ffmpeg_Path</strong>: String value pointing to the installation of <a href="https://ffmpeg.org/">FFMPEG</a>. Default is null (Automatically install the FFMPEG and use it).</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li><strong>videoFrame</strong>: An object which is to specify the width and height of the capturing video frame. Default to browser viewport size.</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li><strong>aspectRatio</strong>: Specify the aspect ratio of the video. Default value is <code>4:3</code>.</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li><strong>autopad</strong>: Specify whether autopad option is used and its color. Default to autopad deactivation mode.</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li><strong>recordDurationLimit</strong>: Numerical value specify duration (in seconds) to record the video. By default video is recorded till stop method is invoked`. (Note: It's mandatory to invoke Stop() method even if this value is set)</li>
+</ul>
+</blockquote>
+<p><strong>3. create a new instance of video recording</strong></p>
+<pre><code class="javascript"><span class="hl-6">const</span><span class="hl-1"> </span><span class="hl-7">recorder</span><span class="hl-1"> = </span><span class="hl-6">new</span><span class="hl-1"> </span><span class="hl-0">PuppeteerScreenRecorder</span><span class="hl-1">(</span><span class="hl-5">page</span><span class="hl-1">, </span><span class="hl-5">Config</span><span class="hl-1">); </span><span class="hl-3">// Config is optional</span><br/><br/><span class="hl-3">// or</span><br/><br/><span class="hl-6">const</span><span class="hl-1"> </span><span class="hl-7">recorder</span><span class="hl-1"> = </span><span class="hl-6">new</span><span class="hl-1"> </span><span class="hl-0">PuppeteerScreenRecorder</span><span class="hl-1">(</span><span class="hl-5">page</span><span class="hl-1">);</span>
+</code><button type="button">Copy</button></pre>
 
-  <span class="hljs-keyword">await</span> page.goto(<span class="hljs-string">&#x27;https://test.com&#x27;</span>);
-  <span class="hljs-keyword">await</span> recorder.stop();
-  <span class="hljs-keyword">await</span> browser.close();
-})();
-</code></pre>
-				<a href="#faq" id="faq" style="color: inherit; text-decoration: none;">
-					<h2>FAQ</h2>
-				</a>
-				<p>I found an exciting new way to search puppeteer code base using <a href="https://askyourcode.com">https://askyourcode.com</a> (it works just like magic 🪄 ✨).  Now it&#39;s possible to search all faqs related to puppeteer-screen-recorder with <a href="https://askyourcode.com">askyourcode.com</a>.</p>
-				<p><img src="https://user-images.githubusercontent.com/3425038/193901565-b9d2feec-dbf9-4b29-9ea9-3b869a158a86.gif" alt="puppeteer-screen-recorder-documatic"></p>
-				<p>If you are interested, you should check it out, it&#39;s free and saved me a ton of time.</p>
-				<p>Some of the frequently asked question about puppeteer screen recording are</p>
-				<p><strong>Q: Does it support Chrome in headless mode?</strong></p>
-				<hr>
-				<p>Yes, it supports Both headless and headFul mode.</p>
-				<p>It records full length video, frame by frame even when Chrome runs in headless mode.</p>
-				<p><strong>Q: Does it support multiple extension?</strong></p>
-				<hr>
-				<p>Yes, Starting from version 2.0, support multiple extension like AVI, MP4, MOV and WEBM.</p>
-				<p><strong>Q: Does it use the window object?</strong></p>
-				<hr>
-				<p>No, it&#39;s not tied to the window Object.</p>
-				<p><strong>Q: Does it follows pages which are opened at runtime</strong></p>
-				<hr>
-				<p>Yes, it automatically follows pages which is created at runtime.</p>
-				<p><strong>Q: is there an option to disable video recording for new page created and record video only for the page object passed</strong></p>
-				<hr>
-				<p>Yes, By setting the <code>options.followNewTab</code> to false, it record only video for the passed page object alone.</p>
-				<p><strong>Q: Does it support to record video at 60 fps</strong></p>
-				<hr>
-				<p>Yes, video can be recorded at 60 fps. By setting <code>options.fps</code> to 60.</p>
-				<p><strong>Q:Does it use the window object?</strong></p>
-				<hr>
-				<p>No, it doesn&#39;t use the window object.</p>
-				<p><strong>Q: Does it use FFMPEG internally?</strong></p>
-				<hr>
-				<p>Yes, it uses FFMPEG with optimized options to speed up the video recording using stream from chrome devtool protocol.</p>
-				<p><strong>Q: Does it support Webm?</strong></p>
-				<hr>
-				<p>Webm format is supported.</p>
-				<p><strong>Q: Is it possible to output the stream for further processing/enhancing?</strong></p>
-				<hr>
-				<p>Yes. By passing writable stream/duplex stream to <code>startStream</code> method.</p>
-				<p><strong>Q: Can I limit the time of recording, like to stop after 2 minutes?</strong></p>
-				<hr>
-				<p>By specifying the time to record (in seconds) using <code>option.recordDurationLimit</code></p>
-				<p><strong>Q: Does it support audio recording?</strong></p>
-				<hr>
-				<p>No, it doesn&#39;t audio recording.</p>
-				<p><strong>Q: Does it support GIF format, any plan to support in fur?</strong></p>
-				<hr>
-				<p>No, it wont support GIF. since Gif is considered as a image format.</p>
-				<a href="#sponsors" id="sponsors" style="color: inherit; text-decoration: none;">
-					<h2>Sponsors</h2>
-				</a>
-				<p><img src="https://www.documatic.com/svg/logo.svg" alt="Documatic"></p>
-			</div>
-		</div>
-		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
-			<nav class="tsd-navigation primary">
-				<ul>
-					<li class="globals  ">
-						<a href="globals.html"><em>Globals</em></a>
-					</li>
-				</ul>
-			</nav>
-			<nav class="tsd-navigation secondary menu-sticky">
-				<ul class="before-current">
-					<li class=" tsd-kind-enum">
-						<a href="enums/supportedfileformats.html" class="tsd-kind-icon">Supported<wbr>File<wbr>Formats</a>
-					</li>
-					<li class=" tsd-kind-class">
-						<a href="classes/puppeteerscreenrecorder.html" class="tsd-kind-icon">Puppeteer<wbr>Screen<wbr>Recorder</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#puppeteerscreenrecorderoptions" class="tsd-kind-icon">Puppeteer<wbr>Screen<wbr>Recorder<wbr>Options</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="globals.html#sleep" class="tsd-kind-icon">sleep</a>
-					</li>
-				</ul>
-			</nav>
-		</div>
-	</div>
-</div>
-<footer class="with-border-bottom">
-	<div class="container">
-		<h2>Legend</h2>
-		<div class="tsd-legend-group">
-			<ul class="tsd-legend">
-				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
-			</ul>
-		</div>
-	</div>
-</footer>
-<div class="container tsd-generator">
-	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
-</div>
-<div class="overlay"></div>
-<script src="assets/js/main.js"></script>
-</body>
-</html>
+<blockquote>
+<ul>
+<li><strong>page</strong>: Puppeteer page object which needs to captured.</li>
+<li><strong>config</strong>: Config is an optional object.
+Default value is <code>{ followNewTab: true, fps: 25, ffmpeg_Path: null }</code></li>
+</ul>
+</blockquote>
+<p><strong>4. Start Video capturing</strong></p>
+<p><strong>Option 1 - Start video capturing and save as file</strong></p>
+<pre><code class="javascript"><span class="hl-6">const</span><span class="hl-1"> </span><span class="hl-7">SavePath</span><span class="hl-1"> = </span><span class="hl-2">&#39;./test/demo.mp4&#39;</span><span class="hl-1">;</span><br/><span class="hl-4">await</span><span class="hl-1"> </span><span class="hl-5">recorder</span><span class="hl-1">.</span><span class="hl-0">start</span><span class="hl-1">(</span><span class="hl-5">savePath</span><span class="hl-1">);</span>
+</code><button type="button">Copy</button></pre>
+
+<p><strong>Option 2 - Start Video capturing using stream</strong></p>
+<pre><code class="javascript"><span class="hl-6">const</span><span class="hl-1"> </span><span class="hl-7">pipeStream</span><span class="hl-1"> = </span><span class="hl-6">new</span><span class="hl-1"> </span><span class="hl-0">PassThrough</span><span class="hl-1">();</span><br/><span class="hl-4">await</span><span class="hl-1"> </span><span class="hl-5">recorder</span><span class="hl-1">.</span><span class="hl-0">startStream</span><span class="hl-1">(</span><span class="hl-5">pipeStream</span><span class="hl-1">);</span>
+</code><button type="button">Copy</button></pre>
+
+<blockquote>
+<p><strong>pass</strong>: Any writeable stream that will be an output for the stream recorder. Video is recorded and streamed with .mp4 extension.</p>
+</blockquote>
+<blockquote>
+<p><strong>savePath</strong>: string value indicating the directory on where to save the video. The path must also specify the name of the video with extension .mp4 (example - ./test/puppeteer-demo.mp4). Starting from v2, support added for extensions mp4, avi, mov and webm.</p>
+</blockquote>
+<p><strong>5. Stop the video capturing.</strong></p>
+<pre><code class="javascript"><span class="hl-4">await</span><span class="hl-1"> </span><span class="hl-5">recorder</span><span class="hl-1">.</span><span class="hl-0">stop</span><span class="hl-1">();</span>
+</code><button type="button">Copy</button></pre>
+
+<a id="md:example" class="tsd-anchor"></a><h3 class="tsd-anchor-link">Example<a href="#md:example" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><pre><code class="javascript"><span class="hl-6">const</span><span class="hl-1"> </span><span class="hl-7">puppeteer</span><span class="hl-1"> = </span><span class="hl-0">require</span><span class="hl-1">(</span><span class="hl-2">&#39;puppeteer&#39;</span><span class="hl-1">);</span><br/><span class="hl-6">const</span><span class="hl-1"> { </span><span class="hl-7">PuppeteerScreenRecorder</span><span class="hl-1"> } = </span><span class="hl-0">require</span><span class="hl-1">(</span><span class="hl-2">&#39;puppeteer-screen-recorder&#39;</span><span class="hl-1">);</span><br/><br/><span class="hl-1">(</span><span class="hl-6">async</span><span class="hl-1"> () </span><span class="hl-6">=&gt;</span><span class="hl-1"> {</span><br/><span class="hl-1">  </span><span class="hl-6">const</span><span class="hl-1"> </span><span class="hl-7">browser</span><span class="hl-1"> = </span><span class="hl-4">await</span><span class="hl-1"> </span><span class="hl-5">puppeteer</span><span class="hl-1">.</span><span class="hl-0">launch</span><span class="hl-1">();</span><br/><span class="hl-1">  </span><span class="hl-6">const</span><span class="hl-1"> </span><span class="hl-7">page</span><span class="hl-1"> = </span><span class="hl-4">await</span><span class="hl-1"> </span><span class="hl-5">browser</span><span class="hl-1">.</span><span class="hl-0">newPage</span><span class="hl-1">();</span><br/><span class="hl-1">  </span><span class="hl-6">const</span><span class="hl-1"> </span><span class="hl-7">recorder</span><span class="hl-1"> = </span><span class="hl-6">new</span><span class="hl-1"> </span><span class="hl-0">PuppeteerScreenRecorder</span><span class="hl-1">(</span><span class="hl-5">page</span><span class="hl-1">);</span><br/><span class="hl-1">  </span><span class="hl-4">await</span><span class="hl-1"> </span><span class="hl-5">recorder</span><span class="hl-1">.</span><span class="hl-0">start</span><span class="hl-1">(</span><span class="hl-2">&#39;./report/video/simple.mp4&#39;</span><span class="hl-1">); </span><span class="hl-3">// supports extension - mp4, avi, webm and mov</span><br/><span class="hl-1">  </span><span class="hl-4">await</span><span class="hl-1"> </span><span class="hl-5">page</span><span class="hl-1">.</span><span class="hl-0">goto</span><span class="hl-1">(</span><span class="hl-2">&#39;https://example.com&#39;</span><span class="hl-1">);</span><br/><br/><span class="hl-1">  </span><span class="hl-4">await</span><span class="hl-1"> </span><span class="hl-5">page</span><span class="hl-1">.</span><span class="hl-0">goto</span><span class="hl-1">(</span><span class="hl-2">&#39;https://test.com&#39;</span><span class="hl-1">);</span><br/><span class="hl-1">  </span><span class="hl-4">await</span><span class="hl-1"> </span><span class="hl-5">recorder</span><span class="hl-1">.</span><span class="hl-0">stop</span><span class="hl-1">();</span><br/><span class="hl-1">  </span><span class="hl-4">await</span><span class="hl-1"> </span><span class="hl-5">browser</span><span class="hl-1">.</span><span class="hl-0">close</span><span class="hl-1">();</span><br/><span class="hl-1">})();</span>
+</code><button type="button">Copy</button></pre>
+
+<a id="md:key-feature" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Key Feature<a href="#md:key-feature" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><a id="md:1-follow-page-automatically" class="tsd-anchor"></a><h3 class="tsd-anchor-link">1. Follow Page Automatically<a href="#md:1-follow-page-automatically" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><p>Automatically follows pages (multiple pages) which are opened at runtime, which will be part of video capturing. Also support options to disable the default flow.</p>
+<a id="md:2-no-overhead-over-ff_mpeg-library" class="tsd-anchor"></a><h3 class="tsd-anchor-link">2. No overhead over FF_MPEG library<a href="#md:2-no-overhead-over-ff_mpeg-library" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><p>FFMPEG library's installation and configuration are automatically managed by the library internally. Also offers options to configure with custom library path.</p>
+<a id="md:3-native-implementation" class="tsd-anchor"></a><h3 class="tsd-anchor-link">3. Native Implementation<a href="#md:3-native-implementation" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><p>This plugin works directly with native <a href="https://chromedevtools.github.io/devtools-protocol/tot/Page/#method-startScreencast">chrome devtool protocol</a> to capture the video under the wood without any other thirdparty puppeteer plugins for screen capturing.</p>
+<a id="md:4-adopted-the-chromium-principles" class="tsd-anchor"></a><h3 class="tsd-anchor-link">4. Adopted the Chromium principles<a href="#md:4-adopted-the-chromium-principles" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><p>Adopted Chromium principles such as Speed, Security, Stability and Simplicity. It also ensures no frames are missed during video capturing and doesn't impact the performance, since its doesn't use any other puppeteer plugin internally.</p>
+<a id="md:5-supports-multiple-video-format-and-stream" class="tsd-anchor"></a><h3 class="tsd-anchor-link">5. Supports multiple video format and stream<a href="#md:5-supports-multiple-video-format-and-stream" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><p>Supports multiple video format like AVI, MP4, MOV and WEBM. Enable support for writable or duplex stream for process the output streaming .</p>
+<a id="md:faq" class="tsd-anchor"></a><h2 class="tsd-anchor-link">FAQ<a href="#md:faq" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><p>Some of the frequently asked question about puppeteer screen recording are</p>
+<p><strong>Q: Does it support Chrome in headless mode?</strong></p>
+<hr>
+<p>Yes, it supports Both headless and headFul mode.</p>
+<p>It records full length video, frame by frame even when Chrome runs in headless mode.</p>
+<p><strong>Q: Does it support multiple extension?</strong></p>
+<hr>
+<p>Yes, Starting from version 2.0, support multiple extension like AVI, MP4, MOV and WEBM.</p>
+<p><strong>Q: Does it use the window object?</strong></p>
+<hr>
+<p>No, it's not tied to the window Object.</p>
+<p><strong>Q: Does it follows pages which are opened at runtime</strong></p>
+<hr>
+<p>Yes, it automatically follows pages which is created at runtime.</p>
+<p><strong>Q: is there an option to disable video recording for new page created and record video only for the page object passed</strong></p>
+<hr>
+<p>Yes, By setting the <code>options.followNewTab</code> to false, it record only video for the passed page object alone.</p>
+<p><strong>Q: Does it support to record video at 60 fps</strong></p>
+<hr>
+<p>Yes, video can be recorded at 60 fps. By setting <code>options.fps</code> to 60.</p>
+<p><strong>Q:Does it use the window object?</strong></p>
+<hr>
+<p>No, it doesn't use the window object.</p>
+<p><strong>Q: Does it use FFMPEG internally?</strong></p>
+<hr>
+<p>Yes, it uses FFMPEG with optimized options to speed up the video recording using stream from chrome devtool protocol.</p>
+<p><strong>Q: Does it support Webm?</strong></p>
+<hr>
+<p>Webm format is supported.</p>
+<p><strong>Q: Is it possible to output the stream for further processing/enhancing?</strong></p>
+<hr>
+<p>Yes. By passing writable stream/duplex stream to <code>startStream</code> method.</p>
+<p><strong>Q: Can I limit the time of recording, like to stop after 2 minutes?</strong></p>
+<hr>
+<p>By specifying the time to record (in seconds) using <code>option.recordDurationLimit</code></p>
+<p><strong>Q: Does it support audio recording?</strong></p>
+<hr>
+<p>No, it doesn't audio recording.</p>
+<p><strong>Q: Does it support GIF format, any plan to support in fur?</strong></p>
+<hr>
+<p>No, it wont support GIF. since Gif is considered as a image format.</p>
+</div></div><div class="col-sidebar"><div class="page-menu"><div class="tsd-navigation settings"><details class="tsd-accordion"><summary class="tsd-accordion-summary"><h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><use href="assets/icons.svg#icon-chevronDown"></use></svg>Settings</h3></summary><div class="tsd-accordion-details"><div class="tsd-filter-visibility"><span class="settings-label">Member Visibility</span><ul id="tsd-filter-options"><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-protected" name="protected"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Protected</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-inherited" name="inherited" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Inherited</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-external" name="external"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>External</span></label></li></ul></div><div class="tsd-theme-toggle"><label class="settings-label" for="tsd-theme">Theme</label><select id="tsd-theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></div></div></details></div><details open class="tsd-accordion tsd-page-navigation"><summary class="tsd-accordion-summary"><h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><use href="assets/icons.svg#icon-chevronDown"></use></svg>On This Page</h3></summary><div class="tsd-accordion-details"><a href="#md:-puppeteer-screen-recorder"><span>&lt;img alt=&quot;puppeteer screen recorder logo&quot; width=&quot;128px&quot; src=&quot;https://github.com/prasanaworld/puppeteer-<wbr/>screen-<wbr/>recorder/blob/main/asserts/puppeteer-<wbr/>screen-<wbr/>recorder.png&quot; /&gt; puppeteer-<wbr/>screen-<wbr/>recorder</span></a><ul><li><a href="#md:recording-videoaudio-from-video-conferencing-calls"><span>Recording video/audio from video conferencing calls</span></a></li><li><a href="#md:be-a-sponsor"><span>Be a <wbr/>Sponsor</span></a></li><li><ul><li><ul><li><a href="#md:for-companies-and-businesses"><span>For <wbr/>Companies and <wbr/>Businesses</span></a></li><li><a href="#md:for-developers"><span>For <wbr/>Developers</span></a></li></ul></li></ul></li><li><a href="#md:getting-started"><span>Getting <wbr/>Started</span></a></li><li><ul><li><a href="#md:how-to-use"><span>How to use</span></a></li><li><a href="#md:installation-guide"><span>Installation <wbr/>Guide</span></a></li><li><a href="#md:api-description"><span>API <wbr/>Description</span></a></li><li><a href="#md:example"><span>Example</span></a></li></ul></li><li><a href="#md:key-feature"><span>Key <wbr/>Feature</span></a></li><li><ul><li><a href="#md:1-follow-page-automatically"><span>1. <wbr/>Follow <wbr/>Page <wbr/>Automatically</span></a></li><li><a href="#md:2-no-overhead-over-ff_mpeg-library"><span>2. <wbr/>No overhead over FF_<wbr/>MPEG library</span></a></li><li><a href="#md:3-native-implementation"><span>3. <wbr/>Native <wbr/>Implementation</span></a></li><li><a href="#md:4-adopted-the-chromium-principles"><span>4. <wbr/>Adopted the <wbr/>Chromium principles</span></a></li><li><a href="#md:5-supports-multiple-video-format-and-stream"><span>5. <wbr/>Supports multiple video format and stream</span></a></li></ul></li><li><a href="#md:faq"><span>FAQ</span></a></li></ul></div></details></div><div class="site-menu"><nav class="tsd-navigation"><a href="modules.html" class="current"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="assets/icons.svg#icon-1"></use></svg><span>puppeteer-screen-recorder</span></a><ul class="tsd-small-nested-navigation" id="tsd-nav-container" data-base="."><li>Loading...</li></ul></nav></div></div></div><footer><p class="tsd-generator">Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></footer><div class="overlay"></div></body></html>
