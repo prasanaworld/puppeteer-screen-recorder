@@ -107,7 +107,7 @@
     "@istanbuljs/nyc-config-typescript": "^1.0.1",
     "@jest/globals": "^29.7.0",
     "@types/jest": "29.5.3",
-    "@types/node": "22.1.0",
+    "@types/node": "22.10.7",
     "@typescript-eslint/eslint-plugin": "7.18.0",
     "@typescript-eslint/parser": "7.18.0",
     "codecov": "^3.5.0",
