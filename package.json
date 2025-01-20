@@ -114,7 +114,7 @@
     "cspell": "8.13.1",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "8.57.1",
-    "eslint-config-prettier": "9.0.0",
+    "eslint-config-prettier": "10.0.1",
     "eslint-plugin-eslint-comments": "^3.2.0",
     "eslint-plugin-functional": "6.6.3",
     "eslint-plugin-import": "^2.22.0",
