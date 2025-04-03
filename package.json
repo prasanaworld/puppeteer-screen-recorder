@@ -100,7 +100,7 @@
     "@ffmpeg-installer/ffmpeg": "^1.1.0"
   },
   "peerDependencies": {
-    "puppeteer": "19.0.0"
+    "puppeteer": ">=19.0.0"
   },
   "devDependencies": {
     "@babel/preset-typescript": "^7.26.0",
